@@ -1,0 +1,125 @@
+:root{
+    --dark-color : #19283f;
+    --blue-color: #33d1cc;
+}
+body,html
+{   
+    overflow: hidden;
+    height: 100%;
+    background-image: url("../imgs/20230311_201953_0000.png");
+    font-family: 'Cairo', sans-serif;
+    background-position: center ;
+    background-size: cover;
+}
+.searchWeb{
+    margin: 15px;
+/* montaser */
+}
+.searchwebinput{
+    border-radius: 15px;
+    border-width: 3px;
+    border: solid 1px;
+}
+.navbar{
+    background-color: #19283f00;
+    font-family: 'Cairo', sans-serif;
+
+}
+.navdropdow{
+    background-color: #19283f;
+    transition-delay: 0.4s;
+}
+.linktomagr{
+
+color: white;
+}
+.navbar .navbar-nav  .nav-link{
+    font-family: 'Cairo', sans-serif;
+    color: white;
+    font-weight: 600;
+    
+}
+.navdropdown{
+    background-color: #19283f00;
+    color: white;
+}
+.navbar .navbar-nav  .nav-link.active,
+.navbar .navbar-nav  .nav-link:focus,
+.navbar .navbar-nav  .nav-link:hover{
+    color :var(--blue-color)
+}
+ .navbar .navbar-toggler{
+    color: white;
+    font-size: 25px;
+    border-color: white;
+ }
+.navbar .search{
+    border-left: 1px solid var(--blue-color);
+
+}
+.navbar .search svg{
+    color: var(--blue-color);
+}
+.navbar .navbar-toggler:focus{
+box-shadow: none;
+}
+/* .navbar-brand{
+    background-color: white;
+    padding-bottom: 60px;
+    padding-top: 70px;
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    position: relative;
+    top: -115px;
+}
+    */
+
+.logonav{
+    width: 75px;
+    background-color: white;
+    padding-bottom: 16px;
+    padding-top: 23px;
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    position: relative;
+    top: -30px;
+    left: 35px;
+}
+/* nav bar */
+
+/* landing */
+.landing{
+    min-height: calc(100vh - 72px);
+}
+
+.imglogo{
+    height: 100px;
+
+}
+.libraylmg{
+    width: 12rem ;
+    
+}
+.info{
+    color: #194681;
+    font-family: 'Cairo', sans-serif;
+
+}
+.nameOfProjact{
+    font-family: 'Cairo', sans-serif;
+}
+.getStarted{
+    color: #1b54a0;
+    background-color: white;
+    font-family: 'Cairo', sans-serif;
+}
+
+.logoName{
+    font-family: 'Cairo', sans-serif;
+}
+.navdropdown{
+background-color: #19283f;
+}
+.fab{
+    margin: auto;
+}

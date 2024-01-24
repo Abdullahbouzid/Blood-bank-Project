@@ -1,0 +1,21 @@
+.footer {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--main-color);
+    /* position: fixed; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .contact {
+    display: flex;
+    align-items: center;
+}
+
+.footer .contact a {
+    font-size: 20px;
+    color: white;
+    margin: 0 10px;
+}
