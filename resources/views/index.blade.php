@@ -34,7 +34,7 @@
             <div class="row align-items-center">
             </div>
             <div class="text-center">
-              <h1 style="color: black;"><span>مرحبا بيك</span></h1>
+              <h1 style="color: black;"><span>مرحبا بك</span></h1>
             </div>
             <div class="text-center">
               <h5 style="color: black;"><span>ادخل بياناتك هنا</span></h5>
