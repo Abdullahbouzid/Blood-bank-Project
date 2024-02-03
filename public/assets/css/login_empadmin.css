@@ -1,0 +1,11 @@
+:root {
+    --main-color: #fd563f;
+    --dark-color: #19283f;
+}
+
+.container .row {
+
+    display: flex;
+    justify-content: center;
+
+}

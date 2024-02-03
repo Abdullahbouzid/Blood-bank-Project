@@ -31,8 +31,14 @@
           style=" box-shadow: -1px 4px 1px -1px #616263;border-radius: 20px; color: #616263;">
 
           <div class="container">
-            <div class="row align-items-center">
-            </div>
+
+            <!-- شن وظيفة الكود الي هدا -->
+
+            <!-- <div class="row align-items-center">
+            </div> -->
+
+            <!--  -->
+
             <div class="text-center">
               <h1 style="color: black;"><span>مرحبا بك</span></h1>
             </div>
@@ -54,7 +60,7 @@
 
               </div>
 
-              <a href="" style="color: gray; cursor: pointer; font-size: 15px;">هل نسيت كلمة السر</a>
+              <a href="">هل نسيت كلمة السر</a>
               <br>
               <br>
 
@@ -71,10 +77,12 @@
               </div>
 
               <div class="form-group">
-
-                <button type="submit" class="submit ">انشاء حساب جديد</button>
+                <button type="submit" class="submit"
+                  style="background-color: white; color:red; border:1px solid red;">إنشاء حساب
+                  جديد</button>
 
               </div>
+
 
             </form>
           </div>

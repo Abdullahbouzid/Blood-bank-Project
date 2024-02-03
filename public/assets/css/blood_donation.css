@@ -127,8 +127,8 @@ body {
         direction: rtl;
     }
 
-
-    .navbar .container .navbar-brand {
+    .navbar .container img {
+        height: 85px;
         padding-top: 2%;
     }
 

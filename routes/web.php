@@ -17,14 +17,19 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/home', function () {
+// اختصار لعرض شاشة تسجيل الدخول الخاصة ب الموظف و الادمن 
+Route::view("/login_administrator", 'login_admin');
+
+Route::view("/login_employee", 'login_employee');
+
+Route::get("/home", function () {
     return view('home');
 });
-
 
 Route::get('/blood_donation', function () {
     return view('blood_donation');
 });
+
 Route::get('/patient', function () {
     return view('patient');
 });

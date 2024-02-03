@@ -3,7 +3,7 @@
 }
 
 body {
-    overflow: scroll;
+    /* overflow: scroll; */
     box-shadow: 0px 0px 2px 5px #ffffff5e;
     background-image: url(../../img/Blood-Donor-Privileges-Malaysia\ v.png);
     font-family: 'Cairo', sans-serif;
@@ -22,17 +22,6 @@ body {
         height: 76px;
         display: flex;
         align-items: center;
-    }/* For larger screens (adjust as needed) */
-@media (min-width: 768px) {
-    .navbar {
-        direction: rtl;
-        height: 12%;
-    }
-
-    .navbar .container .collapse .navbar-nav .nav-item {
-        height: 76px;
-        display: flex;
-        align-items: center;
     }
 
     .container .nameOfProjact {
@@ -43,16 +32,17 @@ body {
         font-family: 'Cairo', sans-serif;
         background-color: var(--main-color);
         position: fixed;
-        left: 0;
-        bottom: 0;
+        left: 0px;
+        bottom: 0px;
         width: 100%;
         display: flex;
         justify-content: space-between;
     }
+
 }
 
 /* For smaller screens */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .navbar {
         margin-top: -17px;
         padding-bottom: 0px;
@@ -61,7 +51,7 @@ body {
     }
 
     .container .nameOfProjact {
-        margin-top: calc(100vh - 520px);
+        margin-top: 40%
     }
 
     .navbar .container .navbar-nav {
@@ -69,7 +59,8 @@ body {
 
     }
 
-    .navbar .container .navbar-brand {
+    .navbar .container img {
+        height: 85px;
         padding-top: 2%;
     }
 
@@ -77,62 +68,10 @@ body {
         font-family: 'Cairo', sans-serif;
         background-color: var(--main-color);
         position: fixed;
-        bottom: 0;
-        left: 0;
+        left: 0px;
+        bottom: 0px;
         width: 100%;
         display: flex;
         justify-content: space-between;
     }
-
-}
-
-    .container .nameOfProjact {
-        margin-top: calc(100vh - 500px);
-    }
-
-    .footer {
-        font-family: 'Cairo', sans-serif;
-        background-color: var(--main-color);
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-}
-
-/* For smaller screens */
-@media (max-width: 767px) {
-    .navbar {
-        margin-top: -17px;
-        padding-bottom: 0px;
-        direction: ltr;
-        background-color: var(--main-color);
-    }
-
-    .container .nameOfProjact {
-        margin-top: calc(100vh - 520px);
-    }
-
-    .navbar .container .navbar-nav {
-        direction: rtl;
-
-    }
-
-    .navbar .container .navbar-brand {
-        padding-top: 2%;
-    }
-
-    .footer {
-        font-family: 'Cairo', sans-serif;
-        background-color: var(--main-color);
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-
 }

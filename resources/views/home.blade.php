@@ -10,16 +10,13 @@
 
   <link rel="stylesheet" href="{{asset('assets/css/bondi.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-
   <link rel="stylesheet" href="{{asset('assets/css/navbar.css')}}">
- 
+  <link rel="stylesheet" href="{{asset('assets/css/home.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/footer.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/cdn.jsdelivr.net_npm_bootstrap@5.3.1_dist_css_bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css.map')}}">
   <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}">
-  <link rel="stylesheet" href="{{asset('assets/css/home.css')}}">
-  <link rel="stylesheet" href="{{asset('assets/css/content.css')}}">
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;500;600;700;800;900&display=swap"
@@ -36,10 +33,8 @@
     <div class="container">
 
       <!-- للرجوع الى القائمة الرئيسية -->
+      <img src="{{asset('img/blood bank white and black.png')}}" alt="Logo" height="78px">
 
-     
-        <img src="{{asset('img/blood bank white and black.png')}}" alt="Logo" height="78px">
-     
 
       <!-- بوتن وظيفتها الظهور عندما يتم تصغير الشاشة  -->
 
@@ -100,13 +95,7 @@
     <!-- START FOOTER -->
 
     <script src="{{asset('assets/js/cdn.jsdelivr.net_npm_bootstrap@5.3.1_dist_js_bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('assets/js/all.min.js')}}"></script>
-
-
-
-
-
-
+    <script src="{{asset('assets/js/all.min.js')}}"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
