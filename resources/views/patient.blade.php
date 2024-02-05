@@ -52,22 +52,21 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
  
                 <ul class="navbar-nav mb-0 mb-lg-0 fw-bolder ms-auto "> 
-                    <li class="nav-item"> 
-                        <a class="nav-link fs-5 pt-1 " href="home">الرئيسية</a> 
-                    </li> 
-                    <li class="nav-item"> 
-                        <a class="nav-link fs-5 pt-1 " href="blood_donation">طلب التبرع بالدم</a> 
-                    </li> 
-                    <li class="nav-item" style="background-color: #fd563f;"> 
-                        <a class="nav-link fs-5 pt-1 " href="patient">طلب دم</a> 
-                    </li> 
-                    <li class="nav-item"> 
-                        <a class="nav-link fs-5 pt-1 " href="#">مراكز التبرع</a> 
-                    </li> 
-                    <li class="nav-item"> 
-                        <a class="nav-link fs-5 pt-1 " href="#">حول</a> 
-                    </li> 
- 
+                    <li class="nav-item" >
+                        <a class="nav-link fs-5 pt-1 " href="home">الرئيسية</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link fs-5 pt-1 " href="blood_donation">طلب التبرع بالدم</a>
+                      </li>
+                      <li class="nav-item" style="background-color: #fd563f;">
+                        <a class="nav-link fs-5 pt-1 " href="patient">طلب دم</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link fs-5 pt-1 " href="#">مراكز التبرع</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link fs-5 pt-1 " href="about">حول</a>
+                      </li>
                 </ul> 
  
             </div> 
@@ -78,7 +77,7 @@
  
     <!-- START SECTION --> 
  
-    <form action="" method=""> 
+ 
         <div class="container text-center "> 
  
             <!-- الصف الذي يجمع بين نص الطلب بالدم و باقي الصفحة --> 
@@ -172,7 +171,7 @@
  
             </div> 
         </div> 
-    </form> 
+  
  
     <!-- END SECTION --> 
  

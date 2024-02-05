@@ -30,7 +30,7 @@
   <!-- START NAVBAR -->
 
   <nav class="navbar navbar-expand-lg navbar-expand-md ">
-    <divfixed class="container">
+    <div fixed class="container">
 
       <!-- للرجوع الى القائمة الرئيسية -->
 
@@ -49,7 +49,7 @@
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
 
         <ul class="navbar-nav mb-0 mb-lg-0 fw-bolder ms-auto ">
-          <li class="nav-item">
+          <li class="nav-item" >
             <a class="nav-link fs-5 pt-1 " href="home">الرئيسية</a>
           </li>
           <li class="nav-item" style="background-color: #fd563f;">
@@ -62,9 +62,8 @@
             <a class="nav-link fs-5 pt-1 " href="#">مراكز التبرع</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5 pt-1 " href="#">حول</a>
+            <a class="nav-link fs-5 pt-1 " href="about">حول</a>
           </li>
-
         </ul>
 
       </div>

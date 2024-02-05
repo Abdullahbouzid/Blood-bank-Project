@@ -33,3 +33,7 @@ Route::get('/blood_donation', function () {
 Route::get('/patient', function () {
     return view('patient');
 });
+
+Route::get('/about', function () {
+    return view('about');
+});
