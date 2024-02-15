@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\FormCheck;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,3 +37,7 @@ Route::get('/patient', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+// خاص بالنموذج
+Route::post("/home",[FormCheck::class,'getUserlogin']);
+Route::view("/index","home");

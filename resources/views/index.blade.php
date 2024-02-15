@@ -46,17 +46,20 @@
               <h5 style="color: black;"><span>ادخل بياناتك هنا</span></h5>
             </div>
             <br>
-            <form>
+            <form action="home" method="POST">
+              {{-- @csrf --}}
 
               <div class="form-group pt-1">
 
                 <label class="text" for="">البريد الالكتروني</label>
-                <input type="email" id="" name="email" required class="form-control text-center mt-1"
-                  placeholder="user@email.com">
+                <input type="email" id="" name="visitoremail" required class="form-control text-center mt-1"
+                  placeholder="user@email.com"><br>
+                  <span style="color: red">@error('visitoremail'){{$message}}@enderror </span>
 
                 <label class="text pt-2" for="">كلمة المرور</label>
-                <input type="text" id="" name="password" required class="form-control text-center mt-1 mb-1"
-                  placeholder="ادخل  كلمة السر">
+                <input type="password" id="" name="visitorpassword" required class="form-control text-center mt-1 mb-1"
+                  placeholder="ادخل  كلمة السر"><br>
+                  <span style="color: red">@error('visitorpassword'){{$message}}@enderror </span>
 
               </div>
 
@@ -66,9 +69,9 @@
 
               <div class="form-group">
 
-                <!-- <button type="submit" class="submit" >تسجيل الدخول</button> -->
-                <button type="submit" class="submit"><a href="home"
-                    style=" color: white; font-size: 18px; font-weight: bold;">تسجيل الدخول</a></button>
+                <button type="submit" class="submit" >تسجيل الدخول</button> 
+                {{-- <button type="submit" class="submit"><a href="home" --}}
+                    {{-- style=" color: white; font-size: 18px; font-weight: bold;">تسجيل الدخول</a></button> --}}
 
               </div>
               <br>
