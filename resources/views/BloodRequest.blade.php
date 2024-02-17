@@ -62,7 +62,7 @@
                         <a class="nav-link fs-5 pt-1 " href="BloodRequest">طلب دم</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link fs-5 pt-1 " href="#">مراكز التبرع</a>
+                        <a class="nav-link fs-5 pt-1 " href="Blood_Center">مراكز التبرع</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link fs-5 pt-1 " href="about">حول</a>

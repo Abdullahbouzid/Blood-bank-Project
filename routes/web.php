@@ -35,6 +35,10 @@ Route::get('/BloodRequest', function () {
     return view('BloodRequest');
 });
 
+Route::get('/Blood_Center', function () {
+    return view('Blood_Center');
+});
+
 Route::get('/about', function () {
     return view('about');
 });
