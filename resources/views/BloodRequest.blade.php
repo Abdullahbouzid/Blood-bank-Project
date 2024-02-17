@@ -59,13 +59,16 @@
                         <a class="nav-link fs-5 pt-1 " href="blood_donation">طلب التبرع بالدم</a>
                       </li>
                       <li class="nav-item" style="background-color: #fd563f;">
-                        <a class="nav-link fs-5 pt-1 " href="patient">طلب دم</a>
+                        <a class="nav-link fs-5 pt-1 " href="BloodRequest">طلب دم</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link fs-5 pt-1 " href="#">مراكز التبرع</a>
+                        <a class="nav-link fs-5 pt-1 " href="Blood_Center">مراكز التبرع</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link fs-5 pt-1 " href="about">حول</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link fs-5 pt-1 " href="">تسجيل الخروج</a>
                       </li>
                 </ul> 
  
@@ -102,30 +105,33 @@
                     </div> 
  
                     <div class="row mt-4 "> 
- 
+                        <form action="/BloodRequest" method="POST">
+                            @csrf
+                         
                         <div class="form-group"> 
                             <label class="text exception" for="">الاسم الثلاثي</label>
-                            <input type="text" id="" name="fullName" required class="form-control"> 
+                            <input type="text" id="" name="Name_Patient" required class="form-control"> 
  
                             <label class="date exception" for="">تاريخ الميلاد</label> 
-                            <input type="date" id="" name="DateOfBirth" required class="form-control exception" 
+                            <input type="date" id="" name="DOB_Patient" required class="form-control exception" 
                                 style="cursor: pointer;"> 
                         </div> 
  
                         <div class="form-group pt-1"> 
  
                             <label class="text exception" for="">عنوان السكن</label> 
-                            <input type="text" id="" name="address" required class="form-control exception"> 
+                            <input type="text" id="" name="Adds_Patient" required class="form-control exception"> 
  
                             <label class="text exception" for="">رقم الهاتف</label> 
-                            <input type="text" id="" name="phone" required class="form-control exception"> 
+                            <input type="text" id="" name="Phone_Patient" required class="form-control exception"> 
  
                         </div> 
  
                         <div class="form-group pt-1 "> 
  
                             <label class="text exception" for="">نوع الفصيلة</label> 
-                            <select name="typeBlood" id="" class="form-control" required style="text-align: center ;"> 
+                            {{-- Type of blood for the  Patient --}}
+                            <select name="TOB_Patient" id="" class="form-control" required style="text-align: center ;"> 
                                 <option value="">----اختر نوع الفصيلة----</option> 
                                 <option value="A+">A+</option> 
                                 <option value="A-">A-</option> 
@@ -138,7 +144,7 @@
                             </select> 
  
                             <label class="text exception" for="">الجنس</label> 
-                            <select name="typeBlood" id="" class="form-control exception" required 
+                            <select name="Gander_Patient" id="" class="form-control exception" required 
                                 style="text-align: center;"> 
                                 <option value="">--</option> 
                                 <option value="Male">ذكر</option> 
@@ -149,7 +155,7 @@
                         <div class="form-group pt-1 "> 
  
                             <label class="text exception" for="">حالة الطلب</label> 
-                            <select name="Level" id="" class="form-control exception" required 
+                            <select name="State_of_Patient" id="" class="form-control exception" required 
                                 style="text-align: center; margin-left: 50%"> 
                                 <option value="">--</option> 
                                 <option value="Urgent">مستعجل</option> 
@@ -157,11 +163,11 @@
                             </select> 
  
                         </div> 
- 
+                      
                     </div> 
  
                     <button type="submit" class="submit mt-5 mb-3">ارســـال</button> 
- 
+                    </form>
                 </div> 
  
                 <!-- العمود الخاص ب صورة الطلب --> 

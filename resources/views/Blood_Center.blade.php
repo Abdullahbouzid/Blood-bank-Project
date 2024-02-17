@@ -53,10 +53,10 @@
           <li class="nav-item">
             <a class="nav-link fs-5 pt-1 " href="BloodRequest">طلب دم</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item " style="background-color: #fd563f;">
             <a class="nav-link fs-5 pt-1 " href="Blood_Center">مراكز التبرع</a>
           </li>
-          <li class="nav-item" style="background-color: #fd563f;">
+          <li class="nav-item" >
             <a class="nav-link fs-5 pt-1 " href="about">حول</a>
           </li>
       
@@ -80,7 +80,7 @@
           <div class="row align-items-center"> 
 
               <div class="col-12 nameService position-relative"> 
-               حول
+               مراكز التبرع
               </div> 
 
           </div> 
@@ -90,32 +90,31 @@
                 <!-- start of posting-->
                   <div class="row align-items-center">
                     
-                    <div class="col-lg-2 col-sm-12">
-                   <img src="../img/aboutDr1.png" alt="" class="Drimg" style="height: 520px; width: 270px; margin-bottom: -20px;">
-                    </div>
-                      <div class="col-lg-8  col-sm-12">
-
-                        <p class="nameOfProjact fs-3 " style=" margin-top: 20px; font-size: 20px; text-align: center;;">
-                           مشروع موقع مصرف دم هو مشروع يهدف إلى تسهيل عملية التبرع بالدم وتوفير الدم للحالات المحتاجة في الوقت المناسب. يعتمد المشروع على إنشاء قاعدة بيانات إلكترونية للمتبرعين بالدم، بحيث يمكن للمرضى والمستشفيات البحث عن المتبرعين المناسبين لفصيلة الدم المطلوبة.
-
-                        </p>
-                        <p class="nameOfProjact fs-3 " style=" margin-top: 20px; font-size: 20px; text-align: center;;">
-                       
-                        :يتميز مشروع موقع مصرف دم بالعديد من المزايا، منها  
-                        </p>
-
-                        <p class="nameOfProjact fs-3 " style=" margin-top: 20px; font-size: 20px; text-align: right;">
-                     
-تسهيل عملية التبرع بالدم: يوفر الموقع الإلكتروني قنوات متعددة للتواصل بين المتبرعين والمرضى، مما يسهل عملية التبرع ويوفر الوقت والجهد.
-توفير الدم للحالات المحتاجة: يساهم المشروع في توفير الدم للحالات المحتاجة في الوقت المناسب، مما يساهم في إنقاذ الأرواح.
-توعية المجتمع بأهمية التبرع بالدم: يساهم المشروع في توعية المجتمع بأهمية التبرع بالدم وفوائده، مما يؤدي إلى زيادة عدد المتبرعين بالدم   .
-            
-                        </p>                     
+                  
+                    <div class="row " style="direction: rtl">
+                        <div class="col-lg-2 col-sm-12">
+                            <div class="form-floating">
+                                <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                                  <option selected>Open this select menu</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                                <label for="floatingSelectGrid">Works with selects</label>
+                              </div>
                         </div>
-                        <div class="col-lg-2  col-sm-12">
-                          <img src="../img/aboutDr2.png" alt="" class="Drimg">
-                           </div>
-                  </div>
+                        <div class="col-lg-2 col-sm-12">
+                          <div class="form-floating">
+                            <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                              <option selected>Open this select menu</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                            <label for="floatingSelectGrid">Works with selects</label>
+                          </div>
+                        </div>
+                      </div>
             </div>
             </div>
             <br>
