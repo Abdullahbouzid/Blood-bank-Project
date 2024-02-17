@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FormCheck;
+// use App\Http\Controllers\FormCheck;
+use App\Http\Controllers\DonationControllers;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,5 +41,7 @@ Route::get('/about', function () {
 });
 
 // خاص بالنموذج
-Route::post("/home",[FormCheck::class,'getUserlogin']);
-Route::view("/index","home");
+// Route::post("/home",[FormCheck::class,'getUserlogin']);
+// Route::view("/index","home");
+
+Route::post('/blood_donation', [DonationControllers::class, 'requestVisitor']);
