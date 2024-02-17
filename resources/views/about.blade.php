@@ -51,13 +51,17 @@
             <a class="nav-link fs-5 pt-1 " href="blood_donation">طلب التبرع بالدم</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5 pt-1 " href="patient">طلب دم</a>
+            <a class="nav-link fs-5 pt-1 " href="BloodRequest">طلب دم</a>
           </li>
           <li class="nav-item">
             <a class="nav-link fs-5 pt-1 " href="#">مراكز التبرع</a>
           </li>
           <li class="nav-item" style="background-color: #fd563f;">
             <a class="nav-link fs-5 pt-1 " href="about">حول</a>
+          </li>
+      
+          <li class="nav-item">
+            <a class="nav-link fs-5 pt-1 " href="">تسجيل الخروج</a>
           </li>
 
         </ul>

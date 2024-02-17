@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Request_Controllers;
 use App\Http\Controllers\FormCheck;
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +31,8 @@ Route::get('/blood_donation', function () {
     return view('blood_donation');
 });
 
-Route::get('/patient', function () {
-    return view('patient');
+Route::get('/BloodRequest', function () {
+    return view('BloodRequest');
 });
 
 Route::get('/about', function () {
@@ -39,5 +40,9 @@ Route::get('/about', function () {
 });
 
 // خاص بالنموذج
-Route::post("/home",[FormCheck::class,'getUserlogin']);
-Route::view("/index","home");
+// Route::post("/home",[FormCheck::class,'getUserlogin']);
+// Route::view("/index","home");
+
+// استقبال طلبات الدم
+// Route::get("/BloodRequest/create",[Request_Controllers::class,'requestPatient']);
+Route::post("/BloodRequest",[Request_Controllers::class,'requestPatient']);
