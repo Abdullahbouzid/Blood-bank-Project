@@ -1,14 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
+// <<<<<<< HEAD
 // use App\Http\Controllers\FormCheck;
 use App\Http\Controllers\DonationControllers;
 
-=======
+// =======
 use App\Http\Controllers\Request_Controllers;
 use App\Http\Controllers\FormCheck;
->>>>>>> dd99cb9d602e01f248dffda3232ecaa9af1d9818
+
+// >>>>>>> dd99cb9d602e01f248dffda3232ecaa9af1d9818
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,10 +54,10 @@ Route::get('/about', function () {
 // Route::post("/home",[FormCheck::class,'getUserlogin']);
 // Route::view("/index","home");
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
 Route::post('/blood_donation', [DonationControllers::class, 'requestVisitor']);
-=======
+// =======
 // استقبال طلبات الدم
 // Route::get("/BloodRequest/create",[Request_Controllers::class,'requestPatient']);
-Route::post("/BloodRequest",[Request_Controllers::class,'requestPatient']);
->>>>>>> dd99cb9d602e01f248dffda3232ecaa9af1d9818
+Route::post("/BloodRequest", [Request_Controllers::class, 'requestPatient']);
+// >>>>>>> dd99cb9d602e01f248dffda3232ecaa9af1d9818

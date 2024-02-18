@@ -66,7 +66,7 @@
           <li class="nav-item">
             <a class="nav-link fs-5 pt-1 " href="about">حول</a>
           </li>
-          <li class="nav-item" >
+          <li class="nav-item">
             <a class="nav-link fs-5 pt-1 " href="">تسجيل الخروج</a>
           </li>
         </ul>
@@ -181,7 +181,7 @@
 
         </div>
 
-        <button type="submit" onclick="getMonthDifference()" class="submit mt-4 mb-3">ارســـال</button>
+        <button type="submit" class="submit mt-4 mb-3">ارســـال</button>
         </form>
 
 
