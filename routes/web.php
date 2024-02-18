@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Center_Controllers;
 use App\Http\Controllers\Request_Controllers;
 use App\Http\Controllers\FormCheck;
 /*
@@ -50,3 +51,6 @@ Route::get('/about', function () {
 // استقبال طلبات الدم
 // Route::get("/BloodRequest/create",[Request_Controllers::class,'requestPatient']);
 Route::post("/BloodRequest",[Request_Controllers::class,'requestPatient']);
+
+// عرض مراكز التبرع
+Route::get("/Blood_Center",[Center_Controllers::class,'show']);

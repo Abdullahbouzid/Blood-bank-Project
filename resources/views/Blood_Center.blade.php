@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body> 
+<body style=" font-family: 'Cairo', sans-serif;"> 
   <!-- START NAVBAR -->
 
   <nav class="navbar navbar-expand-lg navbar-expand-md ">
@@ -74,16 +74,10 @@
 
             <!--من هنا تقدر تمسح لانه هذا تبع المحتوي الصفحه-->
            
-        <div class="container text-center "> 
+        <div class="container text-center pt-5"> 
  
-          <!-- الصف الذي يجمع بين باقي الصفحة --> 
-          <div class="row align-items-center"> 
-
-              <div class="col-12 nameService position-relative"> 
-               مراكز التبرع
-              </div> 
-
-          </div> 
+        
+         
 
                 
 
@@ -113,6 +107,34 @@
                           </div>
                         </div>
                       </div>
+
+{{-- جدول المراكز --}}
+
+<div class="col-lg-12 col-sm-12 pt-5">
+
+<table class="table table-striped " style="direction: rtl">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">اسم المركز</th>
+      <th scope="col">نوع المركز</th>
+      <th scope="col">مكان المركز</th>
+    </tr>
+  </thead>
+
+  @foreach ($centers as $center)
+  <tbody>
+    <tr>
+      <th scope="row">{{$center->$Center_id}} </th>
+      <td>{{$center->$Name_Center}}</td>
+      <td>{{$center->$Type_of_Center }}</td>
+      <td>{{ $center->$Adds_Center}} </td>
+      
+    </tr>
+  </tbody>
+</table>
+@endforeach
+</div>
             </div>
             </div>
             <br>
