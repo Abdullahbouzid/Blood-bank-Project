@@ -25,8 +25,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
-
 </head>
 
 <body>
@@ -109,7 +107,7 @@
 
         <div class="row mt-4">
 
-          <form action="/blood_donation" method="post" onsubmit="return checkData()">
+          <form action="/blood_donation" method="post" onsubmit="return checkDataDonation()">
             @csrf
 
             <div class="form-group">

@@ -1,5 +1,5 @@
 
-function checkData() {
+function checkDataDonation() {
     var nameVisitor = document.getElementById('Name_Visitor').value;
     var DOB = document.getElementById('DOB_Visitor').value;
     var Adds = document.getElementById('Adds_Visitor').value;
@@ -10,6 +10,33 @@ function checkData() {
     var nameCenter = document.getElementById('Name_Center').value;
 
     if (nameVisitor && phone && DOB && Adds && TOB && gender && DOD && nameCenter) {
+        Swal.fire({
+            title: "!احسنت",
+            text: "تمت عملية ارسال البيانات بنجاح",
+            icon: "success"
+        });
+        return true;
+    } else {
+        Swal.fire({
+            title: "! عذرا",
+            text: "من فضلك تأكد من إدخال جميع البيانات بشكل صحيح",
+            icon: "warning"
+        });
+        return false;
+    }
+
+}
+
+function checkDataRequest() {
+    var namePatient = document.getElementById('Name_Patient').value;
+    var DOB = document.getElementById('DOB_Patient').value;
+    var Adds = document.getElementById('Adds_Patient').value;
+    var phone = document.getElementById('Phone_Patient').value;
+    var TOB = document.getElementById('TOB_Patient').value;
+    var gender = document.getElementById('Gander_Patient').value;
+    var state = document.getElementById('State_of_Patient').value;
+
+    if (namePatient && phone && DOB && Adds && TOB && gender && state) {
         Swal.fire({
             title: "!احسنت",
             text: "تمت عملية ارسال البيانات بنجاح",
