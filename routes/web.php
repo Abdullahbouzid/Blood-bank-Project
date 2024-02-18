@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Center_Controllers;
 use App\Http\Controllers\Request_Controllers;
 use App\Http\Controllers\FormCheck;
+
+// >>>>>>> dd99cb9d602e01f248dffda3232ecaa9af1d9818
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +50,9 @@ Route::get('/about', function () {
 // Route::post("/home",[FormCheck::class,'getUserlogin']);
 // Route::view("/index","home");
 
+// <<<<<<< HEAD
+Route::post('/blood_donation', [DonationControllers::class, 'requestVisitor']);
+// =======
 // استقبال طلبات الدم
 // Route::get("/BloodRequest/create",[Request_Controllers::class,'requestPatient']);
 Route::post("/BloodRequest",[Request_Controllers::class,'requestPatient']);

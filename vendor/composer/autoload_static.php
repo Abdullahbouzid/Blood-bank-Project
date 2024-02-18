@@ -511,6 +511,7 @@ class ComposerStaticInitc61ff82cbf0142a401a48a8161e1595a
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Center_Controllers' => __DIR__ . '/../..' . '/app/Http/Controllers/Center_Controllers.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DonationControllers' => __DIR__ . '/../..' . '/app/Http/Controllers/DonationControllers.php',
         'App\\Http\\Controllers\\FormCheck' => __DIR__ . '/../..' . '/app/Http/Controllers/FormCheck.php',
         'App\\Http\\Controllers\\Request_Controllers' => __DIR__ . '/../..' . '/app/Http/Controllers/Request_Controllers.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
