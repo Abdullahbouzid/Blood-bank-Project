@@ -9,13 +9,9 @@ return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
-<<<<<<< HEAD
     'App\\Http\\Controllers\\DonationControllers' => $baseDir . '/app/Http/Controllers/DonationControllers.php',
     'App\\Http\\Controllers\\FormCheck' => $baseDir . '/app/Http/Controllers/FormCheck.php',
-=======
-    'App\\Http\\Controllers\\FormCheck' => $baseDir . '/app/Http/Controllers/FormCheck.php',
     'App\\Http\\Controllers\\Request_Controllers' => $baseDir . '/app/Http/Controllers/Request_Controllers.php',
->>>>>>> dd99cb9d602e01f248dffda3232ecaa9af1d9818
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
@@ -25,6 +21,8 @@ return array(
     'App\\Http\\Middleware\\TrustHosts' => $baseDir . '/app/Http/Middleware/TrustHosts.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Models\\Donation' => $baseDir . '/app/Models/Donation.php',
+    'App\\Models\\Request' => $baseDir . '/app/Models/Request.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
