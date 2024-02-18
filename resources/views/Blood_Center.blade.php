@@ -92,26 +92,24 @@
                     
                   
                     <div class="row " style="direction: rtl">
-                        <div class="col-lg-2 col-sm-12">
-                            <div class="form-floating">
+                        <div class="col-lg-3 col-sm-12">
+                            <div class="form-control exception">
                                 <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                                  <option selected>Open this select menu</option>
+                                  <option selected>اختر مكان التبرع</option>
                                   <option value="1">One</option>
                                   <option value="2">Two</option>
                                   <option value="3">Three</option>
                                 </select>
-                                <label for="floatingSelectGrid">Works with selects</label>
-                              </div>
+                                </div>
                         </div>
-                        <div class="col-lg-2 col-sm-12">
-                          <div class="form-floating">
+                        <div class="col-lg-3 col-sm-12">
+                          <div class="form-control exception">
                             <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                              <option selected>Open this select menu</option>
+                              <option selected>اختر نوع المركز</option>
                               <option value="1">One</option>
                               <option value="2">Two</option>
                               <option value="3">Three</option>
                             </select>
-                            <label for="floatingSelectGrid">Works with selects</label>
                           </div>
                         </div>
                       </div>
