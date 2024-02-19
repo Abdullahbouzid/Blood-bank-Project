@@ -1,0 +1,37 @@
+:root {
+    --main-color: #fd563f;
+    --dark-color: #19283f;
+    --greaen-color: #ffffff;
+}
+
+body {
+
+    font-family: 'Cairo', sans-serif;
+    background-position: center;
+    overflow: hidden;
+    background-color: var(--main-color);
+}
+
+button {
+    margin-right: 9%;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 10px;
+    /* width: 150px; */
+    width: 40%;
+
+    font-family: 'Cairo', sans-serif;
+}
+
+button {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+button :hover {
+    color: white;
+
+}

@@ -32,7 +32,6 @@
   <nav class="navbar navbar-expand-lg navbar-expand-md ">
     <div class="container">
 
-      <!-- للرجوع الى القائمة الرئيسية -->
       <img src="{{asset('img/blood bank white and black.png')}}" alt="Logo" height="78px">
 
 

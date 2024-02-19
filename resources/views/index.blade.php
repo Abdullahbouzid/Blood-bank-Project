@@ -27,8 +27,7 @@
     <!-- start of posting-->
     <div class="row align-items-center">
       <div class="col-lg-6">
-        <div class="bg-white p-5 my-5"
-          style=" box-shadow: -1px 4px 1px -1px #616263;border-radius: 20px; color: #616263;">
+        <div class="bg-white p-4 my-5" style="border-radius: 20px; color: #616263;">
 
           <div class="container">
 
@@ -47,19 +46,29 @@
             </div>
             <br>
             <form action="home" method="POST">
-              {{-- @csrf --}}
+              <!-- @csrf -->
 
               <div class="form-group pt-1">
 
                 <label class="text" for="">البريد الالكتروني</label>
                 <input type="email" id="" name="visitoremail" required class="form-control text-center mt-1"
-                  placeholder="user@email.com"><br>
-                  <span style="color: red">@error('visitoremail'){{$message}}@enderror </span>
+                  placeholder="user@email.com">
+                <br>
+                <span style="color: red">
+                  @error('visitoremail')
+                  {{$message}}
+                  @enderror
+                </span>
 
                 <label class="text pt-2" for="">كلمة المرور</label>
                 <input type="password" id="" name="visitorpassword" required class="form-control text-center mt-1 mb-1"
                   placeholder="ادخل  كلمة السر"><br>
-                  <span style="color: red">@error('visitorpassword'){{$message}}@enderror </span>
+                <span style="color: red">
+                  @error('visitorpassword')
+                  {{$message}}
+                  @enderror
+
+                </span>
 
               </div>
 
@@ -69,9 +78,9 @@
 
               <div class="form-group">
 
-                <button type="submit" class="submit" >تسجيل الدخول</button> 
-                {{-- <button type="submit" class="submit"><a href="home" --}}
-                    {{-- style=" color: white; font-size: 18px; font-weight: bold;">تسجيل الدخول</a></button> --}}
+                <button type="submit" class="submit">تسجيل الدخول</button>
+                {{-- <button type="submit" class="submit"><a href="home" --}} {{--
+                    style=" color: white; font-size: 18px; font-weight: bold;">تسجيل الدخول</a></button> --}}
 
               </div>
               <br>
