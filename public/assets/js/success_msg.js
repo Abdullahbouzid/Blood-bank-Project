@@ -54,6 +54,30 @@ function checkDataRequest() {
 
 }
 
+function checkData_CreateVisitor() {
+    var username = document.getElementById('username').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var password_again = document.getElementById('password_again').value;
+    var DOB = document.getElementById('DOB_Visitor').value;
+
+    if (username && email && password && password_again && DOB) {
+        Swal.fire({
+            title: "!احسنت",
+            text: "تمت عملية ارسال البيانات بنجاح",
+            icon: "success"
+        });
+        return true;
+    } else {
+        Swal.fire({
+            title: "! عذرا",
+            text: "من فضلك تأكد من إدخال جميع البيانات بشكل صحيح",
+            icon: "warning"
+        });
+        return false;
+    }
+}
+
 function getMonthDifference(startDate, endDate) {
     // Ensure valid Date objects
     startDate = new Date(startDate);
