@@ -23,6 +23,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -36,8 +38,6 @@
 
       <img src="{{asset('img/blood bank white and black.png')}}" alt="Logo" height="78px">
 
-
-
       <!-- بوتن وظيفتها الظهور عندما يتم تصغير الشاشة  -->
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -49,20 +49,23 @@
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
 
         <ul class="navbar-nav mb-0 mb-lg-0 fw-bolder ms-auto ">
-          <li class="nav-item" >
+          <li class="nav-item">
             <a class="nav-link fs-5 pt-1 " href="home">الرئيسية</a>
           </li>
           <li class="nav-item" style="background-color: #fd563f;">
             <a class="nav-link fs-5 pt-1 " href="blood_donation">طلب التبرع بالدم</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5 pt-1 " href="patient">طلب دم</a>
+            <a class="nav-link fs-5 pt-1 " href="BloodRequest">طلب دم</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5 pt-1 " href="#">مراكز التبرع</a>
+            <a class="nav-link fs-5 pt-1 " href="Blood_Center">مراكز التبرع</a>
           </li>
           <li class="nav-item">
             <a class="nav-link fs-5 pt-1 " href="about">حول</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 pt-1 " href="">تسجيل الخروج</a>
           </li>
         </ul>
 
@@ -73,45 +76,46 @@
   <!-- END NAVBAR -->
 
   <!-- START SECTION -->
+  <div class="container text-center ">
 
-  <form action="" method="">
-    <div class="container text-center ">
+    <!-- الصف الذي يجمع بين نص التبرع بالدم و باقي الصفحة -->
+    <div class="row align-items-center">
 
-      <!-- الصف الذي يجمع بين نص التبرع بالدم و باقي الصفحة -->
-      <div class="row align-items-center">
+      <div class="col-12 nameService position-relative">
+        التبرع بالدم
+      </div>
 
-        <div class="col-12 nameService position-relative">
-          التبرع بالدم
-        </div>
+    </div>
+
+    <!-- الصف الذي يجمع بين بيانات التبرع و صورة التبرع -->
+    <div class="row mt-4">
+
+      <!-- العمود الخاص ب صورة التبرع -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <img src="{{asset('img/blood-donation.jpg')}}" alt="" style="height: 300px; padding-left: 8%;">
 
       </div>
 
-      <!-- الصف الذي يجمع بين بيانات التبرع و صورة التبرع -->
-      <div class="row mt-4">
+      <!-- العمود الخاص ب بيانات التبرع -->
+      <div class="col-lg-9 col-md-12 dataDonation mb-5">
 
-        <!-- العمود الخاص ب صورة التبرع -->
-        <div class="col-lg-3 d-none d-lg-block">
-          <img src="{{asset('img/blood-donation.jpg')}}" alt="" style="height: 300px; padding-left: 8%;">
-
+        <div class="row">
+          <label style=" padding-bottom: 5px; padding-top: 5px;" for="">
+            الرجاء ملئ النموذج التالي
+          </label>
         </div>
 
-        <!-- العمود الخاص ب بيانات التبرع -->
-        <div class="col-lg-9 col-md-12 dataDonation mb-5">
+        <div class="row mt-4">
 
-          <div class="row">
-            <label style=" padding-bottom: 5px; padding-top: 5px;" for="">
-              الرجاء ملئ النموذج التالي
-            </label>
-          </div>
-
-          <div class="row mt-4">
+          <form action="/blood_donation" method="post" onsubmit="return checkDataDonation()">
+            @csrf
 
             <div class="form-group">
               <label class="text exception" for="">الاسم الثلاثي</label>
-              <input type="text" id="" name="fullName" required class="form-control">
+              <input type="text" id="Name_Visitor" name="Name_Visitor" class="form-control">
 
               <label class="date exception" for="">تاريخ الميلاد</label>
-              <input type="date" id="" name="DateOfBirth" required class="form-control exception"
+              <input type="date" id="DOB_Visitor" name="DOB_Visitor" class="form-control exception"
                 style="cursor: pointer;">
 
             </div>
@@ -119,17 +123,18 @@
             <div class="form-group pt-1">
 
               <label class="text exception" for="">عنوان السكن</label>
-              <input type="text" id="" name="address" required class="form-control exception">
+              <input type="text" id="Adds_Visitor" name="Adds_Visitor" class="form-control exception">
 
               <label class="text exception" for="">رقم الهاتف</label>
-              <input type="text" id="" name="phone" required class="form-control exception">
+              <input type="text" id="Ph_Visitor" name="Ph_Visitor" class="form-control exception">
 
             </div>
 
             <div class="form-group pt-1 ">
 
               <label class="text exception" for="">نوع الفصيلة</label>
-              <select name="typeBlood" id="" class="form-control" required style="text-align: center ;">
+              <!-- TOB - Type of blood for the Visitor-->
+              <select name="TOB_Visitor" id="TOB_Visitor" class="form-control" style="text-align: center ;">
                 <option value="">----اختر نوع الفصيلة----</option>
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
@@ -142,7 +147,8 @@
               </select>
 
               <label class="text exception" for="">الجنس</label>
-              <select name="typeBlood" id="" class="form-control exception" required style="text-align: center;">
+              <select name="Gender_Visitor" id="Gender_Visitor" class="form-control exception"
+                style="text-align: center;">
                 <option value="">--</option>
                 <option value="Male">ذكر</option>
                 <option value="Female">انثى</option>
@@ -152,39 +158,40 @@
             <div class="form-group pt-1">
 
               <label class="date exception" for="">تاريخ التبرع</label>
-              <input type="date" id="" name="DateOfDonation" required class="form-control exception"
-                style="cursor: pointer;">
+              <!-- DOD - Date Of Donation for the Visitor -->
+              <input type="date" id="date" name="DOD_Visitor" class="form-control exception" style="cursor: pointer;">
 
               <label class="text exception" for="">اسم المركز</label>
-              <select name="nameCenter" id="" class="form-control exception" required style="text-align: center;">
+              <select name="Name_Center" id="Name_Center" class="form-control exception" style="text-align: center;">
                 <option value="">----اختر اسم المركز----</option>
+                <option value="TR">مؤقت: طرابلس الطبي</option>
               </select>
 
             </div>
+        </div>
 
-          </div>
 
-
-          <div class="row pt-3 pb-0">
-            <span style="font-size: 16px; font-weight: bold;">
-              ملاحظة : لا يمكن التبرع بالدم في حالة قيام المتبرع باجراء عملية حديثة و عدم تجاوز 6 شهور من اخر تبرع او
-              قيام بالحجامة الشرعية
-            </span>
-
-          </div>
-
-          <button type="submit" class="submit mt-4 mb-3">ارســـال</button>
+        <div class="row pt-3 pb-0">
+          <span style="font-size: 16px; font-weight: bold;">
+            ملاحظة : لا يمكن التبرع بالدم في حالة قيام المتبرع باجراء عملية حديثة و عدم تجاوز 6 شهور من اخر تبرع او
+            قيام بالحجامة الشرعية
+          </span>
 
         </div>
 
-      </div>
-    </div>
-  </form>
+        <button type="submit" class="submit mt-4 mb-3">ارســـال</button>
+        </form>
 
+
+      </div>
+
+    </div>
+  </div>
   <!-- END SECTION -->
 
   <!-- START FOOTER -->
 
+  <script src="/assets/js/success_msg.js"></script>
   <script src="/assets/js/cdn.jsdelivr.net_npm_bootstrap@5.3.1_dist_js_bootstrap.bundle.min.js"></script>
   <script src="/assets/js/all.min.js"></script>
 

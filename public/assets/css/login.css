@@ -11,7 +11,6 @@ body {
     background-position: center;
     background-size: cover;
     overflow: hidden;
-
     background-color: #fd563f;
 }
 
@@ -55,21 +54,6 @@ a:hover {
 .nameofSubject {
     overflow: hidden;
     display: inline-block;
-}
-
-/* What is this ????????????????? */
-.ControlsMenu {
-    /* box-shadow: 0px 0px 8px 2px #00000045;
-    top: 30%;
-    width: 9%;
-    left: 15px;
-    color: white;
-    position: fixed;
-    font-family: 'Cairo', sans-serif;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #29658d;
-    border-radius: 30px; */
 }
 
 .buttonMeunn {
