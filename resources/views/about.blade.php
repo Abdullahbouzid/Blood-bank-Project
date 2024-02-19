@@ -90,7 +90,7 @@
                 <!-- start of posting-->
                   <div class="row align-items-center">
                     
-                    <div class="col-lg-2 col-sm-12">
+                    <div class="col-lg-2 col-sm-12 ">
                    <img src="../img/aboutDr1.png" alt="" class="Drimg" style="height: 520px; width: 270px; margin-bottom: -20px;">
                     </div>
                       <div class="col-lg-8  col-sm-12">
