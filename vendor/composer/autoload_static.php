@@ -509,7 +509,6 @@ class ComposerStaticInitc61ff82cbf0142a401a48a8161e1595a
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-        'App\\Http\\Controllers\\Center_Controllers' => __DIR__ . '/../..' . '/app/Http/Controllers/Center_Controllers.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DonationControllers' => __DIR__ . '/../..' . '/app/Http/Controllers/DonationControllers.php',
         'App\\Http\\Controllers\\FormCheck' => __DIR__ . '/../..' . '/app/Http/Controllers/FormCheck.php',
@@ -524,6 +523,7 @@ class ComposerStaticInitc61ff82cbf0142a401a48a8161e1595a
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Center' => __DIR__ . '/../..' . '/app/Models/Center.php',
+        'App\\Models\\Donation' => __DIR__ . '/../..' . '/app/Models/Donation.php',
         'App\\Models\\Request' => __DIR__ . '/../..' . '/app/Models/Request.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
