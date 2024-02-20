@@ -67,5 +67,5 @@ Route::post('/blood_donation', [DonationControllers::class, 'requestVisitor']);
 Route::post("/BloodRequest", [Request_Controllers::class, 'requestPatient']);
 
 // عرض مراكز التبرع
-Route::get("/Blood_Center", [Center_Controllers::class, 'show']);
+
 
