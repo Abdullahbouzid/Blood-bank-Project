@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VisitorControllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Center_Controllers;
 use App\Http\Controllers\Request_Controllers;
@@ -47,15 +48,20 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::view('/CreateAccount', "create_visitor");
+Route::get('/CreateAccount', function () {
+    return view("create_visitor");
+});
 
-// خاص بالنموذج
-// Route::post("/home",[FormCheck::class,'getUserlogin']);
+Route::post('/CreateAccount', [VisitorControllers::class, 'store']);
+
+// Route::get('/CreateAccount/{email}', [VisitorControllers::class, 'show']);
+
+// خاص بالنموذج تسجيل الدخول
+Route::post("/home", [FormCheck::class, 'getUserlogin']);
 // Route::view("/index","home");
 
-// <<<<<<< HEAD
 Route::post('/blood_donation', [DonationControllers::class, 'requestVisitor']);
-// =======
+
 // استقبال طلبات الدم
 // Route::get("/BloodRequest/create",[Request_Controllers::class,'requestPatient']);
 Route::post("/BloodRequest", [Request_Controllers::class, 'requestPatient']);

@@ -11,14 +11,13 @@
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('assets/css/navbar.css')}}">
-
+    <link rel="stylesheet" href="{{asset('assets/css/patient.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/content.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/footer.css')}}">
     <link rel="stylesheet"
         href="{{asset('assets/css/cdn.jsdelivr.net_npm_bootstrap@5.3.1_dist_css_bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css.map')}}">
     <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/patient.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/content.css')}}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,9 +37,7 @@
 
             <!-- للرجوع الى القائمة الرئيسية -->
 
-
             <img src="{{asset('img/blood bank white and black.png')}}" alt="Logo" height="78px">
-
 
             <!-- بوتن وظيفتها الظهور عندما يتم تصغير الشاشة  -->
 
@@ -133,7 +130,7 @@
 
                             <label class="text exception" for="">نوع الفصيلة</label>
                             {{-- Type of blood for the Patient --}}
-                            <select name="TOB_Patient" id="TOB_Patient" class="form-control"
+                            <select name="TOB_Patient" id="TOB_Patient" class="form-control exception"
                                 style="text-align: center ;">
                                 <option value="">----اختر نوع الفصيلة----</option>
                                 <option value="A+">A+</option>
@@ -157,9 +154,12 @@
 
                         <div class="form-group pt-1 ">
 
+                            <label class="text exception" for="">عدد الاكياس</label>
+                            <input type="number" id="Adds_Patient" name="Adds_Patient" class="form-control">
+
                             <label class="text exception" for="">حالة الطلب</label>
                             <select name="State_of_Patient" id="State_of_Patient" class="form-control exception"
-                                style="text-align: center; margin-left: 50%">
+                                style="text-align: center;">
                                 <option value="">--</option>
                                 <option value="Urgent">مستعجل</option>
                                 <option value="nonUrgent">غير مستعجل</option>

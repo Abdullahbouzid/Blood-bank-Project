@@ -1,21 +1,16 @@
 :root {
     --main-color: #F2371E;
+    --font-family: 'Cairo', sans-serif;
 }
 
 /* START SECTION */
 
 body {
-    overflow-y: scroll;
-
-}
-
-.container .row .dataPatient .row {
-    font-family: 'Cairo', sans-serif;
+    font-family: var(--font-family);
 
 }
 
 .container .row .nameService {
-    font-family: 'Cairo', sans-serif;
     color: var(--main-color);
     font-size: 32px;
     padding-top: 15px;
@@ -73,8 +68,6 @@ body {
     border: none;
     font-size: 20px;
     border-radius: 10px;
-
-    font-family: 'Cairo', sans-serif;
 }
 
 .submit :hover {
@@ -85,8 +78,12 @@ body {
     background-color: var(--main-color);
 }
 
-/* END SECTION */
+/* .exception {
+    font-family: var(--font-family);
 
+} */
+
+/* END SECTION */
 
 /* For larger screens (adjust as needed) */
 
@@ -125,6 +122,10 @@ body {
 
     .navbar .container .navbar-nav {
         direction: rtl;
+    }
+
+    body {
+        overflow-y: scroll;
     }
 
     .navbar .container img {

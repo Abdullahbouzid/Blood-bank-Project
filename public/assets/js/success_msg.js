@@ -1,4 +1,7 @@
 
+
+var $timerMessage = 3000;
+
 function checkDataDonation() {
     var nameVisitor = document.getElementById('Name_Visitor').value;
     var DOB = document.getElementById('DOB_Visitor').value;
@@ -13,14 +16,18 @@ function checkDataDonation() {
         Swal.fire({
             title: "!احسنت",
             text: "تمت عملية ارسال البيانات بنجاح",
-            icon: "success"
+            icon: "success",
+            showConfirmButton: false,
+            timer: $timerMessage
         });
         return true;
     } else {
         Swal.fire({
             title: "! عذرا",
             text: "من فضلك تأكد من إدخال جميع البيانات بشكل صحيح",
-            icon: "warning"
+            icon: "warning",
+            showConfirmButton: false,
+            timer: $timerMessage
         });
         return false;
     }
@@ -40,14 +47,18 @@ function checkDataRequest() {
         Swal.fire({
             title: "!احسنت",
             text: "تمت عملية ارسال البيانات بنجاح",
-            icon: "success"
+            icon: "success",
+            showConfirmButton: false,
+            timer: $timerMessage
         });
         return true;
     } else {
         Swal.fire({
             title: "! عذرا",
             text: "من فضلك تأكد من إدخال جميع البيانات بشكل صحيح",
-            icon: "warning"
+            icon: "warning",
+            showConfirmButton: false,
+            timer: $timerMessage
         });
         return false;
     }
@@ -64,44 +75,70 @@ function checkData_CreateVisitor() {
     if (username && email && password && password_again && DOB) {
         Swal.fire({
             title: "!احسنت",
-            text: "تمت عملية ارسال البيانات بنجاح",
-            icon: "success"
+            text: "تمت عملية إنشاء الحساب بنجاح",
+            icon: "success",
+            showConfirmButton: false,
+            timer: $timerMessage
         });
         return true;
     } else {
         Swal.fire({
             title: "! عذرا",
             text: "من فضلك تأكد من إدخال جميع البيانات بشكل صحيح",
-            icon: "warning"
+            icon: "warning",
+            showConfirmButton: false,
+            timer: $timerMessage
         });
         return false;
     }
 }
 
 function getMonthDifference(startDate, endDate) {
-    // Ensure valid Date objects
-    startDate = new Date(startDate);
-    endDate = new Date(endDate);
+    // // Ensure valid Date objects
+    // startDate = new Date(startDate);
+    // endDate = new Date(endDate);
 
-    // Get year and month differences
-    const yearDiff = endDate.getFullYear() - startDate.getFullYear();
-    const monthDiff = endDate.getMonth() - startDate.getMonth();
+    // // Get year and month differences
+    // const yearDiff = endDate.getFullYear() - startDate.getFullYear();
+    // const monthDiff = endDate.getMonth() - startDate.getMonth();
 
-    // Handle negative month differences (e.g., December to February)
-    if (monthDiff < 0) {
-        yearDiff--;
-        monthDiff += 12;
-    }
+    // // Handle negative month differences (e.g., December to February)
+    // if (monthDiff < 0) {
+    //     yearDiff--;
+    //     monthDiff += 12;
+    // }
 
-    // Calculate and return total months difference
-    return yearDiff * 12 + monthDiff;
+    // // Calculate and return total months difference
+    // return yearDiff * 12 + monthDiff;
 
 
 }
 
-// Example usage
-const startDate = new Date("2023-10-25");
-const endDate = new Date("2024-02-18");
-const monthsBetween = getMonthDifference(startDate, endDate);
+// // Example usage
+// const startDate = new Date("2023-10-25");
+// const endDate = new Date("2024-02-18");
+// const monthsBetween = getMonthDifference(startDate, endDate);
 
-console.log(`There are ${monthsBetween} months between ${startDate.toLocaleDateString()} and ${endDate.toLocaleDateString()}.`);
+// console.log(`There are ${monthsBetween} months between ${startDate.toLocaleDateString()} and ${endDate.toLocaleDateString()}.`);
+
+function checkMatch() {
+    const firstPass = document.getElementById("password").value;
+    const secondPass = document.getElementById("password_again").value;
+    const errorMessage = document.getElementById("error-message");
+
+
+    if (firstPass !== secondPass) {
+        errorMessage.style.color = "red";
+        errorMessage.textContent = "كلمات المرور المدخلة غير متطابقة !";
+        errorMessage.classList.remove("hidden");
+
+        return false;
+    } else {
+        errorMessage.style.color = "green";
+        errorMessage.textContent = "كلمات المرور المدخلة متطابقة";
+        errorMessage.classList.add("hidden");
+
+        return true;
+    }
+}
+

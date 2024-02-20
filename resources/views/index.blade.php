@@ -29,74 +29,64 @@
       <div class="col-lg-6">
         <div class="bg-white p-4 my-5" style="border-radius: 20px; color: #616263;">
 
-          <div class="container">
+          <div class="text-center">
+            <h1 style="color: black;"><span>مرحبا بك</span></h1>
+          </div>
+          <div class="text-center">
+            <h5 style="color: black;"><span>ادخل بياناتك هنا</span></h5>
+          </div>
+          <br>
+          <!-- <form action="" method=""> -->
+          <form action="/home" method="POST">
+            @csrf
 
-            <!-- شن وظيفة الكود الي هدا -->
+            <div class="form-group">
 
-            <!-- <div class="row align-items-center">
-            </div> -->
+              <label class="text" for="">البريد الالكتروني</label>
+              <input type="email" id="" name="email" class="form-control text-center mt-1 mb-1"
+                placeholder="user@email.com">
+              <span style="color: red">
+                @error('email')
+                {{$message}}
+                <br>
+                @enderror
+              </span>
 
-            <!--  -->
-
-            <div class="text-center">
-              <h1 style="color: black;"><span>مرحبا بك</span></h1>
+              <label class="text mt-2" for="">كلمة المرور</label>
+              <input type="password" id="" name="password" class="form-control text-center mt-1 mb-2"
+                placeholder="ادخل  كلمة المرور">
+              <span style="color: red">
+                @error('password')
+                {{$message}}
+                <br>
+                @enderror
+              </span>
             </div>
-            <div class="text-center">
-              <h5 style="color: black;"><span>ادخل بياناتك هنا</span></h5>
+
+            <a href="">هل نسيت كلمة السر</a>
+            <br>
+            <br>
+
+            <div class="form-group">
+
+              <button type="submit" class="submit">تسجيل الدخول</button>
+              {{-- <button type="submit" class="submit"><a href="home" --}} {{--
+                  style=" color: white; font-size: 18px; font-weight: bold;">تسجيل الدخول</a></button> --}}
+
             </div>
             <br>
-            <form action="home" method="POST">
-              <!-- @csrf -->
 
-              <div class="form-group pt-1">
+            <div class="text-center">
+              <p class="section-title px-5 "><span class="px-2">أو</span></p>
+            </div>
 
-                <label class="text" for="">البريد الالكتروني</label>
-                <input type="email" id="" name="visitoremail" required class="form-control text-center mt-1"
-                  placeholder="user@email.com">
-                <br>
-                <span style="color: red">
-                  @error('visitoremail')
-                  {{$message}}
-                  @enderror
-                </span>
+          </form>
 
-                <label class="text pt-2" for="">كلمة المرور</label>
-                <input type="password" id="" name="visitorpassword" required class="form-control text-center mt-1 mb-1"
-                  placeholder="ادخل  كلمة السر"><br>
-                <span style="color: red">
-                  @error('visitorpassword')
-                  {{$message}}
-                  @enderror
-
-                </span>
-
-              </div>
-
-              <a href="">هل نسيت كلمة السر</a>
-              <br>
-              <br>
-
-              <div class="form-group">
-
-                <button type="submit" class="submit">تسجيل الدخول</button>
-                {{-- <button type="submit" class="submit"><a href="home" --}} {{--
-                    style=" color: white; font-size: 18px; font-weight: bold;">تسجيل الدخول</a></button> --}}
-
-              </div>
-              <br>
-              <div class="text-center">
-                <p class="section-title px-5"><span class="px-2">أو</span></p>
-              </div>
-
-              <div class="form-group">
-                <button type="submit" class="submit"
-                  style="background-color: white; color:red; border:1px solid red;">إنشاء حساب
-                  جديد</button>
-
-              </div>
-
-
-            </form>
+          <div class="container-btn">
+            <a class="button text-center" href="/CreateAccount"
+              style="background-color: white; color:red; border:1px solid red;">
+              إنشاء حساب جديد
+            </a>
           </div>
         </div>
       </div>

@@ -11,8 +11,7 @@
         href="{{asset('assets/css/cdn.jsdelivr.net_npm_bootstrap@5.3.1_dist_css_bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css.map')}}">
     <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}">
-    <!-- <link rel="stylesheet" href="{{asset('assets/css/login.css')}}"> -->
-    <link rel="stylesheet" href="{{asset('assets/css/create_account.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/create_visitor.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/content.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/footer.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +31,7 @@
         <!-- start of posting-->
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <div class="bg-white p-4 pb-0  mt-5" style="border-radius: 20px; color: #616263;">
+                <div class="bg-white p-4 pb-0 " style="border-radius: 20px; color: #616263; margin-top:9%;">
 
                     <div class="container">
 
@@ -41,46 +40,40 @@
 
 
                         <br>
-                        <form action="/CreateAccount" method="" onsubmit="return checkData_CreateVisitor()">
-                            {{-- @csrf --}}
+                        <form action="/CreateAccount" method="post" onsubmit="return checkData_CreateVisitor()">
+                            @csrf
 
                             <div class="form-group">
 
-                                <label class="text" for="">الاسم الثلاثي</label>
-                                <input type="username" id="username" name="visitoremail"
-                                    class="form-control text-center" placeholder="اكتب اسمك الثلاثي">
-                                <br>
+                                <!-- <span id="message" class="hidden"></span> -->
 
-                                <label class="text" for="">البريد الالكتروني</label>
-                                <input type="email" id="email" name="email" class="form-control text-center"
+                                <!-- <label class="text mb-1" style="display:block;" for="">الاسم الثلاثي</label> -->
+                                <label class="text mb-1" for="">الاسم الثلاثي</label>
+                                <input type="username" id="username" name="Username" class="form-control text-center"
+                                    placeholder="اكتب اسمك الثلاثي">
+
+                                <label class="text mb-1 mt-3" for="">البريد الالكتروني</label>
+                                <input type="email" id="email" name="Email" class="form-control text-center"
                                     placeholder="user@email.com">
-                                <br>
 
-                                <label class="text" for="">كلمة المرور</label>
-                                <input type="password" id="password" name="visitorpassword"
-                                    class="form-control text-center" placeholder="ادخل  كلمة المرور"><br>
+                                <label class="text mb-1 mt-3" for="">كلمة المرور</label>
+                                <input type="password" id="password" name="Password" class="form-control text-center"
+                                    placeholder="ادخل  كلمة المرور">
 
-                                <label class="text" for="">تاكيد كلمة المرور</label>
+                                <label class="text mb-1 mt-3" for="">تاكيد كلمة المرور</label>
                                 <input type="password" id="password_again" name="visitorpassword"
-                                    class="form-control text-center" placeholder="ادخل  كلمة المرور مجددا"><br>
+                                    class="form-control text-center" onchange="checkMatch()"
+                                    placeholder="ادخل  كلمة المرور مجددا">
 
-                                <label class="date exception" style="display: block" for="">تاريخ الميلاد</label>
-                                <input type="date" id="DOB_Visitor" name="DOB_Visitor" class="form-control exception"
-                                    style="cursor: pointer; width:50%; display: inline;">
+                                <span id="error-message" class="hidden"></span>
 
-                                <button type="submit" class="submit" style="">إنشاء حساب جديد</button>
+                                <label class="date mb-1 mt-3" style="display: block" for="">تاريخ الميلاد</label>
+                                <input type="date" id="DOB_Visitor" name="DOB_Visitor" class="form-control date"
+                                    style="">
 
+                                <button type="submit" class="submit mb-3" style="">إنشاء حساب
+                                    جديد</button>
                             </div>
-                            <br>
-
-                            <!-- <div class="form-group"> -->
-
-                            <!-- <button type="submit" class="submit">إنشاء حساب جديد</button> -->
-                            {{-- <button type="submit" class="submit"><a href="home" --}} {{--
-                                    style=" color: white; font-size: 18px; font-weight: bold;">تسجيل
-                                    الدخول</a></button> --}}
-
-                            <!-- </div> -->
                         </form>
                     </div>
                 </div>
@@ -107,7 +100,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- هذم سكربت متع البوتس تراب -->
-    <footer class="footer text-white py-0">
+    <footer class="footer d-none d-lg-block text-white py-0">
         <div class="contact">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fa-brands fa-youtube fa-sm"></i></a>

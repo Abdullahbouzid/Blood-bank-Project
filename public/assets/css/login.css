@@ -5,12 +5,10 @@
 }
 
 body {
-
     background-color: #ffffff;
     font-family: 'Cairo', sans-serif;
     background-position: center;
     background-size: cover;
-    overflow: hidden;
     background-color: #fd563f;
 }
 
@@ -30,10 +28,6 @@ a {
     cursor: pointer;
     font-size: 15px;
 
-}
-
-a:hover {
-    color: #f24e1e;
 }
 
 .arro {
@@ -106,8 +100,7 @@ a:hover {
     letter-spacing: 1px;
     font-size: 20px;
     text-transform: uppercase;
-    color: #f24e1e;
-
+    color: var(--main-color);
 
 }
 
@@ -129,7 +122,8 @@ a:hover {
     color: rgba(0, 0, 0, 0.3);
 }
 
-button {
+button,
+.button {
     padding-left: 7%;
     padding-right: 7%;
     padding-top: 1%;
@@ -142,16 +136,18 @@ button {
     font-family: 'Cairo', sans-serif;
 }
 
-button {
+button,
+.button {
     color: white;
     font-size: 18px;
     font-weight: bold;
 
 }
 
-button :hover {
-    color: white;
-
+.container-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -173,6 +169,11 @@ button :hover {
 
     .container .nameOfProjact {
         margin-top: calc(100vh - 500px);
+    }
+
+    body {
+        overflow-y: hidden;
+
     }
 
     .footer {
@@ -207,6 +208,11 @@ button :hover {
 
     .navbar .container .navbar-brand {
         padding-top: 2%;
+    }
+
+    body {
+        overflow-y: scroll;
+
     }
 
     .footer {
