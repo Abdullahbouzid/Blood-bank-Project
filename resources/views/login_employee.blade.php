@@ -37,16 +37,16 @@
                     </div>
 
                     <div class="container">
-                        <form>
-
+                        <form method="POST" action="login">
+                                @csrf
                             <div class="form-group pt-4">
 
                                 <label class="text" for="">البريد الالكتروني</label>
-                                <input type="email" id="" name="email" required class="form-control text-center mt-1"
+                                <input type="Email_Emp" id="" name="Email_Emp" required class="form-control text-center mt-1"
                                     placeholder="user@email.com">
 
                                 <label class="text pt-3" for="">كلمة المرور</label>
-                                <input type="text" id="" name="password" required
+                                <input type="text" id="password_Emp" name="password_Emp" required
                                     class="form-control text-center mt-1 mb-1" placeholder="ادخل  كلمة السر">
 
                             </div>

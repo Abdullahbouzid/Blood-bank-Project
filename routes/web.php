@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\VisitorControllers;
+use App\Http\Controllers\Visitor_Controller;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Center_Controllers;
-use App\Http\Controllers\Request_Controllers;
-use App\Http\Controllers\DonationControllers;
+use App\Http\Controllers\Center_Controller;
+use App\Http\Controllers\Emp_Controllers;
+use App\Http\Controllers\Request_Controller;
+use App\Http\Controllers\Donation_Controller;
 use App\Models\Visitor;
 use App\Http\Controllers\FormCheck;
 
@@ -30,26 +31,42 @@ Route::view("/login-emp", 'login_employee');
 
 Route::view("/home", 'home');
 
-Route::view("/blood-donation", 'blood_donation');
+Route::view("/blood_donation", 'blood_donation');
 
-Route::view("/blood-request", 'BloodRequest');
+Route::view("/BloodRequest", 'BloodRequest');
 
-Route::view("/blood-center", 'Blood_Center');
+// Route::get('/Blood_Center', function () {
+//     return view('Blood_Center');
+// });
 
 Route::view("/about", 'about');
 
-Route::view("/create-account", 'create_visitor');
-
-Route::view("/my-account", 'myaccount');
+Route::get('/CreateAccount', function () {
+    return view("create_visitor");
+});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
 
 // ################ POST ######################
+Route::post('/CreateAccount', [Visitor_Controller::class, 'store']);
 
-Route::post('/create-account', [VisitorControllers::class, 'store']);
+Route::post('/blood-donation', [Donation_Controller::class, 'store']);
 
-Route::post('/blood-donation', [DonationControllers::class, 'store']);
-
-Route::post("/blood-request", [Request_Controllers::class, 'store']);
-
+Route::post("/BloodRequest", [Request_Controller::class, 'store']);
 
 
+// استقبال طلبات الدم
+// Route::get("/BloodRequest/create",[Request_Controllers::class,'requestPatient']);
+// Route::post("/BloodRequest", [Request_Controller::class, 'requestPatient']);
+
+// عرض مراكز التبرع
+Route::get('/Blood_Center', [Center_Controller::class, 'showselect']);
+
+
+// tast 
+
+// Route::get('/tast', [Center_Controller::class, 'showselect']);
+// Route::post('/tast', [Center_Controller::class, 'searchselect']);
+// وحدة التحكم تحقق من كلمة السر
 

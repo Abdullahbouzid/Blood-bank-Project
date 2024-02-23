@@ -71,10 +71,6 @@
 
                                 <span id="password-error" class="hidden"></span>
 
-                                <label class="date mb-1 mt-2" style="display: block" for="">تاريخ الميلاد</label>
-                                <input type="date" id="DOB_Visitor" name="DOB_Visitor" value="{{old('DOB_Visitor')}}"
-                                    class="form-control date">
-
                                 <button type="submit" class="submit mb-3" style="">إنشاء حساب
                                     جديد
                                 </button>

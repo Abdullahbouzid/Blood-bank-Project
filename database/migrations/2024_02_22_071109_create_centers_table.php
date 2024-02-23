@@ -15,9 +15,11 @@ class CreateCentersTable extends Migration
     {
         Schema::create('centers', function (Blueprint $table) {
             $table->id();
-            $table->string('Name_Center'); 
-            $table->string('Type_of_Center'); 
-            $table->string('Adds_Center'); 
+            $table->string('Name')->nullable();
+            $table->string('Addrees')->nullable();
+            $table->string('Type')->nullable();
+            $table->foreignId('employee_id')->nullable(); 
+            $table->foreignId('bank_id')->nullable(); 
             $table->timestamps();
         });
     }

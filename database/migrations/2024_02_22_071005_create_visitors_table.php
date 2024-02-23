@@ -15,11 +15,18 @@ class CreateVisitorsTable extends Migration
     {
         Schema::create('visitors', function (Blueprint $table) {
             $table->id();
-            $table->string('Username');
-            $table->string('Email');
-            $table->string('Password');
-            $table->date('DOB_Visitor');
+            $table->string('Name')->nullable();
+            $table->date('DoB') ->nullable(); 
+            $table->string('Email')->nullable(); 
+            $table->bigInteger('Phone')->nullable(); 
+            $table->integer('Password')->nullable();
+            $table->string('Addrees')->nullable();
+            $table->string('Gander')->nullable();
+            // type of blood form the Visitor
+            $table->string('Typeofblood')->nullable();
+            
             $table->timestamps();
+
         });
     }
 

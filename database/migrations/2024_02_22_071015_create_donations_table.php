@@ -15,14 +15,12 @@ class CreateDonationsTable extends Migration
     {
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
-            $table->string('nameVisitor');
-            $table->date('DOB_Visitor');
-            $table->string('Adds_Visitor');
-            $table->integer('Ph_Visitor');
-            $table->string('TOB_Visitor');
-            $table->string('Gender_Visitor');
-            $table->date('DOD_Visitor');
+            $table->date('Dof_Donation')->nullable(); 
+            $table->foreignId('visitor_id')->nullable(); 
+            $table->foreignId('employee_id')->nullable(); 
+
             $table->timestamps();
+
         });
     }
 
