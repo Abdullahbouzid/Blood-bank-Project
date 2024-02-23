@@ -35,9 +35,9 @@ Route::view("/blood_donation", 'blood_donation');
 
 Route::view("/BloodRequest", 'BloodRequest');
 
-// Route::get('/Blood_Center', function () {
-//     return view('Blood_Center');
-// });
+Route::get('/Blood_Center', function () {
+    return view('Blood_Center');
+});
 
 Route::view("/about", 'about');
 
