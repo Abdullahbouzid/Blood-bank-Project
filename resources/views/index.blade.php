@@ -36,8 +36,8 @@
             <h5 style="color: black;"><span>ادخل بياناتك هنا</span></h5>
           </div>
           <br>
-          <!-- <form action="" method=""> -->
-          <form action="/home" method="POST">
+          <form action="/" method="POST">
+            <!-- <form action="" method=""> -->
             @csrf
 
             <div class="form-group">
@@ -62,9 +62,6 @@
                 @enderror
               </span>
             </div>
-
-            <a href="">هل نسيت كلمة السر</a>
-            <br>
             <br>
 
             <div class="form-group">
@@ -76,14 +73,14 @@
             </div>
             <br>
 
-            <div class="text-center">
-              <p class="section-title px-5 "><span class="px-2">أو</span></p>
-            </div>
-
           </form>
 
+          <div class="text-center">
+            <p class="section-title px-5 "><span class="px-2">أو</span></p>
+          </div>
+
           <div class="container-btn">
-            <a class="button text-center" href="/CreateAccount"
+            <a class="button text-center" href="/create-account"
               style="background-color: white; color:red; border:1px solid red;">
               إنشاء حساب جديد
             </a>

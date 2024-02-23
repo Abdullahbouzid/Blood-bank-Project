@@ -9,7 +9,7 @@ use App\Models\Request;
 class Request_Controllers extends Controller
 {
     //
-    public function requestPatient()
+    public function store()
     {
 
         $request = new Request;

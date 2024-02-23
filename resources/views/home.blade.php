@@ -10,7 +10,7 @@
 
   <link rel="stylesheet" href="{{asset('assets/css/bondi.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('assets/css/navbar.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/css/navbar_home.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/home.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/footer.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/cdn.jsdelivr.net_npm_bootstrap@5.3.1_dist_css_bootstrap.min.css')}}">
@@ -32,7 +32,7 @@
   <nav class="navbar navbar-expand-lg navbar-expand-md ">
     <div class="container">
 
-      <img src="{{asset('img/blood bank white and black.png')}}" alt="Logo" height="78px">
+      <img src="{{asset('img/blood bank white (1).png')}}" alt="Logo" height="78px">
 
 
       <!-- بوتن وظيفتها الظهور عندما يتم تصغير الشاشة  -->
@@ -46,17 +46,17 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
         <ul class="navbar-nav mb-0 mb-lg-0 fw-bolder ms-auto ">
-          <li class="nav-item" style="background-color: #fd563f;">
-            <a class="nav-link fs-5 pt-1 " href="home">الرئيسية</a>
+          <li class="nav-item">
+            <a class="nav-link fs-5 pt-1 " href="home" style="color: red;  opacity: 0.8;">الرئيسية</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5 pt-1 " href="blood_donation">طلب التبرع بالدم</a>
+            <a class="nav-link fs-5 pt-1 " href="blood-donation">طلب التبرع بالدم</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5 pt-1 " href="BloodRequest">طلب دم</a>
+            <a class="nav-link fs-5 pt-1 " href="blood-request">طلب دم</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5 pt-1 " href="Blood_Center">مراكز التبرع</a>
+            <a class="nav-link fs-5 pt-1 " href="center-blood">مراكز التبرع</a>
           </li>
           <li class="nav-item">
             <a class="nav-link fs-5 pt-1 " href="about">حول</a>
@@ -64,11 +64,14 @@
           <li class="nav-item">
             <a class="nav-link fs-5 pt-1 " href="">تسجيل الخروج</a>
           </li>
+          <li class="nav-item" style="margin-right:200px">
+            <img src="{{asset('img/icons8-user-50.png')}}" alt="">
+            <a class="nav-link fs-5 pt-1" href="my-account">حسابي</a>
+          </li>
 
         </ul>
 
       </div>
-
   </nav>
 
   <!-- END NAVBAR -->

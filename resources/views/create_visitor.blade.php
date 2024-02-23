@@ -40,39 +40,44 @@
 
 
                         <br>
-                        <form action="/CreateAccount" method="post" onsubmit="return checkData_CreateVisitor()">
+                        <form action="/create-account" method="post" onsubmit="return checkData_CreateVisitor()">
                             @csrf
 
                             <div class="form-group">
 
-                                <!-- <span id="message" class="hidden"></span> -->
-
-                                <!-- <label class="text mb-1" style="display:block;" for="">الاسم الثلاثي</label> -->
                                 <label class="text mb-1" for="">الاسم الثلاثي</label>
-                                <input type="username" id="username" name="Username" class="form-control text-center"
-                                    placeholder="اكتب اسمك الثلاثي">
+                                <input type="username" id="username" name="Username" value="{{old('Username')}}"
+                                    class="form-control text-center" placeholder="اكتب اسمك الثلاثي">
 
-                                <label class="text mb-1 mt-3" for="">البريد الالكتروني</label>
-                                <input type="email" id="email" name="Email" class="form-control text-center"
-                                    placeholder="user@email.com">
+                                <label class="text mb-1 mt-2" for="">البريد الالكتروني</label>
+                                <input type="email" id="email" name="Email" value="{{old('Email')}}"
+                                    class="form-control text-center" placeholder="user@email.com">
+                                <span id="email-error" data-error="emailExists" style="color: red; display:block;">
+                                    @error('Email')
+                                    البريد الالكتروني مسجل لدينا مسبقا
+                                    <!-- {{ $message }} -->
 
-                                <label class="text mb-1 mt-3" for="">كلمة المرور</label>
-                                <input type="password" id="password" name="Password" class="form-control text-center"
-                                    placeholder="ادخل  كلمة المرور">
+                                    @enderror
+                                </span>
 
-                                <label class="text mb-1 mt-3" for="">تاكيد كلمة المرور</label>
-                                <input type="password" id="password_again" name="visitorpassword"
-                                    class="form-control text-center" onchange="checkMatch()"
-                                    placeholder="ادخل  كلمة المرور مجددا">
+                                <label class="text mb-1 mt-2" for="">كلمة المرور</label>
+                                <input type="password" id="password" name="Password" value="{{old('Password')}}"
+                                    class="form-control text-center" placeholder="ادخل  كلمة المرور">
 
-                                <span id="error-message" class="hidden"></span>
+                                <label class="text mb-1 mt-2" for="">تاكيد كلمة المرور</label>
+                                <input type="password" id="password_again" name="password_again"
+                                    value="{{old('password_again')}}" class="form-control text-center"
+                                    onchange="checkMatchPassword()" placeholder="ادخل  كلمة المرور مجددا">
 
-                                <label class="date mb-1 mt-3" style="display: block" for="">تاريخ الميلاد</label>
-                                <input type="date" id="DOB_Visitor" name="DOB_Visitor" class="form-control date"
-                                    style="">
+                                <span id="password-error" class="hidden"></span>
+
+                                <label class="date mb-1 mt-2" style="display: block" for="">تاريخ الميلاد</label>
+                                <input type="date" id="DOB_Visitor" name="DOB_Visitor" value="{{old('DOB_Visitor')}}"
+                                    class="form-control date">
 
                                 <button type="submit" class="submit mb-3" style="">إنشاء حساب
-                                    جديد</button>
+                                    جديد
+                                </button>
                             </div>
                         </form>
                     </div>

@@ -68,6 +68,7 @@ body {
     border: none;
     font-size: 20px;
     border-radius: 10px;
+
 }
 
 .submit :hover {
@@ -77,11 +78,6 @@ body {
 .submit :active {
     background-color: var(--main-color);
 }
-
-/* .exception {
-    font-family: var(--font-family);
-
-} */
 
 /* END SECTION */
 
@@ -100,7 +96,6 @@ body {
     }
 
     .footer {
-        font-family: 'Cairo', sans-serif;
         background-color: var(--main-color);
         position: fixed;
         bottom: 0;

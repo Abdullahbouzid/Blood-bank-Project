@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\lo;
+
 
 class FormCheck extends Controller
 {
@@ -11,16 +14,9 @@ class FormCheck extends Controller
     {
         $req->validate([
             'email' => 'required',
-            'password' => 'required | min : 8'
+            'password' => 'required'
 
         ]);
-
-        // if (empty($req->input('visitorpassword'))) {
-        //     return redirect()->back()->withErrors(['visitorpassword' => 'يجب كتابة كلمة المرور الخاصة بك']);
-        // }
-
-        // return $req->input();
-        // return 'كلمة المرور يجب ان تحتوي على 8 حروف على الاقل';
-
     }
+
 }

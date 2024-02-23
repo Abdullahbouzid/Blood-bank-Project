@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('assets/css/navbar.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/patient.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/content.css')}}">
+
     <link rel="stylesheet" href="{{asset('assets/css/footer.css')}}">
     <link rel="stylesheet"
         href="{{asset('assets/css/cdn.jsdelivr.net_npm_bootstrap@5.3.1_dist_css_bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css.map')}}">
     <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/patient.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/content.css')}}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,19 +56,23 @@
                         <a class="nav-link fs-5 pt-1 " href="home">الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-5 pt-1 " href="blood_donation">طلب التبرع بالدم</a>
+                        <a class="nav-link fs-5 pt-1 " href="blood-donation">طلب التبرع بالدم</a>
                     </li>
                     <li class="nav-item" style="background-color: #fd563f;">
-                        <a class="nav-link fs-5 pt-1 " href="BloodRequest">طلب دم</a>
+                        <a class="nav-link fs-5 pt-1 " href="blood-request">طلب دم</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-5 pt-1 " href="Blood_Center">مراكز التبرع</a>
+                        <a class="nav-link fs-5 pt-1 " href="blood-center">مراكز التبرع</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fs-5 pt-1 " href="about">حول</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fs-5 pt-1 " href="">تسجيل الخروج</a>
+                    </li>
+                    <li class="nav-item" style="margin-right:200px">
+                        <img src="{{asset('img/icons8-user-50.png')}}" alt="">
+                        <a class="nav-link fs-5 pt-1" href="my-account">حسابي</a>
                     </li>
                 </ul>
 
@@ -78,7 +83,6 @@
     <!-- END NAVBAR -->
 
     <!-- START SECTION -->
-
 
     <div class="container text-center ">
 
@@ -104,7 +108,7 @@
                 </div>
 
                 <div class="row mt-4 ">
-                    <form action="/BloodRequest" method="post" onsubmit="return checkDataRequest()">
+                    <form action="/blood-request" method="post" onsubmit="return checkDataRequest()">
                         @csrf
 
                         <div class="form-group">
@@ -130,7 +134,7 @@
 
                             <label class="text exception" for="">نوع الفصيلة</label>
                             {{-- Type of blood for the Patient --}}
-                            <select name="TOB_Patient" id="TOB_Patient" class="form-control exception"
+                            <select name="TOB_Patient" id="TOB_Patient" class="form-control"
                                 style="text-align: center ;">
                                 <option value="">----اختر نوع الفصيلة----</option>
                                 <option value="A+">A+</option>

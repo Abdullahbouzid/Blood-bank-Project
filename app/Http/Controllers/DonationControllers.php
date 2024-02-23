@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class DonationControllers extends Controller
 {
     //
-    public function requestVisitor()
+    public function store()
     {
         $donation = new Donation;
 
@@ -25,7 +25,7 @@ class DonationControllers extends Controller
         $donation->save();
 
         sleep(1);
-        header("Location: /blood_donation");
+        header("Location: /blood-donation");
         exit;
 
     }

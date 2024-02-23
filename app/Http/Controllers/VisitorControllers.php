@@ -8,9 +8,12 @@ use Illuminate\Http\Request;
 
 class VisitorControllers extends Controller
 {
-    // createVisitor
     public function store()
     {
+        request()->validate([
+            'Email' => ['unique:visitors,Email']
+        ]);
+
         $visitor = new Visitor;
         $visitor->Username = trim(request()->Username);
         $visitor->Email = trim(request()->Email);
@@ -18,20 +21,11 @@ class VisitorControllers extends Controller
         $visitor->DOB_Visitor = trim(request()->DOB_Visitor);
 
         $visitor->save();
-
         sleep(1);
+
         header("Location: /home");
         exit;
 
     }
 
-    public function show($emailVisitor)
-    {
-        $visitor = Visitor::where('Email', $emailVisitor)->first();
-
-        if ($visitor) {
-            // return '..البريد الالكتروني مسجل لدينا مسبقا';
-            return $visitor;
-        }
-    }
 }

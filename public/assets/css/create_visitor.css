@@ -27,7 +27,7 @@ button {
 /* For larger screens (adjust as needed) */
 @media (min-width: 768px) {
     body {
-        overflow-y: hidden;
+        overflow-y: scroll;
 
     }
 

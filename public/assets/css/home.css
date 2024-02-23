@@ -5,7 +5,7 @@
 body {
     /* overflow: scroll; */
     box-shadow: 0px 0px 2px 5px #ffffff5e;
-    background-image: url(../../img/Blood-Donor-Privileges-Malaysia\ v.png);
+    background-image: url(../../img/background-image.jpg);
     font-family: 'Cairo', sans-serif;
     background-position: center;
 
@@ -25,12 +25,15 @@ body {
     }
 
     .container .nameOfProjact {
+        color: white;
         margin-top: calc(100vh - 500px);
     }
 
     .footer {
         font-family: 'Cairo', sans-serif;
+        /* background-color: var(--main-color); */
         background-color: var(--main-color);
+        opacity: 0.5;
         position: fixed;
         left: 0px;
         bottom: 0px;
