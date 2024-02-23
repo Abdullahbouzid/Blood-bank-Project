@@ -5,18 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Center extends Model
+class Bank extends Model
 {
     use HasFactory;
-    protected $table = 'centers';
+    protected $table = 'banks';
+
 
     public function employees()
     {
-        return $this->belongsTo(employee::class);
+        return $this->hasMany(employee::class);
     }
 
-    public function bank()
+    public function centers()
     {
-    return $this->belongsTo(Bank::class);
+    return $this->hasMany(Center::class);
     }
 }

@@ -49,15 +49,15 @@
 
                                 <!-- <label class="text mb-1" style="display:block;" for="">الاسم الثلاثي</label> -->
                                 <label class="text mb-1" for="">الاسم الثلاثي</label>
-                                <input type="username" id="username" name="Username" class="form-control text-center"
+                                <input type="username" id="username" name="Name_Visitor" class="form-control text-center"
                                     placeholder="اكتب اسمك الثلاثي">
 
                                 <label class="text mb-1 mt-3" for="">البريد الالكتروني</label>
-                                <input type="email" id="email" name="Email" class="form-control text-center"
+                                <input type="email" id="email" name="Email_Visitor" class="form-control text-center"
                                     placeholder="user@email.com">
 
                                 <label class="text mb-1 mt-3" for="">كلمة المرور</label>
-                                <input type="password" id="password" name="Password" class="form-control text-center"
+                                <input type="password" id="password" name="Password_Visitor" class="form-control text-center"
                                     placeholder="ادخل  كلمة المرور">
 
                                 <label class="text mb-1 mt-3" for="">تاكيد كلمة المرور</label>
@@ -68,7 +68,7 @@
                                 <span id="error-message" class="hidden"></span>
 
                                 <label class="date mb-1 mt-3" style="display: block" for="">تاريخ الميلاد</label>
-                                <input type="date" id="DOB_Visitor" name="DOB_Visitor" class="form-control date"
+                                <input type="date" id="DoB_Visitor" name="DoB_Visitor" class="form-control date"
                                     style="">
 
                                 <button type="submit" class="submit mb-3" style="">إنشاء حساب

@@ -1,0 +1,89 @@
+    Schema::create('_visitors', function (Blueprint $table) {
+            $table->id();
+            $table->string('Name_Visitor');
+            $table->date('DoB_Visitor');  
+            $table->string('Email_Visitor'); 
+            $table->bigInteger('Phone_Visitor'); 
+            $table->integer('password_Visitor'); 
+            $table->string('Adds_Visitor'); 
+            $table->string('Gander_Visitor'); 
+            // type of blood form the Visitor
+            $table->string('TOB_Visitor'); 
+            
+            $table->timestamps();
+
+    }
+
+    Schema::create('_blood_donation', function (Blueprint $table) {
+            $table->id();
+            $table->date('DO_Donation');  
+            $table->timestamps();
+
+    //         $table->foreign('visitor_id')
+    //         ->references('id')
+    //         ->on('visitors')
+    //         ->onDelete('cascade');
+
+    //   $table->foreign('employee_id')
+    //         ->references('id')
+    //         ->on('employees')
+    //         ->onDelete('cascade');
+        });
+    }
+    Schema::create('_employees', function (Blueprint $table) {
+            $table->id();
+            $table->string('Name_Emp');
+            $table->date('DoB_Emp'); 
+            $table->string('Type_Emp'); 
+            $table->string('Email_Emp'); 
+            $table->bigInteger('Phone_Emp'); 
+            $table->integer('password_Emp'); 
+            $table->string('Adds_Emp'); 
+            $table->string('Gander_Emp'); 
+            $table->timestamps();
+            
+        });
+
+        Schema::create('_requests', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('visitor_id');
+            $table->unsignedBigInteger('employee_id');
+            $table->timestamps();
+
+    //         $table->foreign('visitor_id')
+    //         ->references('id')
+    //         ->on('visitors')
+    //         ->onDelete('cascade');
+
+    //   $table->foreign('employee_id')
+    //         ->references('id')
+    //         ->on('employees')
+    //         ->onDelete('cascade');
+        });
+    }
+
+    Schema::create('_centers', function (Blueprint $table) {
+            $table->id();
+            $table->string('Name_center');
+            $table->string('Addr_center');
+            $table->string('Type_center');
+            $table->timestamps();
+
+            $table->foreign('bank_id');
+
+    //   $table->foreign('employee_id')
+    //         ->references('id')
+    //         ->on('employees')
+    //         ->onDelete('cascade');
+        });
+
+        Schema::create('_banks', function (Blueprint $table) {
+            $table->id();
+            $table->string('Name_Bank');
+            $table->string('Addr_Bank');
+            $table->string('Tyep_Bank');
+            $table->timestamps();
+
+            $table->foreign('employee_id');
+        });
+    }

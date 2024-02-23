@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\VisitorControllers;
+use App\Http\Controllers\Visitor_Controllers;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Center_Controllers;
+use App\Http\Controllers\Center_Controller;
+use App\Http\Controllers\Emp_Controllers;
 use App\Http\Controllers\Request_Controllers;
 use App\Http\Controllers\DonationControllers;
 use App\Http\Controllers\FormCheck;
@@ -40,9 +41,9 @@ Route::get('/BloodRequest', function () {
     return view('BloodRequest');
 });
 
-Route::get('/Blood_Center', function () {
-    return view('Blood_Center');
-});
+// Route::get('/Blood_Center', function () {
+//     return view('Blood_Center');
+// });
 
 Route::get('/about', function () {
     return view('about');
@@ -51,8 +52,13 @@ Route::get('/about', function () {
 Route::get('/CreateAccount', function () {
     return view("create_visitor");
 });
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
 
-Route::post('/CreateAccount', [VisitorControllers::class, 'store']);
+
+
+Route::post('/CreateAccount', [Visitor_Controllers::class, 'store']);
 
 // Route::get('/CreateAccount/{email}', [VisitorControllers::class, 'show']);
 
@@ -67,5 +73,14 @@ Route::post('/blood_donation', [DonationControllers::class, 'requestVisitor']);
 Route::post("/BloodRequest", [Request_Controllers::class, 'requestPatient']);
 
 // عرض مراكز التبرع
+Route::get('/Blood_Center', [Center_Controller::class, 'showselect']);
 
+
+
+
+// tast 
+
+// Route::get('/tast', [Center_Controller::class, 'showselect']);
+// Route::post('/tast', [Center_Controller::class, 'searchselect']);
+// وحدة التحكم تحقق من كلمة السر
 

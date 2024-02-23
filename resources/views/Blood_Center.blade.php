@@ -77,57 +77,91 @@
         <div class="container text-center " style="direction: rtl"> 
  
           <!-- الصف الذي يجمع بين باقي الصفحة --> 
-       <h1>hhhhhhhhhhhhhhhhhhhhhhhhhh</h1>
+     
                 
 
                 <!-- start of posting-->
-                  <div class="row align-items-center pt-5" >
-                    
+                  <form method="POST" action="">
+                        @csrf 
+                        <div class="row align-items-center pt-5" >
+                   
                     <div class="col-lg-3 col-sm-12 ">
+                      
+                
                       <select class="form-select" aria-label="Default select example">
-                        <option selected>اختر العنوان </option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <option value="">Select</option>
+                        @foreach ($NameCenters as $nameOption)
+                            <option value="{{ $nameOption->id }}">{{ $nameOption->Name }}</option>
+                        @endforeach
+                    </select>
                   
                     </div>
                                         
                      
                         <div class="col-lg-3  col-sm-12">
-                          <select class="form-select" aria-label="Default select example">
-                            <option selected>اختر نوع المركز</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
+                    
+                        <select class="form-select" aria-label="Default select example">
+                          <option value="">Select</option>
+                            @foreach ($allTyps as $allTyp)
+                            <option value="{{ $allTyp->id }}">{{ $allTyp->Type }}</option>
+                          
+                                @endforeach
+                        </select>
                            </div> 
                            <div class="col-lg-1  col-sm-12">
-                           <button type="button" class="btn btn-danger">بحث</button>
-                           </div>
-                          </div>
+                           <button type="button" class="btn btn-danger">
+                            <a href="/Blood_Center?type=a&name=abc">بحث</a>
+                          </button>
+                           </div></div>
+                          </form>
+                          
 
-                           <div class="row align-items-center pt-5" >
-                           <table class="table table-striped">
-                            <thead>
-                              <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">اسم المركز</th>
-                                <th scope="col">نوع المركز</th>
-                                <th scope="col">عنوان المركز</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                              </tr>
+                           <div class="row align-items-center pt-5">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">اسم المركز</th>
+                                        <th scope="col">نوع المركز</th>
+                                        <th scope="col">عنوان المركز</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     @foreach ($bloodBanks as $bank)
+                                        <tr>
+                                            <th scope="row">{{ $bank->id }}</th>
+                                            <td>{{ $bank->Name }}</td>
+                                            <td>{{ $bank->Type }}</td>
+                                            <td>{{ $bank->Addrees }}</td>
+                                        </tr>
+                                    @endforeach 
+                        
+                                     @foreach ($centers as $center)
+                                        <tr>
+                                            <th scope="row">{{ $center->id }}</th>
+                                            <td>{{ $center->Name }}</td>
+                                            <td>{{ $center->Type }}</td>
+                                            <td>{{ $center->Addrees }}</td>
+                                        </tr>
+                                    @endforeach 
+                                </tbody>
+                            </table>
+                        </div>
+                        <br><br>
+                        <marquee behavior="" direction="right" scrollamount="4"> 
+                          <img src="{{asset('img/b1.jpeg')}}" alt="Logo" height="100px">
+                          <img src="{{asset('img/b2.jpeg')}}" alt="Logo" height="100px">
+                          <img src="{{asset('img/b3.jpeg')}}" alt="Logo" height="100px">
+                          <img src="{{asset('img/b4.jpeg')}}" alt="Logo" height="100px">
+                          <img src="{{asset('img/b5.jpeg')}}" alt="Logo" height="100px">
+                      </marquee>
 
-                            </tbody>
-                          </table>
-                           </div>
+                      <br>
+
+                      <br>
+                    
+
+
                   </div>
            
             <br>
