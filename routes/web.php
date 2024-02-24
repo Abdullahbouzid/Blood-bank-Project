@@ -25,15 +25,15 @@ use App\Http\Controllers\FormCheck;
 Route::view("/", 'index');
 
 // اختصار لعرض شاشة تسجيل الدخول الخاصة ب الموظف و الادمن 
-Route::view("/login-admin", 'login_admin');
+Route::view("/login_admin", 'login_admin');
 
-Route::view("/login-emp", 'login_employee');
+Route::view("/login_emp", 'login_employee');
 
 Route::view("/home", 'home');
 
 Route::view("/blood_donation", 'blood_donation');
 
-Route::view("/BloodRequest", 'BloodRequest');
+Route::view("/Blood_Request", 'BloodRequest');
 
 Route::get('/Blood_Center', function () {
     return view('Blood_Center');
@@ -44,6 +44,7 @@ Route::view("/about", 'about');
 Route::get('/CreateAccount', function () {
     return view("create_visitor");
 });
+Route::view("/myaccount", 'myaccount');
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
@@ -51,9 +52,9 @@ Route::get('/dashboard', function () {
 // ################ POST ######################
 Route::post('/CreateAccount', [Visitor_Controller::class, 'store']);
 
-Route::post('/blood-donation', [Donation_Controller::class, 'store']);
+Route::post('/blood_donation', [Donation_Controller::class, 'store']);
 
-Route::post("/BloodRequest", [Request_Controller::class, 'store']);
+Route::post("/Blood_Request", [Request_Controller::class, 'store']);
 
 
 // استقبال طلبات الدم

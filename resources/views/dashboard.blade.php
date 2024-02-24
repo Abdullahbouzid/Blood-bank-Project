@@ -119,7 +119,7 @@
       <!-- offcanvas -->
       <main class="mt-5 pt-3">
         <div class="container-fluid">
-          <div class="row mt-5">
+         <div class="row mt-5">
             <div class="col-md-3 mb-3">
               <div class="card bg-primary text-white h-100">
                 <div class="card-body py-5  offcanvas-center ">عدد

@@ -50,13 +50,13 @@
             <a class="nav-link fs-5 pt-1 " href="home" style="color: red;  opacity: 0.8;">الرئيسية</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5 pt-1 " href="blood-donation">طلب التبرع بالدم</a>
+            <a class="nav-link fs-5 pt-1 " href="blood_donation">طلب التبرع بالدم</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5 pt-1 " href="blood-request">طلب دم</a>
+            <a class="nav-link fs-5 pt-1 " href="Blood_Request">طلب دم</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5 pt-1 " href="center-blood">مراكز التبرع</a>
+            <a class="nav-link fs-5 pt-1 " href="Blood_Center">مراكز التبرع</a>
           </li>
           <li class="nav-item">
             <a class="nav-link fs-5 pt-1 " href="about">حول</a>
@@ -66,7 +66,7 @@
           </li>
           <li class="nav-item" style="margin-right:200px">
             <img src="{{asset('img/icons8-user-50.png')}}" alt="">
-            <a class="nav-link fs-5 pt-1" href="my-account">حسابي</a>
+            <a class="nav-link fs-5 pt-1" href="myaccount">حسابي</a>
           </li>
 
         </ul>
