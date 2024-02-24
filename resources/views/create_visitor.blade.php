@@ -40,7 +40,7 @@
 
 
                         <br>
-                        <form action="/create-account" method="post" onsubmit="return checkData_CreateVisitor()">
+                        <form action="/CreateAccount" method="post" onsubmit="return checkData_CreateVisitor()">
                             @csrf
 
                             <div class="form-group">
@@ -61,7 +61,7 @@
                                 </span>
 
                                 <label class="text mb-1 mt-2" for="">كلمة المرور</label>
-                                <input type="username" id="username" name="Name" value="{{old('Name')}}"
+                                <input type="password" id="password" name="Password" value="{{old('Password')}}"
                                     class="form-control text-center" placeholder="ادخل  كلمة المرور">
 
                                 <label class="text mb-1 mt-2" for="">تاكيد كلمة المرور</label>

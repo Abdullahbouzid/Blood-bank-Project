@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Visitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 
 
 class Visitor_Controller extends Controller
@@ -33,17 +34,14 @@ class Visitor_Controller extends Controller
     public function loginUser(Request $request)
     {
         $request->validate([
-            'Email' => 'required|email',
+            'Email' => ['required', 'email', 'exists:visitors'],
             'Password' => 'required|min:8'
         ]);
 
-        $email = $request->input('Email');
-        $password = $request->input('Password');
-
         $visitor = DB::table('visitors')
             ->where([
-                ['Email', '=', $email],
-                ['Password', '=', $password]
+                ['Email', '=', $request->input('Email')],
+                ['Password', '=', $request->input('Password')]
             ])
             ->first();
 
