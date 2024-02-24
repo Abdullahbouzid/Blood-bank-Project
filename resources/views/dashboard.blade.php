@@ -12,16 +12,20 @@
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/dataTables.bootstrap5.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    
+
     <title>Dashboard</title>
       </head>
       <body style="direction: rtl">
           <!-- top navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
+        <div class="container-fluid mr-2">
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"aria-controls="offcanvasExample">
             <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
           </button>
-          <h2 style="color: white  "  >Blood Bank</h2>
+          {{-- <h2 style="color: white  "  >Blood Bank</h2> --}}
+          <img src="{{asset('img/blood bank white (1).png')}}" alt="Logo" height="60px" style="margin-right: 100px">
+
        
 
       
@@ -33,30 +37,42 @@
         class="offcanvas offcanvas-end sidebar-nav bg-dark" tabindex="-1" id="sidebar" >
         <div class="offcanvas-body p-0">
           <nav class="navbar-dark">
+            <br>
             <ul class="navbar-nav">
+              
+              <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+            
               <li>
-                <div class="text-muted small fw-bold text-uppercase px-3">
-                  CORE
-                </div>
-              </li>
-              <li>
+                <div class="  bg-primary " >
                 <a href="#" class="nav-link px-3 active">
-                  <span class="me-2"><i class="bi bi-speedometer2"></i></span>
-                  <span>Dashboard</span>
-                </a>
+                  <span class="me-2"><i class="bi bi-speedometer2" style="color: white;"></i></span>
+                  <span style="color: white;" >Dashboard</span>
+                </a></div>
               </li>
               <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
-              <li>
-                <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-                  Interface
-                </div>
-              </li>
-              <li>
+                <li>
+                  <a href="#" class="nav-link px-3">
+                    <span class="me-2"><i class="bi bi-person px-3" style="color: white;"></i></span>
+                    <span  style="color: white;">المسؤولين</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link px-3">
+                    <span class="me-2"><i class="bi bi-people px-3" style="color: white;"></i></span>
+                    <span  style="color: white;">الموظفين</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link px-3">
+                    <span class="me-2"><i class="bi bi-person-circle px-3" style="color: white;"></i></span>
+                    <span  style="color: white;">المستخدمين</span>
+                  </a>
+                </li>
                 <a  class="nav-link px-3 sidebar-link" data-bs-toggle="collapse"  href="#layouts">
-                  <span class="me-2"><i class="bi bi-layout-split"></i></span>
-                  <span>Layouts</span>
+                  <span class="me-2"><i class="bi bi-geo-alt-fill px-3"  style="color: white;"></i></span>
+                  <span  style="color: white;">مواقع التبرع</span>
                   <span class="ms-auto">
-                    <span class="right-icon">
+                    <span class="right-icon px-3">
                       <i class="bi bi-chevron-down"></i>
                     </span>
                   </span>
@@ -65,10 +81,19 @@
                   <ul class="navbar-nav ps-3">
                     <li>
                       <a href="#" class="nav-link px-3">
+                        <span class="me-2"><i class="bi bi-geo-alt-fill "  style="color: white;"></i></span>
+                        <span  style="color: white;">مصرف الدم</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="collapse" id="layouts">
+                  <ul class="navbar-nav ps-3">
+                    <li>
+                      <a href="#" class="nav-link px-3">
                         <span class="me-2"
-                          ><i class="bi bi-speedometer2"></i
-                        ></span>
-                        <span>وحدة التحكم</span>
+                          ><i class="bi bi-geo-alt-fill "  style="color: white;"></i></span>
+                        <span  style="color: white;">مراكز تبرع</span>
                       </a>
                     </li>
                   </ul>
@@ -76,28 +101,17 @@
               </li>
               <li>
                 <a href="#" class="nav-link px-3">
-                  <span class="me-2"><i class="bi bi-book-fill"></i></span>
-                  <span>Pages</span>
-                </a>
-              </li>
-              <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
-              <li>
-                <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-                  Addons
-                </div>
-              </li>
-              <li>
-                <a href="#" class="nav-link px-3">
-                  <span class="me-2"><i class="bi bi-graph-up"></i></span>
-                  <span>Charts</span>
+                  <span class="me-2"><i class="bi bi-droplet px-3"  style="color: white;"> </i></span>
+                  <span  style="color: white;">طلبات طلب دم</span>
                 </a>
               </li>
               <li>
                 <a href="#" class="nav-link px-3">
-                  <span class="me-2"><i class="bi bi-table"></i></span>
-                  <span>Tables</span>
+                  <span class="me-2"><i class="bi bi-droplet-half px-3" style="color: white;"></i></span>
+                  <span style="color: white;">طلبات تبرع بالدم</span>
                 </a>
               </li>
+            
             </ul>
           </nav>
         </div>
@@ -105,17 +119,14 @@
       <!-- offcanvas -->
       <main class="mt-5 pt-3">
         <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <h4>Dashboard</h4>
-            </div>
-          </div>
-          <div class="row">
+          <div class="row mt-5">
             <div class="col-md-3 mb-3">
               <div class="card bg-primary text-white h-100">
-                <div class="card-body py-5">Primary Card</div>
+                <div class="card-body py-5  offcanvas-center ">عدد
+                  <img src="{{asset('img/icon/user.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
+               </div>
                 <div class="card-footer d-flex">
-                  View Details
+                  عرض المسؤولين
                   <span class="ms-auto">
                     <i class="bi bi-chevron-right"></i>
                   </span>
@@ -123,10 +134,25 @@
               </div>
             </div>
             <div class="col-md-3 mb-3">
-              <div class="card bg-warning text-dark h-100">
-                <div class="card-body py-5">Warning Card</div>
+              <div class="card bg-warning text-white  h-100">
+                <div class="card-body py-5  offcanvas-center ">عدد
+                  <img src="{{asset('img/icon/emp.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
+               </div>
                 <div class="card-footer d-flex">
-                  View Details
+                  الموظفين
+                  <span class="ms-auto">
+                    <i class="bi bi-chevron-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <div class="card bg-info text-white h-100">
+                <div class="card-body py-5  offcanvas-center ">عدد
+                  <img src="{{asset('img/icon/emp.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
+               </div>
+                <div class="card-footer d-flex">
+                  المستخدمين
                   <span class="ms-auto">
                     <i class="bi bi-chevron-right"></i>
                   </span>
@@ -135,9 +161,37 @@
             </div>
             <div class="col-md-3 mb-3">
               <div class="card bg-success text-white h-100">
-                <div class="card-body py-5">Success Card</div>
+                <div class="card-body py-5  offcanvas-center ">عدد
+                  <img src="{{asset('img/icon/hospital.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
+               </div>
                 <div class="card-footer d-flex">
-                  View Details
+                  مصارف الدم
+                  <span class="ms-auto">
+                    <i class="bi bi-chevron-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <div class="card bg-dark text-white h-100">
+                <div class="card-body py-5  offcanvas-center ">عدد
+                  <img src="{{asset('img/icon/ambulance.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
+               </div>
+                <div class="card-footer d-flex">
+                  مراكز التبرع
+                  <span class="ms-auto">
+                    <i class="bi bi-chevron-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <div class="card bg-secondary text-white h-100">
+                <div class="card-body py-5  offcanvas-center ">عدد
+                  <img src="{{asset('img/icon/blood-test.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
+               </div>
+                <div class="card-footer d-flex">
+                  طلبات طلب دم
                   <span class="ms-auto">
                     <i class="bi bi-chevron-right"></i>
                   </span>
@@ -146,9 +200,11 @@
             </div>
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5">Danger Card</div>
+                <div class="card-body py-5  offcanvas-center ">عدد
+                  <img src="{{asset('img/icon/blood-donation.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
+               </div>
                 <div class="card-footer d-flex">
-                  View Details
+                  طلبات تبرع بالدم
                   <span class="ms-auto">
                     <i class="bi bi-chevron-right"></i>
                   </span>
@@ -203,6 +259,7 @@
               </div>
             </div>
           </div>
+          
         </div>
       </main>
         <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
