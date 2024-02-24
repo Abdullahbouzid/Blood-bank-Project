@@ -42,13 +42,12 @@ button {
     }
 
     button {
-        margin-right: 9%;
         padding-top: 6px;
         padding-bottom: 7px;
         background-color: var(--main-color);
         border: none;
         border-radius: 10px;
-        width: 40%;
+        width: 100%;
 
     }
 

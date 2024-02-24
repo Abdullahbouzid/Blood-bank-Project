@@ -61,7 +61,7 @@
                                 </span>
 
                                 <label class="text mb-1 mt-2" for="">كلمة المرور</label>
-                                <input type="password" id="password" name="Password" value="{{old('Password')}}"
+                                <input type="username" id="username" name="Name" value="{{old('Name')}}"
                                     class="form-control text-center" placeholder="ادخل  كلمة المرور">
 
                                 <label class="text mb-1 mt-2" for="">تاكيد كلمة المرور</label>
@@ -71,7 +71,7 @@
 
                                 <span id="password-error" class="hidden"></span>
 
-                                <button type="submit" class="submit mb-3" style="">إنشاء حساب
+                                <button type="submit" class="submit mb-3 mt-4" style="">إنشاء حساب
                                     جديد
                                 </button>
                             </div>

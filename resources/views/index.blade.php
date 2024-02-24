@@ -37,26 +37,25 @@
           </div>
           <br>
           <form action="/" method="POST">
-            <!-- <form action="" method=""> -->
             @csrf
 
             <div class="form-group">
 
               <label class="text" for="">البريد الالكتروني</label>
-              <input type="email" id="" name="email" class="form-control text-center mt-1 mb-1"
+              <input type="email" id="" name="Email" class="form-control text-center mt-1 mb-1"
                 placeholder="user@email.com">
               <span style="color: red">
-                @error('email')
+                @error('Email')
                 {{$message}}
                 <br>
                 @enderror
               </span>
 
               <label class="text mt-2" for="">كلمة المرور</label>
-              <input type="password" id="" name="password" class="form-control text-center mt-1 mb-2"
+              <input type="password" id="" name="Password" class="form-control text-center mt-1 mb-2"
                 placeholder="ادخل  كلمة المرور">
               <span style="color: red">
-                @error('password')
+                @error('Password')
                 {{$message}}
                 <br>
                 @enderror
