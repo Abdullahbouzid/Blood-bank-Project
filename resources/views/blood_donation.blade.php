@@ -53,19 +53,23 @@
             <a class="nav-link fs-5 pt-1 " href="home">الرئيسية</a>
           </li>
           <li class="nav-item" style="background-color: #fd563f;">
-            <a class="nav-link fs-5 pt-1 " href="blood_donation">طلب التبرع بالدم</a>
+            <a class="nav-link fs-5 pt-1 " href="blood-donation">طلب التبرع بالدم</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5 pt-1 " href="BloodRequest">طلب دم</a>
+            <a class="nav-link fs-5 pt-1 " href="blood-request">طلب دم</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5 pt-1 " href="Blood_Center">مراكز التبرع</a>
+            <a class="nav-link fs-5 pt-1 " href="blood-Center">مراكز التبرع</a>
           </li>
           <li class="nav-item">
             <a class="nav-link fs-5 pt-1 " href="about">حول</a>
           </li>
           <li class="nav-item">
             <a class="nav-link fs-5 pt-1 " href="">تسجيل الخروج</a>
+          </li>
+          <li class="nav-item" style="margin-right:200px">
+            <img src="{{asset('img/icons8-user-50.png')}}" alt="">
+            <a class="nav-link fs-5 pt-1" href="my-account">حسابي</a>
           </li>
         </ul>
 
@@ -107,7 +111,7 @@
 
         <div class="row mt-4">
 
-          <form action="/blood_donation" method="post" onsubmit="return checkDataDonation()">
+          <form action="/blood-donation" method="post" onsubmit="return checkDataDonation()">
             @csrf
 
             <div class="form-group">
@@ -153,6 +157,7 @@
                 <option value="Male">ذكر</option>
                 <option value="Female">انثى</option>
               </select>
+
             </div>
 
             <div class="form-group pt-1">

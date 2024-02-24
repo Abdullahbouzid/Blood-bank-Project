@@ -1,14 +1,14 @@
 <?php
 
-use App\Http\Controllers\Visitor_Controllers;
+use App\Http\Controllers\Visitor_Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Center_Controller;
 use App\Http\Controllers\Emp_Controllers;
-use App\Http\Controllers\Request_Controllers;
-use App\Http\Controllers\DonationControllers;
+use App\Http\Controllers\Request_Controller;
+use App\Http\Controllers\Donation_Controller;
+use App\Models\Visitor;
 use App\Http\Controllers\FormCheck;
 
-// >>>>>>> dd99cb9d602e01f248dffda3232ecaa9af1d9818
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,34 +20,26 @@ use App\Http\Controllers\FormCheck;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// ################ VIEW ######################
+
+Route::view("/", 'index');
 
 // اختصار لعرض شاشة تسجيل الدخول الخاصة ب الموظف و الادمن 
-Route::view("/login_administrator", 'login_admin');
+Route::view("/login-admin", 'login_admin');
 
-Route::view("/login_employee", 'login_employee');
+Route::view("/login-emp", 'login_employee');
 
-Route::get("/home", function () {
-    return view('home');
+Route::view("/home", 'home');
+
+Route::view("/blood_donation", 'blood_donation');
+
+Route::view("/BloodRequest", 'BloodRequest');
+
+Route::get('/Blood_Center', function () {
+    return view('Blood_Center');
 });
 
-Route::get('/blood_donation', function () {
-    return view('blood_donation');
-});
-
-Route::get('/BloodRequest', function () {
-    return view('BloodRequest');
-});
-
-// Route::get('/Blood_Center', function () {
-//     return view('Blood_Center');
-// });
-
-Route::get('/about', function () {
-    return view('about');
-});
+Route::view("/about", 'about');
 
 Route::get('/CreateAccount', function () {
     return view("create_visitor");
@@ -56,26 +48,20 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
+// ################ POST ######################
+Route::post('/CreateAccount', [Visitor_Controller::class, 'store']);
 
+Route::post('/blood-donation', [Donation_Controller::class, 'store']);
 
-Route::post('/CreateAccount', [Visitor_Controllers::class, 'store']);
+Route::post("/BloodRequest", [Request_Controller::class, 'store']);
 
-// Route::get('/CreateAccount/{email}', [VisitorControllers::class, 'show']);
-
-// خاص بالنموذج تسجيل الدخول
-Route::post("/home", [FormCheck::class, 'getUserlogin']);
-// Route::view("/index","home");
-
-Route::post('/blood_donation', [DonationControllers::class, 'requestVisitor']);
 
 // استقبال طلبات الدم
 // Route::get("/BloodRequest/create",[Request_Controllers::class,'requestPatient']);
-Route::post("/BloodRequest", [Request_Controllers::class, 'requestPatient']);
+// Route::post("/BloodRequest", [Request_Controller::class, 'requestPatient']);
 
 // عرض مراكز التبرع
 Route::get('/Blood_Center', [Center_Controller::class, 'showselect']);
-
-
 
 
 // tast 

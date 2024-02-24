@@ -1,22 +1,17 @@
 :root {
     --main-color: #F2371E;
+    --font-family: 'Cairo', sans-serif;
 }
 
 /* START SECTION */
 
 body {
-    overflow-y: scroll;
-    font-family: 'Cairo', sans-serif;
-
-}
-
-.container .row .dataDonation .row {
-    font-family: 'Cairo', sans-serif;
+    /* overflow-y: scroll; */
+    font-family: var(--font-family);
 
 }
 
 .container .row .nameService {
-    font-family: 'Cairo', sans-serif;
     color: var(--main-color);
     font-size: 32px;
     padding-top: 15px;
@@ -74,8 +69,6 @@ body {
     border: none;
     font-size: 20px;
     border-radius: 10px;
-
-    font-family: 'Cairo', sans-serif;
 }
 
 .submit :hover {
@@ -103,7 +96,6 @@ body {
     }
 
     .footer {
-        font-family: 'Cairo', sans-serif;
         background-color: var(--main-color);
         position: fixed;
         bottom: 0;

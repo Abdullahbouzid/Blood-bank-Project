@@ -1,6 +1,5 @@
 
-
-var $timerMessage = 3000;
+var $timerMessage = 2000;
 
 function checkDataDonation() {
     var nameVisitor = document.getElementById('Name_Visitor').value;
@@ -24,7 +23,7 @@ function checkDataDonation() {
     } else {
         Swal.fire({
             title: "! عذرا",
-            text: "من فضلك تأكد من إدخال جميع البيانات بشكل صحيح",
+            text: "من فضلك قم بالتأكد من إدخال جميع البيانات المطلوبة ",
             icon: "warning",
             showConfirmButton: false,
             timer: $timerMessage
@@ -55,7 +54,7 @@ function checkDataRequest() {
     } else {
         Swal.fire({
             title: "! عذرا",
-            text: "من فضلك تأكد من إدخال جميع البيانات بشكل صحيح",
+            text: "من فضلك قم بالتأكد من إدخال جميع البيانات المطلوبة ",
             icon: "warning",
             showConfirmButton: false,
             timer: $timerMessage
@@ -72,59 +71,28 @@ function checkData_CreateVisitor() {
     var password_again = document.getElementById('password_again').value;
     var DOB = document.getElementById('DOB_Visitor').value;
 
-    if (username && email && password && password_again && DOB) {
-        Swal.fire({
-            title: "!احسنت",
-            text: "تمت عملية إنشاء الحساب بنجاح",
-            icon: "success",
-            showConfirmButton: false,
-            timer: $timerMessage
-        });
-        return true;
-    } else {
-        Swal.fire({
-            title: "! عذرا",
-            text: "من فضلك تأكد من إدخال جميع البيانات بشكل صحيح",
-            icon: "warning",
-            showConfirmButton: false,
-            timer: $timerMessage
-        });
+    var emailErrorElement = document.getElementById('email-error');
+
+    if (!username || !email || !password || !password_again || !DOB) {
+        alert("من فضلك قم بالتأكد من إدخال جميع البيانات المطلوبة ");
+
         return false;
     }
-}
 
-function getMonthDifference(startDate, endDate) {
-    // // Ensure valid Date objects
-    // startDate = new Date(startDate);
-    // endDate = new Date(endDate);
+    // if (emailErrorElement.dataset.error === 'emailExists') {
+    //     alert("البريد الالكتروني مسجل لدينا مسبقا");
 
-    // // Get year and month differences
-    // const yearDiff = endDate.getFullYear() - startDate.getFullYear();
-    // const monthDiff = endDate.getMonth() - startDate.getMonth();
-
-    // // Handle negative month differences (e.g., December to February)
-    // if (monthDiff < 0) {
-    //     yearDiff--;
-    //     monthDiff += 12;
+    //     return false;
     // }
 
-    // // Calculate and return total months difference
-    // return yearDiff * 12 + monthDiff;
-
+    return true;
 
 }
 
-// // Example usage
-// const startDate = new Date("2023-10-25");
-// const endDate = new Date("2024-02-18");
-// const monthsBetween = getMonthDifference(startDate, endDate);
-
-// console.log(`There are ${monthsBetween} months between ${startDate.toLocaleDateString()} and ${endDate.toLocaleDateString()}.`);
-
-function checkMatch() {
+function checkMatchPassword() {
     const firstPass = document.getElementById("password").value;
     const secondPass = document.getElementById("password_again").value;
-    const errorMessage = document.getElementById("error-message");
+    const errorMessage = document.getElementById("password-error");
 
 
     if (firstPass !== secondPass) {
@@ -142,3 +110,23 @@ function checkMatch() {
     }
 }
 
+// --------#########-------------
+function checkAvailableEmail() {
+    // const email = document.getElementById("email").value;
+    const errorMessage = document.getElementById("email-error");
+
+    const emailErrorElement = document.getElementById('email-error');
+
+
+    if (emailErrorElement.dataset.error === 'emailExists') {
+        // errorMessage.textContent = "البريد الالكتروني مسجل لدينا مسبقا";
+        errorMessage.classList.remove("hidden");
+    }
+
+    else {
+        // errorMessage.textContent = "";
+        errorMessage.classList.add("hidden");
+    }
+
+
+}
