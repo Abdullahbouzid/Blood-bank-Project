@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\employee;
 use Illuminate\Http\Request;
 
 class Emp_Controller extends Controller
@@ -40,5 +40,22 @@ class Emp_Controller extends Controller
             // فشل التحقق من مصداقية المستخدم
             return redirect()->back()->withErrors(['Email_Emp' => 'خطأ في بيانات الاعتماد']);
         }
+    }
+
+    public function show_Emp()
+    {
+        // $ShowEmps = employee::all();
+        $ShowEmps = employee::where('Type', 'موظف')->get();
+
+        
+        return view('/Dashboards.empcontrol', compact('ShowEmps'));
+    }
+    public function show_Admin()
+    {
+      
+        $ShowAdmins = employee::where('Type', 'مسؤول')->get();
+
+        
+        return view('/Dashboards.admincontrol', compact('ShowAdmins'));
     }
 }

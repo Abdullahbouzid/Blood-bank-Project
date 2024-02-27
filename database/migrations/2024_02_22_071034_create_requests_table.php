@@ -17,6 +17,7 @@ class CreateRequestsTable extends Migration
             $table->id();
             $table->foreignId('visitor_id')->nullable(); 
             $table->foreignId('employee_id')->nullable(); 
+            $table->boolean('status_request')->default(false);
             $table->timestamps();
         });
     }

@@ -1,4 +1,4 @@
-    Schema::create('_visitors', function (Blueprint $table) {
+    <!-- Schema::create('_visitors', function (Blueprint $table) {
             $table->id();
             $table->string('Name_Visitor');
             $table->date('DoB_Visitor');  
@@ -29,7 +29,7 @@
     //         ->on('employees')
     //         ->onDelete('cascade');
         });
-    }
+    } 
     Schema::create('_employees', function (Blueprint $table) {
             $table->id();
             $table->string('Name_Emp');
@@ -86,4 +86,4 @@
 
             $table->foreign('employee_id');
         });
-    }
+    } -->

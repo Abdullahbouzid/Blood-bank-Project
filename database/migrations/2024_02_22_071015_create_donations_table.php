@@ -18,6 +18,7 @@ class CreateDonationsTable extends Migration
             $table->date('Dof_Donation')->nullable(); 
             $table->foreignId('visitor_id')->nullable(); 
             $table->foreignId('employee_id')->nullable(); 
+            $table->boolean('status_donation')->default(false);
 
             $table->timestamps();
 

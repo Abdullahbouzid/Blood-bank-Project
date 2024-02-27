@@ -57,4 +57,18 @@ class Center_Controller extends Controller
 
     }
   
+    public function show_center_incontrol()
+    {
+        // قم بإرجاع جميع البيانات المتاحة في جدول "مصرف الدم"
+        $ShowCenters = Center::all();
+        
+        return view('/Dashboards.centercontrol', compact('ShowCenters'));
+    }
+    // public function center_count()
+    // {
+    //     // قم بإرجاع جميع البيانات المتاحة في جدول "مصرف الدم"
+    //     $CentersCount = Bank::count();
+        
+    //     return view('/Dashboards.dashboard', compact('CentersCount'));
+    // }
 }

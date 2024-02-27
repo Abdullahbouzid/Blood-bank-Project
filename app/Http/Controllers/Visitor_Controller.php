@@ -26,4 +26,11 @@ class Visitor_Controller extends Controller
         exit;
 
     }
+    public function show_visitor_control()
+    {
+       $vitsits=Visitor::all();
+       
+       return view('/Dashboards.visitcontrol', compact('vitsits'));
+
+    }
 }

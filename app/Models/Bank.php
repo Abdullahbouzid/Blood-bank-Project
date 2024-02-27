@@ -10,6 +10,8 @@ class Bank extends Model
     use HasFactory;
     protected $table = 'banks';
 
+    
+
 
     public function employees()
     {

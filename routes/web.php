@@ -3,7 +3,9 @@
 use App\Http\Controllers\Visitor_Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Center_Controller;
-use App\Http\Controllers\Emp_Controllers;
+use App\Http\Controllers\Bank_Controller;
+use App\Http\Controllers\countController;
+use App\Http\Controllers\Emp_Controller;
 use App\Http\Controllers\Request_Controller;
 use App\Http\Controllers\Donation_Controller;
 use App\Models\Visitor;
@@ -45,9 +47,43 @@ Route::get('/CreateAccount', function () {
     return view("create_visitor");
 });
 Route::view("/myaccount", 'myaccount');
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('/Dashboards.dashboard');
 });
+
+Route::get('/empcontrol', function () {
+    return view('/Dashboards.empcontrol');
+});
+
+
+Route::get('/visitcontrol', function () {
+    return view('/Dashboards.visitcontrol');
+});
+Route::get('/bankcontrol', function () {
+    return view('/Dashboards.bankcontrol');
+});
+Route::get('/admincontrol', function () {
+    return view('/Dashboards.admincontrol');
+});
+
+Route::get('/centercontrol', function () {
+    return view('/Dashboards.centercontrol');
+});
+Route::get('/donationcontrol', function () {
+    return view('/Dashboards.donationcontrol');
+});
+
+Route::get('/requestcontrol', function () {
+    return view('/Dashboards.requestcontrol');
+});
+Route::get('/blood_storage', function () {
+    return view('/Dashboards.blood_storage');
+});
+
+
+
+
 
 // ################ POST ######################
 Route::post('/CreateAccount', [Visitor_Controller::class, 'store']);
@@ -69,5 +105,27 @@ Route::get('/Blood_Center', [Center_Controller::class, 'showselect']);
 
 // Route::get('/tast', [Center_Controller::class, 'showselect']);
 // Route::post('/tast', [Center_Controller::class, 'searchselect']);
-// وحدة التحكم تحقق من كلمة السر
+
+################# Dashboard#########################
+
+// وحدة التحكم عرض المصارف
+Route::get('/bankcontrol', [Bank_Controller::class, 'index']);
+//add new bank
+Route::post('/bankcontrol', [Bank_Controller::class, 'add_bank']);
+
+// show emp
+Route::get('/empcontrol', [Emp_Controller::class, 'show_Emp'])->name('show emp only');
+//show the admins in dashboard
+Route::get('/admincontrol', [Emp_Controller::class, 'show_Admin'])->name('show admin only');
+
+
+//وحدة التحكم عرض مراكز التبرع
+Route::get('/centercontrol', [Center_Controller::class, 'show_center_incontrol']);
+//وحدة التحكم عرض عدد جميع المتطلبات
+Route::get('/dashboard', [countController::class, 'Show_count']);
+
+
+//وحدة التحكم عرض بيانات المستخدمين
+Route::get('/visitcontrol', [Visitor_Controller::class, 'show_visitor_control']);
+
 
