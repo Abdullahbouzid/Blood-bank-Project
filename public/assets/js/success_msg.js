@@ -69,11 +69,10 @@ function checkData_CreateVisitor() {
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     var password_again = document.getElementById('password_again').value;
-    var DOB = document.getElementById('DOB_Visitor').value;
 
     var emailErrorElement = document.getElementById('email-error');
 
-    if (!username || !email || !password || !password_again || !DOB) {
+    if (!username || !email || !password || !password_again) {
         alert("من فضلك قم بالتأكد من إدخال جميع البيانات المطلوبة ");
 
         return false;
@@ -110,23 +109,24 @@ function checkMatchPassword() {
     }
 }
 
-// --------#########-------------
-function checkAvailableEmail() {
-    // const email = document.getElementById("email").value;
-    const errorMessage = document.getElementById("email-error");
+function checkData_LoginVisitor() {
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
 
-    const emailErrorElement = document.getElementById('email-error');
+    // var emailErrorElement = document.getElementById('email-error');
 
+    if (!email || !password) {
+        alert("أدخل بيانات تسجيل الدخول الخاصة بك");
 
-    if (emailErrorElement.dataset.error === 'emailExists') {
-        // errorMessage.textContent = "البريد الالكتروني مسجل لدينا مسبقا";
-        errorMessage.classList.remove("hidden");
+        return false;
     }
 
-    else {
-        // errorMessage.textContent = "";
-        errorMessage.classList.add("hidden");
+    if (emailErrorElement.dataset.error === 'emailNotExists') {
+        alert("البريد الالكتروني المدخل غير مسجل لدينا. يرجى التحقق مرة اخرى او التسجيل");
+
+        return false;
     }
 
+    return true;
 
 }

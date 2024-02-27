@@ -40,7 +40,7 @@
 
 
                         <br>
-                        <form action="/create-account" method="post" onsubmit="return checkData_CreateVisitor()">
+                        <form action="/CreateAccount" method="post" onsubmit="return checkData_CreateVisitor()">
                             @csrf
 
                             <div class="form-group">
@@ -71,7 +71,7 @@
 
                                 <span id="password-error" class="hidden"></span>
 
-                                <button type="submit" class="submit mb-3" style="">إنشاء حساب
+                                <button type="submit" class="submit mb-3 mt-4" style="">إنشاء حساب
                                     جديد
                                 </button>
                             </div>

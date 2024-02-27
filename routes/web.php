@@ -92,6 +92,10 @@ Route::post('/blood_donation', [Donation_Controller::class, 'store']);
 
 Route::post("/Blood_Request", [Request_Controller::class, 'store']);
 
+Route::post("/", [Visitor_Controller::class, 'loginUser']);
+
+// ############################################
+
 
 // استقبال طلبات الدم
 // Route::get("/BloodRequest/create",[Request_Controllers::class,'requestPatient']);

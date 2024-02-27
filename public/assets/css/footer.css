@@ -1,6 +1,10 @@
+:root {
+    --main-color: #fd563f;
+}
+
 .footer {
     font-family: 'Cairo', sans-serif;
-    /* background-color: var(--main-color); */
+    background-color: var(--main-color);
     /* position: fixed; */
     bottom: 0;
     left: 0;

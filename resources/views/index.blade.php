@@ -36,27 +36,27 @@
             <h5 style="color: black;"><span>ادخل بياناتك هنا</span></h5>
           </div>
           <br>
-          <form action="/" method="POST">
-            <!-- <form action="" method=""> -->
+          <form action="/" method="POST" onsubmit="return checkData_LoginVisitor()">
             @csrf
 
             <div class="form-group">
 
               <label class="text" for="">البريد الالكتروني</label>
-              <input type="email" id="" name="email" class="form-control text-center mt-1 mb-1"
-                placeholder="user@email.com">
-              <span style="color: red">
-                @error('email')
-                {{$message}}
-                <br>
+              <input type="email" id="email" name="Email" value="{{old('Email')}}"
+                class="form-control text-center mt-1 mb-1" placeholder="user@email.com">
+              <span style="color: red; display:block;">
+                @error('Email')
+                البريد الالكتروني المدخل غير مسجل لدينا. يرجى التحقق مرة اخرى او التسجيل
+                <!-- {{ $message }} -->
+
                 @enderror
               </span>
 
               <label class="text mt-2" for="">كلمة المرور</label>
-              <input type="password" id="" name="password" class="form-control text-center mt-1 mb-2"
-                placeholder="ادخل  كلمة المرور">
+              <input type="password" id="password" name="Password" value="{{old('Password')}}"
+                class="form-control text-center mt-1 mb-2" placeholder="ادخل  كلمة المرور">
               <span style="color: red">
-                @error('password')
+                @error('Password')
                 {{$message}}
                 <br>
                 @enderror
@@ -99,7 +99,7 @@
 
 
   <!-- START FOOTER -->
-
+  <script src="/assets/js/success_msg.js"></script>
   <script src="{{asset('assets/js/cdn.jsdelivr.net_npm_bootstrap@5.3.1_dist_js_bootstrap.bundle.min.js')}}"></script>
   <script src="{{asset('assets/js/all.min.js')}}"></script>
 
