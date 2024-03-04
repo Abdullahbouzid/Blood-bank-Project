@@ -51,13 +51,14 @@ class Visitor_Controller extends Controller
                 ['Password', '=', $request->input('Password')]
             ])
             ->first();
-
         if ($visitor) {
             $name = Visitor::where('Email', $request->input('Email'))
                 ->value('Name');
 
+            setcookie("info", $name);
+
             return redirect('/home')->with('Name', $name);
-            // return view('home', ['Name' => $name]);
+
         } else {
             return redirect('/');
         }
