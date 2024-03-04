@@ -32,9 +32,34 @@ class Visitor_Controller extends Controller
     }
     public function show_visitor_control()
     {
-       $vitsits=Visitor::all();
-       
-       return view('/Dashboards.visitcontrol', compact('vitsits'));
+        $vitsits = Visitor::all();
 
+        return view('/Dashboards.visitcontrol', compact('vitsits'));
+
+    }
+
+    public function loginUser(Request $request)
+    {
+        $request->validate([
+            'Email' => ['required', 'email', 'exists:visitors'],
+            'Password' => ['required', 'min:8']
+        ]);
+
+        $visitor = DB::table('visitors')
+            ->where([
+                ['Email', '=', $request->input('Email')],
+                ['Password', '=', $request->input('Password')]
+            ])
+            ->first();
+
+        if ($visitor) {
+            $name = Visitor::where('Email', $request->input('Email'))
+                ->value('Name');
+
+            return redirect('/home')->with('Name', $name);
+            // return view('home', ['Name' => $name]);
+        } else {
+            return redirect('/');
+        }
     }
 }
