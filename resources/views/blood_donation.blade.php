@@ -153,7 +153,7 @@
 
               <label class="date exception" for="">تاريخ التبرع</label>
               <!-- DOD - Date Of Donation for the Visitor -->
-              <input type="date" id="date" name="DOD_Visitor" class="form-control exception" style="cursor: pointer;">
+              <input type="date" id="date" name="Dof_Donation" class="form-control exception" style="cursor: pointer;">
 
               <label class="text exception" for="">اسم المركز</label>
               <select name="Name_Center" id="Name_Center" class="form-control exception" style="text-align: center;">
