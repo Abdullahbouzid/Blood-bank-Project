@@ -67,13 +67,18 @@
                     <li class="nav-item">
                         <a class="nav-link fs-5 pt-1 " href="about">حول</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-5 pt-1 " href="">تسجيل الخروج</a>
-                    </li>
-                    <li class="nav-item" style="margin-right:200px">
-                        <img src="{{asset('img/icons8-user-50.png')}}" alt="">
-                        <a class="nav-link fs-5 pt-1" href="my-account">حسابي</a>
-                    </li>
+                    <div class="dropdown nav-item" style="margin-right:250px;">
+                    <img src="{{asset('img/icons8-user-50.png')}}" alt="" style="margin-left:5px;">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+              {{$_COOKIE["User"]}}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item exc" href="#">حسابي</a></li>
+              <li><a class="dropdown-item exc" href="/">تسجيل الخروج</a></li>
+            </ul>
+          </div>
+
                 </ul>
 
             </div>
@@ -113,20 +118,20 @@
 
                         <div class="form-group">
                             <label class="text exception" for="">الاسم الثلاثي</label>
-                            <input type="text" id="Name_Patient" name="Name_Patient" class="form-control">
+                            <input type="text" id="Name_Patient" name="Name_Patient" readonly value = "{{$_COOKIE["User"]}}" class="form-control text-center">
 
                             <label class="date exception" for="">تاريخ الميلاد</label>
-                            <input type="date" id="DOB_Patient" name="DOB_Patient" class="form-control exception"
+                            <input type="date" id="DOB_Patient" name="DOB_Patient" readonly value = "{{$_COOKIE["DoB"]}}" class="form-control exception text-center"
                                 style="cursor: pointer;">
                         </div>
 
                         <div class="form-group pt-1">
 
                             <label class="text exception" for="">عنوان السكن</label>
-                            <input type="text" id="Adds_Patient" name="Adds_Patient" class="form-control exception">
+                            <input type="text" id="Adds_Patient" name="Adds_Patient" readonly value = "{{$_COOKIE["Adds"]}}" class="form-control exception text-center">
 
                             <label class="text exception" for="">رقم الهاتف</label>
-                            <input type="text" id="Phone_Patient" name="Phone_Patient" class="form-control exception">
+                            <input type="text" id="Phone_Patient" name="Phone_Patient" readonly value = "{{$_COOKIE["phone"]}}"  class="form-control exception text-center">
 
                         </div>
 
@@ -148,18 +153,19 @@
                             </select>
 
                             <label class="text exception" for="">الجنس</label>
-                            <select name="Gander_Patient" id="Gander_Patient" class="form-control exception"
+                            <input type="text" id="Gander_Patient" readonly value = "{{$_COOKIE["Gander"]}}"  name="Gander_Patient" class="form-control exception text-center">
+                            <!-- <select name="Gander_Patient" id="Gander_Patient" readonly value = "{{$_COOKIE["Gander"]}}" class="form-control exception"
                                 style="text-align: center;">
                                 <option value="">--</option>
                                 <option value="Male">ذكر</option>
                                 <option value="Female">انثى</option>
-                            </select>
+                            </select> -->
                         </div>
 
                         <div class="form-group pt-1 ">
 
                             <label class="text exception" for="">عدد الاكياس</label>
-                            <input type="number" id="Adds_Patient" name="Adds_Patient" class="form-control">
+                            <input type="number" id="Adds_Patient" name="Adds_Patient" min = "1" class="form-control">
 
                             <label class="text exception" for="">حالة الطلب</label>
                             <select name="State_of_Patient" id="State_of_Patient" class="form-control exception"

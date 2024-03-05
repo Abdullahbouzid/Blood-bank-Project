@@ -31,43 +31,84 @@
         <!-- start of posting-->
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <div class="bg-white p-4 pb-0 " style="border-radius: 20px; color: #616263; margin-top:9%;">
+                <div class="bg-white p-1 " style="border-radius: 20px; color: #616263; margin-top:9%; ">
 
                     <div class="container">
 
                         <img src="{{asset('img/blood bank.png')}}" alt="Logo" height="100px"
                             style="padding-right: 39%;">
-
-
                         <br>
                         <form action="/CreateAccount" method="post" onsubmit="return checkData_CreateVisitor()">
                             @csrf
 
-                            <div class="form-group">
+                            <div class="form-group" style = "">
+                                <label class="text mb-1" for="" style = "">الاسم الثلاثي</label>
+                                <input type="username" id="username" name="Name" value="{{old('Username')}}"
+                                       class="form-control text-center" style = "" placeholder="اكتب اسمك الثلاثي">
+                            </div>
 
-                                <label class="text mb-1" for="">الاسم الثلاثي</label>
-                                <input type="username" id="username" name="Username" value="{{old('Username')}}"
-                                    class="form-control text-center" placeholder="اكتب اسمك الثلاثي">
+                                <div class="row mt-1">
+                                    <div class="form-group" style = "">
+                                        <label class="text mb-1" for="" style = "display: block;">البريد الالكتروني</label>
+                                        <input type="email" id="email" name="Email" value="{{old('Email')}}"
+                                               class="form-control text-center" style = "display: inline;" placeholder="user@email.com"> 
+                                                <!-- <span id="email-error" data-error="emailExists" style="color: red; display:block;"> -->
+                                                <!-- @error('Email') -->
+                                                <!-- البريد الالكتروني مسجل لدينا مسبقا -->
+                                                <!-- {{ $message }} -->
 
-                                <label class="text mb-1 mt-2" for="">البريد الالكتروني</label>
-                                <input type="email" id="email" name="Email" value="{{old('Email')}}"
-                                    class="form-control text-center" placeholder="user@email.com">
-                                <span id="email-error" data-error="emailExists" style="color: red; display:block;">
-                                    @error('Email')
-                                    البريد الالكتروني مسجل لدينا مسبقا
-                                    <!-- {{ $message }} -->
-
-                                    @enderror
-                                </span>
-
-                                <label class="text mb-1 mt-2" for="">كلمة المرور</label>
-                                <input type="password" id="password" name="Password" value="{{old('Password')}}"
-                                    class="form-control text-center" placeholder="ادخل  كلمة المرور">
-
-                                <label class="text mb-1 mt-2" for="">تاكيد كلمة المرور</label>
-                                <input type="password" id="password_again" name="password_again"
-                                    value="{{old('password_again')}}" class="form-control text-center"
-                                    onchange="checkMatchPassword()" placeholder="ادخل  كلمة المرور مجددا">
+                                                <!-- @enderror -->
+                                                <!-- </span> -->
+                                    </div>
+                                    <div class="form-group" style = "">
+                                        <label class="text mb-1" for="" style = "display: block;">تاريخ الميلاد</label>
+                                        <input type="date" id="DOB_Visitor" name="DoB" class="form-control"
+                                               style="cursor: pointer;">
+                                    </div>
+                                    <div class="form-group" style = "">
+                                        <label class="text mb-1 mt-1" for="">عنوان السكن</label>
+                                        <input type="text" id="Adds_Visitor" name="Addrees" class="form-control">
+                                    </div>
+                                    <div class="form-group" style = "">
+                                        <label class="text mb-1 mt-1" for="">رقم الهاتف</label>
+                                        <input type="text" id="Ph_Visitor" name="Phone" class="form-control">
+                                    </div>
+                                    <div class="form-group" style = "">
+                                        <label class="text mb-1 mt-1" for="">نوع الفصيلة</label>
+                                        <select name="Typeofblood" id="TOB_Visitor" class="form-control"
+                                                style="text-align: center ;">
+                                            <option value="">----اختر نوع الفصيلة----</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A-">A-</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B-">B-</option>
+                                            <option value="O+">O+</option>
+                                            <option value="O-">O-</option>
+                                            <option value="AB+">AB+</option>
+                                            <option value="AB-">AB-</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" style = "">
+                                        <label class="text mb-1 mt-1" for="">الجنس</label>
+                                        <select name="Gander" id="Gender_Visitor" class="form-control"
+                                                style="text-align: center; display: flex; align-items: center; width:99%; margin-left: 50%;">
+                                            <option value="">--</option>
+                                            <option value="ذكر">ذكر</option>
+                                            <option value="انثى">انثى</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="text mb-1 mt-2" for="">كلمة المرور</label>
+                                        <input type="password" id="password" name="Password" value="{{old('Password')}}"
+                                               class="form-control text-center" placeholder="ادخل  كلمة المرور">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="text mb-1 mt-2" for="">تاكيد كلمة المرور</label>
+                                        <input type="password" id="password_again" name="password_again"
+                                               value="{{old('password_again')}}" class="form-control text-center" 
+                                               onchange="checkMatchPassword()" placeholder="ادخل  كلمة المرور مجددا">
+                                    <!-- </div> -->
+                                </div>    
 
                                 <span id="password-error" class="hidden"></span>
 

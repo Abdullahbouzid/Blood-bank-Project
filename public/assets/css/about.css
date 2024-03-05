@@ -1,15 +1,16 @@
-:root{
-    --dark-color : #19283f;
+:root {
+    --dark-color: #19283f;
     --greaen-color: #ffffff;
 }
-body
-{   
-    
+
+body {
+    overflow-y: scroll;
     background-color: #ffffff;
     font-family: 'Cairo', sans-serif;
-    background-position: center ;
+    background-position: center;
     background-size: cover;
 }
+
 /* 
 .navbar{
     background-color: #f24e1e;
@@ -42,36 +43,40 @@ body
 /* nav bar */
 
 /* landing */
-a{
+a {
     font-family: 'Cairo', sans-serif;
     text-decoration: none;
     color: black;
 
 }
-a:hover{
+
+a:hover {
     color: #f24e1e;
 }
-.arro{
 
-    color:#f24e1e ;
+.arro {
+
+    color: #f24e1e;
     font-size: 1rem;
     margin: auto;
     font-size: 12px;
     margin-bottom: 8px;
 
- 
-    
+
+
 }
 
-.pdfitems{
+.pdfitems {
     margin-top: auto;
     margin-bottom: auto;
 }
-.nameofSubject{
+
+.nameofSubject {
     overflow: hidden;
     display: inline-block;
 }
-.ControlsMenu{
+
+.ControlsMenu {
     box-shadow: 0px 0px 8px 2px #00000045;
     top: 30%;
     width: 9%;
@@ -84,14 +89,16 @@ a:hover{
     background-color: #29658d;
     border-radius: 30px;
 }
-.buttonMeunn{
+
+.buttonMeunn {
     margin: 1px;
     padding-bottom: 20px;
     padding-top: 20px;
     color: white;
 }
-.mobileControlsMenu{
-   box-shadow: 20px 3px 20px 0px #2f7da97d;
+
+.mobileControlsMenu {
+    box-shadow: 20px 3px 20px 0px #2f7da97d;
     position: relative;
     font-size: 12px;
     margin: auto;
@@ -101,15 +108,17 @@ a:hover{
     background-color: #29658d;
     /* width: 90%; */
     margin-bottom: 5px;
-    
+
 
 }
-.mobilebuttonMeunn{
+
+.mobilebuttonMeunn {
     color: white;
     padding: 8px;
     padding: 8px;
     margin: 1px;
 }
+
 /* nameService */
 .container .row .nameService {
     font-family: 'Cairo', sans-serif;
@@ -137,7 +146,7 @@ a:hover{
 
 /* ################################################ */
 /* صور الدكاترة في  حول */
-.Drimg{
+.Drimg {
 
     align-items: center;
     width: 300px;
@@ -170,11 +179,19 @@ a:hover{
     height: 2px;
     background: #f24e1e;
 }
+
 .section-title span {
     position: relative;
-   
+
     z-index: 1;
 }
+
+.navbar .container .collapse .navbar-nav .dropdown .dropdown-menu .exc {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
 
 
 /* ###################################### */

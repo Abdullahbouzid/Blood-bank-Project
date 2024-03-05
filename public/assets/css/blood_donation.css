@@ -6,7 +6,7 @@
 /* START SECTION */
 
 body {
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
     font-family: var(--font-family);
 
 }
@@ -94,6 +94,13 @@ body {
         display: flex;
         align-items: center;
     }
+
+    .navbar .container .collapse .navbar-nav .dropdown .dropdown-menu .exc {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+    }
+
 
     .footer {
         background-color: var(--main-color);

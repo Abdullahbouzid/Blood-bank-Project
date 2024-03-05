@@ -82,9 +82,6 @@ Route::get('/blood_storage', function () {
 });
 
 
-
-
-
 // ################ POST ######################
 Route::post('/CreateAccount', [Visitor_Controller::class, 'store']);
 
@@ -110,7 +107,7 @@ Route::get('/Blood_Center', [Center_Controller::class, 'showselect']);
 // Route::get('/tast', [Center_Controller::class, 'showselect']);
 // Route::post('/tast', [Center_Controller::class, 'searchselect']);
 
-################# Dashboard#########################
+################# Dashboard #########################
 
 // وحدة التحكم عرض المصارف
 Route::get('/bankcontrol', [Bank_Controller::class, 'index'])->name('bankcontrol.index');

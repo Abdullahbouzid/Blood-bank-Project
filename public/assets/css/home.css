@@ -24,6 +24,12 @@ body {
         align-items: center;
     }
 
+    .navbar .container .collapse .navbar-nav .dropdown .dropdown-menu .exc {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+    }
+
     .container .nameOfProjact {
         color: white;
         margin-top: calc(100vh - 500px);

@@ -61,16 +61,18 @@
           <li class="nav-item">
             <a class="nav-link fs-5 pt-1 " href="about">حول</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link fs-5 pt-1 " href="">تسجيل الخروج</a>
-          </li>
-          <li class="nav-item" style="margin-right:200px">
-            <img src="{{asset('img/icons8-user-50.png')}}" alt="">
-            <a class="nav-link fs-5 pt-1" href="myaccount">حسابي</a>
-          </li>
-
+          <div class="dropdown nav-item" style="margin-right:250px;">
+            <img src="{{asset('img/icons8-user-50.png')}}" alt="" style="margin-left:5px;">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              {{$_COOKIE["User"]}}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item exc" href="myaccount">حسابي</a></li>
+              <li><a class="dropdown-item exc" href="/">تسجيل الخروج</a></li>
+            </ul>
+          </div>
         </ul>
-
       </div>
   </nav>
 

@@ -12,7 +12,6 @@ body {
 }
 
 .form-group label {
-
     color: black;
 }
 
@@ -20,6 +19,7 @@ button {
     color: white;
     font-size: 18px;
     font-weight: bold;
+
 }
 
 /* START FOOTER */
@@ -31,23 +31,25 @@ button {
 
     }
 
+    .container .row .col-lg-6 .bg-white .container form .row .form-group {
+        width: 50%;
+    }
+
     .footer {
         background-color: white;
         position: fixed;
         left: 0;
         bottom: 0;
-        /* width: 100%; */
-        /* display: flex;
-        justify-content: space-between; */
     }
 
-    button {
+    .submit {
         padding-top: 6px;
         padding-bottom: 7px;
         background-color: var(--main-color);
         border: none;
         border-radius: 10px;
-        width: 100%;
+        width: 96%;
+        margin-right: 10px;
 
     }
 

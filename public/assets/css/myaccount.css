@@ -6,18 +6,18 @@
 /* START SECTION */
 
 body {
-    /* overflow-y: scroll; */
-    margin-top: 5%;
+    overflow-y: scroll;
     font-family: var(--font-family);
     direction: rtl;
 
 }
 
 .container .row .nameService {
-    color: var(--main-color);
+    /* color: var(--main-color);
     font-size: 32px;
     padding-bottom: 30px;
     font-weight: bold;
+    margin-top: 2%; */
 
 }
 
@@ -36,37 +36,39 @@ body {
 
 }
 
+.form-group label {
+    color: black;
+    font-size: 16px;
+    ;
+}
+
 .container .row .dataVisitor {
     background-color: #F1F1F1;
-    border-radius: 40px;
+    border-radius: 20px;
     font-size: 24px;
-
 }
 
 .container .row .dataVisitor .form-group {
     font-size: 18px;
     text-align: right;
 
-    display: flex;
-    justify-content: space-between;
-
 }
 
-.container .row .dataVisitor .form-group .text,
-.container .row .dataVisitor .form-group .date {
-    padding-right: 1%;
-    width: 40%;
+.container .row .dataVisitor form .row .form-group {
+    width: 50%;
 }
 
 .submit {
-    padding-left: 7%;
-    padding-right: 7%;
-    padding-top: 1px;
-    padding-bottom: 2px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+
     background-color: var(--main-color);
-    color: white;
-    font-weight: bold;
     border: none;
-    font-size: 20px;
     border-radius: 10px;
+    width: 95%;
+    margin-right: 10px;
+
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
 }

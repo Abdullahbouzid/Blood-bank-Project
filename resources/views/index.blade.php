@@ -36,7 +36,7 @@
             <h5 style="color: black;"><span>ادخل بياناتك هنا</span></h5>
           </div>
           <br>
-          <form action="/" method="POST" onsubmit="return checkData_LoginVisitor()">
+          <form action="/" method="post" onsubmit="return checkData_LoginVisitor()">
             @csrf
 
             <div class="form-group">
@@ -80,7 +80,7 @@
           </div>
 
           <div class="container-btn">
-            <a class="button text-center" href="/create-account"
+            <a class="button text-center" href="/CreateAccount"
               style="background-color: white; color:red; border:1px solid red;">
               إنشاء حساب جديد
             </a>
