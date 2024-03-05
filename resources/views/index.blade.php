@@ -80,7 +80,7 @@
           </div>
 
           <div class="container-btn">
-            <a class="button text-center" href="/create-account"
+            <a class="button text-center" href="/CreateAccount"
               style="background-color: white; color:red; border:1px solid red;">
               إنشاء حساب جديد
             </a>
