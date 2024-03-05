@@ -120,11 +120,7 @@
 
             <div class="form-group">
               <label class="text exception" for="">الاسم الثلاثي</label>
-<<<<<<< HEAD
-              <input type="text" id="Name_Visitor" name="Name" class="form-control">
-=======
-              <input type="text" id="Name_Visitor" readonly name="Name_Visitor" value = "{{$_COOKIE["User"]}}" class="form-control text-center">
->>>>>>> 17c812997d5b3729ebb159c3b82bc015814fc784
+              <input type="text" id="Name_Visitor" readonly value = "{{$_COOKIE["User"]}}" name="Name" class="form-control">
 
               <label class="date exception" for="">تاريخ الميلاد</label>
               <input type="date" id="DOB_Visitor" readonly name="DOB_Visitor" value = "{{$_COOKIE["DoB"]}}" class="form-control exception text-center"
@@ -147,26 +143,9 @@
               <label class="text exception" for="">نوع الفصيلة</label>
               <!-- TOB - Type of blood for the Visitor-->
               <input type="text" id="TOB_Visitor" readonly value = "{{$_COOKIE["TOB"]}}"  name="TOB_Visitor" class="form-control exception text-center">
-              <!-- <select name="TOB_Visitor" id="TOB_Visitor" class="form-control" style="text-align: center ;">
-                <option value="">----اختر نوع الفصيلة----</option>
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
-              </select> -->
 
               <label class="text exception" for="">الجنس</label>
               <input type="text" id="Gender_Visitor" readonly value = "{{$_COOKIE["Gander"]}}"  name="Gender_Visitor" class="form-control exception text-center">
-              <!-- <select name="Gender_Visitor" id="Gender_Visitor" class="form-control exception"
-                style="text-align: center;">
-                <option value="">--</option>
-                <option value="Male">ذكر</option>
-                <option value="Female">انثى</option>
-              </select> -->
 
             </div>
 
