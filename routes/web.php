@@ -8,6 +8,7 @@ use App\Http\Controllers\countController;
 use App\Http\Controllers\Emp_Controller;
 use App\Http\Controllers\Request_Controller;
 use App\Http\Controllers\Donation_Controller;
+use App\Http\Controllers\StorageController;
 use App\Models\Visitor;
 use App\Http\Controllers\FormCheck;
 
@@ -157,4 +158,5 @@ Route::get('/visitcontrol', [Visitor_Controller::class, 'index'])->name('visitco
 Route::delete('/visitcontrol/{vitsit}', [Visitor_Controller::class, 'destroy'])->name('visitcontrol.destroy');
 
 
-
+###########وحدة التجكم في المخزون#######
+Route::get('/blood_storage', [StorageController::class, 'index'])->name('blood_storage');

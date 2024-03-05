@@ -133,101 +133,12 @@
       <main class="mt-5 pt-3" >
         <div class="container-fluid">
          <div class="row mt-5" style="color: white">
-            <div class="col-md-3 mb-3">
-              <div class="card bg-primary text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد
-                  <img src="{{asset('img/icon/user.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
-               </div>
-                <div class="card-footer d-flex">
-                  <a href="admincontrol">عرض المسؤولين</a>
-                  <span class="ms-auto">
-                    <i class="bi bi-chevron-right"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 mb-3">
-              <div class="card bg-warning text-white  h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد
-                  <img src="{{asset('img/icon/emp.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
-               </div>
-                <div class="card-footer d-flex">
-                  <a href="empcontrol"> الموظفين</a>
-                  <span class="ms-auto">
-                    <i class="bi bi-chevron-right"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 mb-3">
-              <div class="card bg-info text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد
-                  <img src="{{asset('img/icon/userinfo.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
-               </div>
-                <div class="card-footer d-flex">
-                  <a href="visitcontrol"> المستخدمين</a>
-                  <span class="ms-auto">
-                    <i class="bi bi-chevron-right"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 mb-3">
-              <div class="card bg-success text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد
-                  <img src="{{asset('img/icon/hospital.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
-               </div>
-                <div class="card-footer d-flex">
-                  <a href="bankcontrol">مصارف الدم</a>
-                  <span class="ms-auto">
-                    <i class="bi bi-chevron-right"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 mb-3">
-              <div class="card bg-dark text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد
-                  <img src="{{asset('img/icon/ambulance.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
-               </div>
-                <div class="card-footer d-flex">
-                  <a href="centercontrol">مراكز التبرع</a>
-                  <span class="ms-auto">
-                    <i class="bi bi-chevron-right"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 mb-3">
-              <div class="card bg-secondary text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد
-                  <img src="{{asset('img/icon/blood-test.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
-               </div>
-                <div class="card-footer d-flex">
-                 <a href="donationcontrol"> طلبات طلب دم</a>
-                  <span class="ms-auto">
-                    <i class="bi bi-chevron-right"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 mb-3">
-              <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد
-                  <img src="{{asset('img/icon/blood-donation.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
-               </div>
-                <div class="card-footer d-flex">
-                 <a href="donationcontrol"> طلبات تبرع بالدم</a>
-                  <span class="ms-auto">
-                    <i class="bi bi-chevron-right"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
+          
+           
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
                 <div class="card-body py-5  offcanvas-center ">عدد الاكياس
-                  <img src="{{asset('img/icon/Bloodpak.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
+                  <img src="{{asset('img/icon/Bloodtype/A-.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
                  <a href="blood_storage">  فصائل الدم</a>
@@ -238,6 +149,111 @@
               </div>
             </div>
 
+
+            <div class="col-md-3 mb-3">
+              <div class="card bg-danger text-white h-100">
+                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                  <img src="{{asset('img/icon/Bloodtype/A.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
+               </div>
+                <div class="card-footer d-flex">
+                 <a href="blood_storage">  فصائل الدم</a>
+                  <span class="ms-auto">
+                    <i class="bi bi-chevron-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-3 mb-3">
+              <div class="card bg-danger text-white h-100">
+                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                  <img src="{{asset('img/icon/Bloodtype/BB-.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
+               </div>
+                <div class="card-footer d-flex">
+                 <a href="blood_storage">  فصائل الدم</a>
+                  <span class="ms-auto">
+                    <i class="bi bi-chevron-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-3 mb-3">
+              <div class="card bg-danger text-white h-100">
+                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                  <img src="{{asset('img/icon/Bloodtype/B.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
+               </div>
+                <div class="card-footer d-flex">
+                 <a href="blood_storage">  فصائل الدم</a>
+                  <span class="ms-auto">
+                    <i class="bi bi-chevron-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-3 mb-3">
+              <div class="card bg-danger text-white h-100">
+                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                  <img src="{{asset('img/icon/Bloodtype/O-.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
+               </div>
+                <div class="card-footer d-flex">
+                 <a href="blood_storage">  فصائل الدم</a>
+                  <span class="ms-auto">
+                    <i class="bi bi-chevron-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-3 mb-3">
+              <div class="card bg-danger text-white h-100">
+                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                  <img src="{{asset('img/icon/Bloodtype/O.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
+               </div>
+                <div class="card-footer d-flex">
+                 <a href="blood_storage">  فصائل الدم</a>
+                  <span class="ms-auto">
+                    <i class="bi bi-chevron-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-3 mb-3">
+              <div class="card bg-danger text-white h-100">
+                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                  <img src="{{asset('img/icon/Bloodtype/AB-.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
+               </div>
+                <div class="card-footer d-flex">
+                 <a href="blood_storage">  فصائل الدم</a>
+                  <span class="ms-auto">
+                    <i class="bi bi-chevron-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <div class="card bg-danger text-white h-100">
+                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                  <img src="{{asset('img/icon/Bloodtype/AB.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
+               </div>
+                <div class="card-footer d-flex">
+                 <a href="blood_storage">  فصائل الدم</a>
+                  <span class="ms-auto">
+                    <i class="bi bi-chevron-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+
           </div>
           <div class="row">
           </div>
@@ -245,42 +261,47 @@
             <div class="col-md-12 mb-3">
               <div class="card">
                 <div class="card-header">
-                  <span><i class="bi bi-table me-2"></i></span> Data Table
+                  <span><i class="bi bi-table me-2"></i></span> قائمة بالمتبرعين
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table id="example" class="table table-striped data-table" style="width: 100%">
-                      <thead>
-                        <tr>
-                          <th>Name</th>
-                          <th>Position</th>
-                          <th>Office</th>
-                          <th>Age</th>
-                          <th>Start date</th>
-                          <th>Salary</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Tiger Nixon</td>
-                          <td>System Architect</td>
-                          <td>Edinburgh</td>
-                          <td>61</td>
-                          <td>2011/04/25</td>
-                          <td>$320,800</td>
-                        </tr>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <th>Name</th>
-                          <th>Position</th>
-                          <th>Office</th>
-                          <th>Age</th>
-                          <th>Start date</th>
-                          <th>Salary</th>
-                        </tr>
-                      </tfoot>
-                    </table>
+
+
+
+    <form action="{{ route('blood_storage') }}" method="GET">
+        <select name="blood_type">
+            <option value="">جميع فصائل الدم</option>
+            @foreach ($bloodTypes as $bloodType)
+                <option value="{{ $bloodType }}" {{ $selectedBloodType === $bloodType ? 'selected' : '' }}>{{ $bloodType }}</option>
+            @endforeach
+        </select>
+        <button type="submit" class="btn btn-primary " > بحث</button>
+
+    </form>
+  <br>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>الاسم</th>
+                <th>عنوان السكن</th>
+                <th>رقم الهاتف</th>
+                <th>فصيلة الدم</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($visitors as $visitor)
+                <tr>
+                    <td>{{ $visitor->Name }}</td>
+                    <td>{{ $visitor->Address }}</td>
+                    <td>{{ $visitor->Phone }}</td>
+                    <td>{{ $visitor->Typeofblood }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+
                   </div>
                 </div>
               </div>
