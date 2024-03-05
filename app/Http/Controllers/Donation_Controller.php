@@ -14,6 +14,7 @@ class Donation_Controller extends Controller
         $donation = new Donation;
 
         $donation->Dof_Donation = request()->Dof_Donation;
+        $donation->center_id = request()->Center_id;
         $donation->visitor_id = $_COOKIE["Id"];
         $donation->employee_id = 0;
         $donation->status_donation = false;

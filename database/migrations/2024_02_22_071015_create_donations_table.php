@@ -16,6 +16,7 @@ class CreateDonationsTable extends Migration
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
             $table->date('Dof_Donation')->nullable(); 
+            $table->foreignId('center_id')->nullable(); 
             $table->foreignId('visitor_id')->nullable(); 
             $table->foreignId('employee_id')->nullable(); 
             $table->boolean('status_donation')->default(false);

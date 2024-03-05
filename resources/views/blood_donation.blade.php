@@ -123,7 +123,7 @@
               <input type="text" id="Name_Visitor" readonly value = "{{$_COOKIE["User"]}}" name="Name" class="form-control text-center">
 
               <label class="date exception" for="">تاريخ الميلاد</label>
-              <input type="date" id="DOB_Visitor" readonly name="DOB_Visitor" value = "{{$_COOKIE["DoB"]}}" class="form-control exception text-center"
+              <input type="date" id="DOB_Visitor" readonly name="DOB" value = "{{$_COOKIE["DoB"]}}" class="form-control exception text-center"
                 style="cursor: pointer;">
 
             </div>
@@ -131,10 +131,10 @@
             <div class="form-group pt-1">
 
               <label class="text exception" for="">عنوان السكن</label>
-              <input type="text" id="Adds_Visitor" readonly value = "{{$_COOKIE["Adds"]}}" name="Adds_Visitor" class="form-control exception text-center">
+              <input type="text" id="Adds_Visitor" readonly value = "{{$_COOKIE["Adds"]}}" name="Addrees" class="form-control exception text-center">
 
               <label class="text exception" for="">رقم الهاتف</label>
-              <input type="text" id="Ph_Visitor" readonly value = "{{$_COOKIE["phone"]}}"  name="Ph_Visitor" class="form-control exception text-center">
+              <input type="text" id="Ph_Visitor" readonly value = "{{$_COOKIE["phone"]}}"  name="Phone" class="form-control exception text-center">
 
             </div>
 
@@ -142,10 +142,10 @@
 
               <label class="text exception" for="">نوع الفصيلة</label>
               <!-- TOB - Type of blood for the Visitor-->
-              <input type="text" id="TOB_Visitor" readonly value = "{{$_COOKIE["TOB"]}}"  name="TOB_Visitor" class="form-control exception text-center">
+              <input type="text" id="TOB_Visitor" readonly value = "{{$_COOKIE["TOB"]}}"  name="Typeofblood" class="form-control exception text-center">
 
               <label class="text exception" for="">الجنس</label>
-              <input type="text" id="Gender_Visitor" readonly value = "{{$_COOKIE["Gander"]}}"  name="Gender_Visitor" class="form-control exception text-center">
+              <input type="text" id="Gender_Visitor" readonly value = "{{$_COOKIE["Gander"]}}"  name="Gander" class="form-control exception text-center">
 
             </div>
 
@@ -156,7 +156,7 @@
               <input type="date" id="date" name="Dof_Donation" class="form-control exception" style="cursor: pointer;">
 
               <label class="text exception" for="">اسم المركز</label>
-              <select name="Name_Center" id="Name_Center" class="form-control exception" style="text-align: center; width: 85%;">
+              <select name="Center_id" id="Name_Center" class="form-control exception" style="text-align: center; width: 85%;">
                 <option value="">----اختر اسم المركز----</option>
                 @foreach ($NameCenters as $Option)
                        <option value="{{ $Option->id }}">{{ $Option->Addrees }}</option>
