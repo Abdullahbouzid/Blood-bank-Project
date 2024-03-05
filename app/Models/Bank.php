@@ -10,7 +10,12 @@ class Bank extends Model
     use HasFactory;
     protected $table = 'banks';
 
-    
+    protected $fillable = [
+        'id',
+        'Name',
+        'Addrees',
+        'Type'
+    ];
 
 
     public function employees()

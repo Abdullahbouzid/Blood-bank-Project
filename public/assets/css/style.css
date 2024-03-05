@@ -1,5 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
-body,
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+*{
+  font-family: "Cairo", sans-serif;
+}
 button {
   font-family: "Inter", sans-serif;
 }

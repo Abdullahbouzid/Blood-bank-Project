@@ -108,7 +108,7 @@
                 </div>
 
                 <div class="row mt-4 ">
-                    <form action="/blood-request" method="post" onsubmit="return checkDataRequest()">
+                    <form action="/Blood_Request" method="post" onsubmit="return checkDataRequest()">
                         @csrf
 
                         <div class="form-group">

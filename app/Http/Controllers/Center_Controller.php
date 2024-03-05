@@ -21,6 +21,10 @@ class Center_Controller extends Controller
     {
         // قم بإرجاع جميع البيانات المتاحة في جدول "المراكز"
         $NameCenters = Center::select('Name')->distinct()->get();
+        $Namebanks = Bank::select('Name')->distinct()->get();
+
+        $allNames=[...$NameCenters,...$Namebanks];
+        
 
         $type = $request->input('type') ?? '';
         $name = $request->input('name') ?? '';
@@ -40,7 +44,7 @@ class Center_Controller extends Controller
         $centerTypes = Center::select('Type')->distinct()->get();
         $bankTypes = Bank::select('Type')->distinct()->get();
             $allTyps= [...$centerTypes,...$bankTypes ];
-        return view('Blood_Center', compact('bloodBanks', 'centers','NameCenters','allTyps'));
+        return view('Blood_Center', compact('bloodBanks', 'centers','allNames','allTyps'));
 
        
     }

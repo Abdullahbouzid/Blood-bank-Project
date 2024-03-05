@@ -23,6 +23,10 @@ class CreateEmployeesTable extends Migration
             $table->integer('password')->nullable(); 
             $table->string('Addrees')->nullable(); 
             $table->string('Gander')->nullable(); 
+            $table->foreignId('Bank_id')->nullable();
+            
+            
+
             $table->timestamps();
         });
     }

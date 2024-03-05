@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\employee;
+use App\Models\Bank;
 use Illuminate\Http\Request;
 
 class Emp_Controller extends Controller
@@ -46,10 +47,21 @@ class Emp_Controller extends Controller
     {
         // $ShowEmps = employee::all();
         $ShowEmps = employee::where('Type', 'موظف')->get();
+        // $ShowEmps = employee::where('Type', 'موظف')
+        //             ->join('banks', 'employees.Bank_id', '=', 'banks.id')
+        //             ->select('employees.*', 'banks.bank_name', 'banks.bank_address')
+        //             ->get();
 
         
         return view('/Dashboards.empcontrol', compact('ShowEmps'));
     }
+    // public function destroy($id)
+    // {
+    // Employee::findOrFail($id)->delete();
+
+    // return redirect()->route('employees.index');
+    // }
+
     public function show_Admin()
     {
       

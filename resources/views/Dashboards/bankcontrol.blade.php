@@ -142,40 +142,75 @@
           <div class="col-lg-1 col-md-1 ">
           </div>
           <div class="col-lg-10 col-md-12 col-sm-12">
+             <form action="/bankcontrol" method="post" onsubmit="return checkDataRequest()">
+                  @csrf
               <div class="row">
-                <form action="/bankcontrol" method="POST">
-                @csrf
+               
             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="number" class="form-control" name="bank_num" placeholder="رقم المصرف" aria-label="First name">
+              <input type="number" class="form-control" name="id" placeholder="رقم المصرف" aria-label="First name">
             </div>
             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="text" class="form-control" name="nameof_bank" placeholder="البلدية التابع لها" aria-label="Last name">
+              <input type="text" class="form-control" name="Name" placeholder="البلدية التابع لها" aria-label="Last name">
             </div>
             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="text" class="form-control" name="bank_address" placeholder="العنوان" aria-label="Last name">
+              <input type="text" class="form-control" name="Addrees" placeholder="العنوان" aria-label="Last name">
             </div>
             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="text" class="form-control" name="bank_type" placeholder="نوع المصرف" aria-label="Last name">
+              <input type="text" class="form-control" name="Type" placeholder="نوع المصرف" aria-label="Last name">
             </div>
           <div class="mt-3">
            <button type="submit" class="btn btn-primary " > إضافة</button>
           </div>
-             
+              </div>
           </form>
           </div>
  
           
 
             </div>
-           
+             <div class="col-lg-1 col-md-1 ">
+          </div> 
 
               </div>
               
-           
+           {{-- هذا نموذج مخفي خاص بالتعديل  --}}
+           <div id="editModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">تعديل بيانات مصرف الدم</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <form action="/bankcontrol/update" method="post" onsubmit="return checkDataRequest()">
+                    @csrf
+                    <input type="hidden" id="editId" name="id">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
+                        <input type="number" class="form-control" id="editNumber" name="number" placeholder="رقم المصرف" aria-label="First name">
+                      </div>
+                      <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
+                        <input type="text" class="form-control" id="editName" name="Name" placeholder="البلدية التابع لها" aria-label="Last name">
+                      </div>
+                      <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
+                        <input type="text" class="form-control" id="editAddrees" name="Addrees" placeholder="العنوان" aria-label="Last name">
+                      </div>
+                      <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
+                        <input type="text" class="form-control" id="editType" name="Type" placeholder="نوع المصرف" aria-label="Last name">
+                      </div>
+                    </div>
+                    <div class="mt-3">
+                      <button type="submit" class="btn btn-primary">تعديل</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-1 col-md-1 ">
-          </div> 
-        </div>
+          
 
           <div class="row mt-5" >
             <div class="col-md-12 mb-3 ">
@@ -201,8 +236,19 @@
                           <td>{{ $ShowBank->Name }}</td>
                           <td>{{ $ShowBank->Addrees }}</td>
                           <td>{{ $ShowBank->Type }}</td>
-                          <td> <button type="button" class="btn btn-primary">تعديل</button></td>
-                          <td> <button type="button" class="btn btn-danger">حذف</button></td>
+                          {{-- <td>
+                          <form action="{{ route('bankcontrol.update') }}" method="post" onsubmit="return checkDataRequest()">
+                            @csrf
+                            <button type="button" class="btn btn-primary">تعديل</button>
+                          </form>
+                           </td> --}}
+                          <td>
+                          <form action="{{ route('bankcontrol.destroy', $ShowBank->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">حذف</button>
+                        </form>
+                          </td>
                         </tr>
                         @endforeach 
                       </tbody>
@@ -223,6 +269,61 @@
         <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>
         <script src="{{asset('assets/js/dataTables.bootstrap5.min.js')}}"></script>
         <script src="{{asset('assets//js/script.js')}}"></script>
+        <script>
+       
+
+          document.querySelectorAll('.btn-danger').forEach(button => {
+           button.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+                if (confirm('هل أنت متأكد من حذف مصرف الدم؟')) {
+               this.form.submit(); // Submit the form manually
+                         }
+                });
+            });
+
+        </script>
+
+        {{-- <script>
+         $(".btn-primary").click(function(event) {
+  event.preventDefault();
+
+  const row = $(this).closest("tr");
+  const id = row.find("td:first").text();
+
+  $("#editId").val(id);
+  $("#editNumber").val(row.find("td:nth-child(2)").text());
+  $("#editName").val(row.find("td:nth-child(3)").text());
+  $("#editAddrees").val(row.find("td:nth-child(4)").text());
+  $("#editType").val(row.find("td:nth-child(5)").text());
+
+  $("#editModal").modal("show");
+});
+
+$("#editModal").on("hidden.bs.modal", function() {
+  $(this).find("form")[0].reset();
+});
+
+$("#editForm").submit(function(event) {
+  event.preventDefault();
+
+  const data = $(this).serialize();
+
+  $.ajax({
+    url: "/bankcontrol/update",
+    method: "POST",
+    data: data,
+    success: function(response) {
+      // ... handle success response
+    },
+    error: function(error) {
+      // ... handle error response
+    }
+  });
+});
+
+  
+        </script> --}}
       </body>
     </html>
     

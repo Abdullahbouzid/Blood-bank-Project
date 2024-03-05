@@ -90,9 +90,10 @@
                 
                       <select class="form-select" aria-label="Default select example">
                         <option value="">Select</option>
-                        @foreach ($NameCenters as $nameOption)
-                            <option value="{{ $nameOption->id }}">{{ $nameOption->Name }}</option>
+                        @foreach ($allNames as $Option)
+                            <option value="{{ $Option->id }}">{{ $Option->Name }}</option>
                         @endforeach
+                       
                     </select>
                   
                     </div>
@@ -121,7 +122,7 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">اسم المركز</th>
+                                        <th scope="col">اسم البلدية</th>
                                         <th scope="col">نوع المركز</th>
                                         <th scope="col">عنوان المركز</th>
                                     </tr>

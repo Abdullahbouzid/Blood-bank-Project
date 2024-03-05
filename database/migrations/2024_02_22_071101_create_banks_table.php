@@ -18,7 +18,7 @@ class CreateBanksTable extends Migration
             $table->string('Name')->nullable();
             $table->string('Addrees')->nullable();
             $table->string('Type')->nullable();
-            $table->foreignId('employee_id')->nullable();
+            
    
             $table->timestamps();
         });

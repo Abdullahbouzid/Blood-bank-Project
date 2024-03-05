@@ -113,14 +113,25 @@ Route::get('/Blood_Center', [Center_Controller::class, 'showselect']);
 ################# Dashboard#########################
 
 // وحدة التحكم عرض المصارف
-Route::get('/bankcontrol', [Bank_Controller::class, 'index']);
+Route::get('/bankcontrol', [Bank_Controller::class, 'index'])->name('bankcontrol.index');
 //add new bank
-Route::post('/bankcontrol', [Bank_Controller::class, 'add_bank']);
+Route::post('/bankcontrol', [Bank_Controller::class, 'store']);
 
+//حذف صف في المصرف بناء على رقم المصرف
+Route::delete('/bankcontrol/{bank}', [Bank_Controller::class, 'destroy'])->name('bankcontrol.destroy');
+//تعديل بيانات مصرف معين
+// Route::post('/bankcontrol/update', [Bank_Controller::class, 'update'])->name('bankcontrol.update');
+
+
+
+ 
 // show emp
-Route::get('/empcontrol', [Emp_Controller::class, 'show_Emp'])->name('show emp only');
+Route::get('/empcontrol', [Emp_Controller::class, 'show_Emp'])->name('employees.index');
 //show the admins in dashboard
 Route::get('/admincontrol', [Emp_Controller::class, 'show_Admin'])->name('show admin only');
+//لحذف موظف 
+// Route::delete('/empcontrol/{employee}', [Emp_Controller::class,'destroy'])->name('employees.delete');
+
 
 
 //وحدة التحكم عرض مراكز التبرع

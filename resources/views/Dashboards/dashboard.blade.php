@@ -161,7 +161,7 @@
             </div>
             <div class="col-md-3 mb-3">
               <div class="card bg-info text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد
+                <div class="card-body py-5  offcanvas-center "><h1>{{$vistorCount}}</h1>
                   <img src="{{asset('img/icon/userinfo.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">

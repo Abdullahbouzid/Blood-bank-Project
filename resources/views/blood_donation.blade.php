@@ -111,12 +111,12 @@
 
         <div class="row mt-4">
 
-          <form action="/blood-donation" method="post" onsubmit="return checkDataDonation()">
+          <form action="/blood_donation" method="post" onsubmit="return checkDataDonation()">
             @csrf
 
             <div class="form-group">
               <label class="text exception" for="">الاسم الثلاثي</label>
-              <input type="text" id="Name_Visitor" name="Name_Visitor" class="form-control">
+              <input type="text" id="Name_Visitor" name="Name" class="form-control">
 
               <label class="date exception" for="">تاريخ الميلاد</label>
               <input type="date" id="DOB_Visitor" name="DOB_Visitor" class="form-control exception"

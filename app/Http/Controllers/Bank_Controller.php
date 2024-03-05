@@ -2,35 +2,58 @@
 
 namespace App\Http\Controllers;
 use App\Models\Bank;
-use Illuminate\Http\Request;
+
+
+use Illuminate\Database\QueryException;
 
 class Bank_Controller extends Controller
 {
     //
     public function index()
     {
-        // قم بإرجاع جميع البيانات المتاحة في جدول "مصرف الدم"
+        // إرجاع جميع البيانات المتاحة في جدول "مصرف الدم"
         $ShowBanks = Bank::all();
         
         return view('/Dashboards.bankcontrol', compact('ShowBanks'));
     }
-
-    public function add_bank()
+    
+    public function store()
     {
-       
 
         $bank = new Bank;
-        $bank->id = trim(request()->bank_num);
-        $bank->Name = trim(request()->nameof_bank);
-        $bank->Address = trim(request()->bank_address);
-        $bank->Type = trim(request()->bank_type);
-        $bank->save();
-        sleep(1);
+        $bank->id = trim(request()->id);
+        $bank->Name = trim(request()->Name);
+        $bank->Type = trim(request()->Type);
+        $bank->Addrees = trim(request()->Addrees);
 
+        $bank->save();
+
+        sleep(1);
         header("Location: /bankcontrol");
         exit;
 
     }
+    public function destroy(Bank $bank) 
+{
+    $bank->delete();
+
+    return redirect()->route('bankcontrol.index')->with('success', 'Blood bank deleted successfully!');
+}
+
+        // public function update(Bank $bank)
+        // {
+        //     $validatedData = $bank->validate([
+        //     'id' => 'required|integer',
+        //     'Name' => 'required|string',
+        //     'Addrees' => 'required|string',
+        //     'Type' => 'required|string',
+        //     ]);
+
+        //     $bank = Bank::find($bank->id);
+        //     $bank->update($validatedData);
+
+  
+        // }
  
 
 }

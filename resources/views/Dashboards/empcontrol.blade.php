@@ -215,6 +215,9 @@
                 <div class="card-body">
                   <div class="table-responsive">
                     <table id="example" class="table table-striped data-table" style="width: 100%">
+                      {{-- <form action="{{ route('employees.delete', $ShowEmp->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE') --}}
                       <thead>
                         <tr>
                           <th>رقم</th>
@@ -240,13 +243,14 @@
                           <td>{{ $ShowEmp->Gander }}</td>
                           <td>{{ $ShowEmp->Email }}</td>
                           <td>{{ $ShowEmp->password }}</td>
-
+                          {{-- <td>{{ $ShowEmp->bank_name }}</td> --}}
                           <td> <button type="button" class="btn btn-primary">تعديل</button></td>
-                          <td> <button type="button" class="btn btn-danger">حذف</button></td>
+                          <td> <button type="button" class="btn btn-danger" >حذف</button></td>
+                          {{-- <td> <button type="button" class="btn btn-danger" onclick="location.href='{{ route('employees.delete', $ShowEmp->id) }}'">حذف</button></td> --}}
                         </tr>
                         @endforeach 
                       </tbody>
-                     
+                      </form>
                     </table>
                   </div>
                 </div>

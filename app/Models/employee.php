@@ -10,6 +10,19 @@ class employee extends Model
     use HasFactory;
     protected $table = 'employees';
 
+    protected $fillable =[
+        'id',
+        'Name',
+        'DoB',
+        'Type',
+        'Email',
+        'Phone',
+        'password',
+        'Address',
+        'Gander',
+        'Bank_id',
+    ];
+
     // public function login(Request $request)
     // {
     //     $email = $request->input('Email_Emp');
@@ -38,13 +51,14 @@ class employee extends Model
         return $this->hasMany(donation::class);
     }
 
-    public function banks()
+  
+    public function bank()
     {
-        return $this->belongsTo(Bank::class);
+    return $this->belongsTo(Bank::class);
     }
 
-    public function centers()
-{
-    return $this->hasMany(Center::class);
-}
+//     public function centers()
+// {
+//     return $this->hasMany(Center::class);
+// }
 }

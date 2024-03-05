@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Center;
 use App\Models\Bank;
 use App\Models\employee;
+use App\Models\Visitor;
 use Illuminate\Http\Request;
 
 class countController extends Controller
@@ -16,6 +17,7 @@ class countController extends Controller
         $BanksCount = Bank::count();
         $AdminCount = employee::where('Type', 'مسؤول')->count();
         $EmpCount = employee::where('Type', 'موظف')->count();
-        return view('/Dashboards.dashboard', compact('CentersCount','BanksCount','AdminCount','EmpCount'));
+        $vistorCount=Visitor::count();
+        return view('/Dashboards.dashboard', compact('CentersCount','BanksCount','AdminCount','EmpCount','vistorCount'));
     }
 }
