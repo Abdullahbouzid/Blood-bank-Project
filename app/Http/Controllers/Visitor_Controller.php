@@ -31,6 +31,25 @@ class Visitor_Controller extends Controller
         sleep(1);
 
         setcookie("User", request()->Name);
+        setcookie("DoB", request()->DoB);
+        setcookie("Adds", request()->Addrees);
+        setcookie("phone", request()->Phone);
+        setcookie("TOB", request()->Typeofblood);
+        setcookie("Gander", request()->Gander);
+
+        $visitor = DB::table('visitors')
+            ->where([
+                ['Email', '=', request()->input('Email')],
+                ['Password', '=', request()->input('Password')]
+            ])
+            ->first();
+
+        if ($visitor) {
+            $idVisitor = Visitor::where('Email', request()->input('Email'))
+                ->value('id');
+        }
+
+        setcookie("Id", $idVisitor);
 
         return redirect('/home')->with('Name', request()->Name);
 
@@ -95,10 +114,10 @@ class Visitor_Controller extends Controller
 
 
 
-    public function destroy(Visitor $vitsit) 
+    public function destroy(Visitor $vitsit)
     {
         $vitsit->delete();
-    
+
         return redirect()->route('visitcontrol.index')->with('success', 'visitcontrol deleted successfully!');
     }
 

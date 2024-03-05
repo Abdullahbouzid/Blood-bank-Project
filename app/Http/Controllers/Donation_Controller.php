@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Donation;
+use App\Models\Center;
 
 class Donation_Controller extends Controller
 {
@@ -12,19 +13,26 @@ class Donation_Controller extends Controller
     {
         $donation = new Donation;
 
-        $donation->nameVisitor = trim(request()->Name_Visitor);
-        $donation->DOB_Visitor = trim(request()->DOB_Visitor);
-        $donation->Adds_Visitor = trim(request()->Adds_Visitor);
-        $donation->Ph_Visitor = trim(request()->Ph_Visitor);
-        $donation->TOB_Visitor = trim(request()->TOB_Visitor);
-        $donation->Gender_Visitor = trim(request()->Gender_Visitor);
-        $donation->DOD_Visitor = trim(request()->DOD_Visitor);
+        $donation->Dof_Donation = request()->Dof_Donation;
+        $donation->center_id = request()->Center_id;
+        $donation->visitor_id = $_COOKIE["Id"];
+        $donation->employee_id = 0;
+        $donation->status_donation = false;
 
         $donation->save();
 
         sleep(1);
-        header("Location: /blood-donation");
+        header("Location: /blood_donation");
         exit;
 
+    }
+
+    public function showCenters(Request $request)
+    {
+        // قم بإرجاع جميع البيانات المتاحة في جدول "المراكز"
+        // $NameCenters = Center::select('Addrees')->distinct()->get();
+        $NameCenters = Center::all();
+
+        return view('blood_donation', compact('NameCenters'));
     }
 }
