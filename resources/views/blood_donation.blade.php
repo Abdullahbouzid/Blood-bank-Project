@@ -68,7 +68,7 @@
             <img src="{{asset('img/icons8-user-50.png')}}" alt="" style="margin-left:5px;">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
               data-bs-toggle="dropdown" aria-expanded="false">
-              {{$_COOKIE["info"]}}
+              {{$_COOKIE["User"]}}
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li><a class="dropdown-item exc" href="#">حسابي</a></li>
@@ -120,10 +120,10 @@
 
             <div class="form-group">
               <label class="text exception" for="">الاسم الثلاثي</label>
-              <input type="text" id="Name_Visitor" name="Name_Visitor" class="form-control">
+              <input type="text" id="Name_Visitor" readonly name="Name_Visitor" value = "{{$_COOKIE["User"]}}" class="form-control text-center">
 
               <label class="date exception" for="">تاريخ الميلاد</label>
-              <input type="date" id="DOB_Visitor" name="DOB_Visitor" class="form-control exception"
+              <input type="date" id="DOB_Visitor" readonly name="DOB_Visitor" value = "{{$_COOKIE["DoB"]}}" class="form-control exception text-center"
                 style="cursor: pointer;">
 
             </div>
@@ -131,10 +131,10 @@
             <div class="form-group pt-1">
 
               <label class="text exception" for="">عنوان السكن</label>
-              <input type="text" id="Adds_Visitor" name="Adds_Visitor" class="form-control exception">
+              <input type="text" id="Adds_Visitor" readonly value = "{{$_COOKIE["Adds"]}}" name="Adds_Visitor" class="form-control exception text-center">
 
               <label class="text exception" for="">رقم الهاتف</label>
-              <input type="text" id="Ph_Visitor" name="Ph_Visitor" class="form-control exception">
+              <input type="text" id="Ph_Visitor" readonly value = "{{$_COOKIE["phone"]}}"  name="Ph_Visitor" class="form-control exception text-center">
 
             </div>
 
@@ -142,7 +142,8 @@
 
               <label class="text exception" for="">نوع الفصيلة</label>
               <!-- TOB - Type of blood for the Visitor-->
-              <select name="TOB_Visitor" id="TOB_Visitor" class="form-control" style="text-align: center ;">
+              <input type="text" id="TOB_Visitor" readonly value = "{{$_COOKIE["TOB"]}}"  name="TOB_Visitor" class="form-control exception text-center">
+              <!-- <select name="TOB_Visitor" id="TOB_Visitor" class="form-control" style="text-align: center ;">
                 <option value="">----اختر نوع الفصيلة----</option>
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
@@ -152,15 +153,16 @@
                 <option value="O-">O-</option>
                 <option value="AB+">AB+</option>
                 <option value="AB-">AB-</option>
-              </select>
+              </select> -->
 
               <label class="text exception" for="">الجنس</label>
-              <select name="Gender_Visitor" id="Gender_Visitor" class="form-control exception"
+              <input type="text" id="Gender_Visitor" readonly value = "{{$_COOKIE["Gander"]}}"  name="Gender_Visitor" class="form-control exception text-center">
+              <!-- <select name="Gender_Visitor" id="Gender_Visitor" class="form-control exception"
                 style="text-align: center;">
                 <option value="">--</option>
                 <option value="Male">ذكر</option>
                 <option value="Female">انثى</option>
-              </select>
+              </select> -->
 
             </div>
 

@@ -6,7 +6,7 @@
 /* START SECTION */
 
 body {
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
     font-family: var(--font-family);
 
 }
