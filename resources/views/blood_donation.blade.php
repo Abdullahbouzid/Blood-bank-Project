@@ -120,7 +120,7 @@
 
             <div class="form-group">
               <label class="text exception" for="">الاسم الثلاثي</label>
-              <input type="text" id="Name_Visitor" readonly value = "{{$_COOKIE["User"]}}" name="Name" class="form-control">
+              <input type="text" id="Name_Visitor" readonly value = "{{$_COOKIE["User"]}}" name="Name" class="form-control text-center">
 
               <label class="date exception" for="">تاريخ الميلاد</label>
               <input type="date" id="DOB_Visitor" readonly name="DOB_Visitor" value = "{{$_COOKIE["DoB"]}}" class="form-control exception text-center"
