@@ -35,7 +35,7 @@ class Visitor_Controller extends Controller
         return redirect('/home')->with('Name', request()->Name);
 
     }
-    public function show_visitor_control()
+    public function index()
     {
         $vitsits = Visitor::all();
 
@@ -87,5 +87,14 @@ class Visitor_Controller extends Controller
         } else {
             return redirect('/');
         }
+    }
+
+
+
+    public function destroy(Visitor $vitsit) 
+    {
+        $vitsit->delete();
+    
+        return redirect()->route('visitcontrol.index')->with('success', 'visitcontrol deleted successfully!');
     }
 }

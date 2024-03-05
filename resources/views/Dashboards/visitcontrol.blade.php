@@ -142,7 +142,7 @@
             <div class="col-md-12 mb-3 ">
               <div class="card">
                 <div class="card-header">
-                  <span><i class="bi bi-table me-2"></i></span> بيانات مصارف الدم 
+                  <span><i class="bi bi-table me-2"></i></span> بيانات زوار الموقع
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -175,8 +175,13 @@
                               <td>{{ $vitsit->Email }}</td>
                               <td>{{ $vitsit->Password }}</td>
                               <td> <button type="button" class="btn btn-primary">تعديل</button></td>
-                              <td> <button type="button" class="btn btn-danger">حذف</button></td>
-                             
+                              <td>
+                                <form action="{{ route('visitcontrol.destroy', $vitsit->id) }}" method="POST">
+                                  @csrf
+                                  @method('DELETE')
+                                  <button type="submit" class="btn btn-danger">حذف</button>
+                              </form>
+                                </td>
                         </tr>
                             @endforeach 
                        
@@ -198,6 +203,23 @@
         <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>
         <script src="{{asset('assets/js/dataTables.bootstrap5.min.js')}}"></script>
         <script src="{{asset('assets//js/script.js')}}"></script>
+
+
+
+        <script>
+       
+
+          document.querySelectorAll('.btn-danger').forEach(button => {
+           button.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+                if (confirm('هل أنت متأكد من حذف الزار؟')) {
+               this.form.submit(); // Submit the form manually
+                         }
+                });
+            });
+
+        </script>
       </body>
     </html>
     

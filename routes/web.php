@@ -109,6 +109,13 @@ Route::get('/Blood_Center', [Center_Controller::class, 'showselect']);
 
 ################# Dashboard #########################
 
+
+//وحدة التحكم عرض عدد جميع المتطلبات
+Route::get('/dashboard', [countController::class, 'Show_count']);
+
+
+##############وحدة التحكم في للموظفين ################
+
 // وحدة التحكم عرض المصارف
 Route::get('/bankcontrol', [Bank_Controller::class, 'index'])->name('bankcontrol.index');
 //add new bank
@@ -121,23 +128,33 @@ Route::delete('/bankcontrol/{bank}', [Bank_Controller::class, 'destroy'])->name(
 
 
 
- 
+####وحدة التحكم في للموظفين ########
 // show emp
-Route::get('/empcontrol', [Emp_Controller::class, 'show_Emp'])->name('employees.index');
+Route::get('/empcontrol', [Emp_Controller::class, 'show_Emp'])->name('empcontrol.show_Emp');
+//حذف موظف
+Route::delete('/empcontrol/{emp}', [Emp_Controller::class, 'destroy'])->name('empcontrol.destroy');
+
+
+
+
+##############وحدة التحكم في المسؤولين#############
 //show the admins in dashboard
 Route::get('/admincontrol', [Emp_Controller::class, 'show_Admin'])->name('show admin only');
-//لحذف موظف 
-// Route::delete('/empcontrol/{employee}', [Emp_Controller::class,'destroy'])->name('employees.delete');
 
 
-
+#########وحدة التحكم في المراكز##################
 //وحدة التحكم عرض مراكز التبرع
 Route::get('/centercontrol', [Center_Controller::class, 'show_center_incontrol']);
-//وحدة التحكم عرض عدد جميع المتطلبات
-Route::get('/dashboard', [countController::class, 'Show_count']);
 
 
+
+
+
+##### //وحدة التحكم في الزائرين #####
 //وحدة التحكم عرض بيانات المستخدمين
-Route::get('/visitcontrol', [Visitor_Controller::class, 'show_visitor_control']);
+Route::get('/visitcontrol', [Visitor_Controller::class, 'index'])->name('visitcontrol.index');
+//حذف صف في المصرف بناء على رقم المصرف
+Route::delete('/visitcontrol/{vitsit}', [Visitor_Controller::class, 'destroy'])->name('visitcontrol.destroy');
+
 
 

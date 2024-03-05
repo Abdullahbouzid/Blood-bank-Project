@@ -245,8 +245,13 @@
                           <td>{{ $ShowEmp->password }}</td>
                           {{-- <td>{{ $ShowEmp->bank_name }}</td> --}}
                           <td> <button type="button" class="btn btn-primary">تعديل</button></td>
-                          <td> <button type="button" class="btn btn-danger" >حذف</button></td>
-                          {{-- <td> <button type="button" class="btn btn-danger" onclick="location.href='{{ route('employees.delete', $ShowEmp->id) }}'">حذف</button></td> --}}
+                          <td>
+                          <form action="{{ route('empcontrol.destroy', $ShowEmp->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">حذف</button>
+                        </form>
+                          </td>
                         </tr>
                         @endforeach 
                       </tbody>
@@ -267,6 +272,23 @@
         <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>
         <script src="{{asset('assets/js/dataTables.bootstrap5.min.js')}}"></script>
         <script src="{{asset('assets//js/script.js')}}"></script>
+
+        <script>
+       
+
+          document.querySelectorAll('.btn-danger').forEach(button => {
+           button.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+                if (confirm('هل أنت متأكد من حذف هذا الموظف؟')) {
+               this.form.submit(); // Submit the form manually
+                         }
+                });
+            });
+
+        </script>
+
+
       </body>
     </html>
     

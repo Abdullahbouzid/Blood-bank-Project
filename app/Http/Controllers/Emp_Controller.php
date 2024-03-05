@@ -55,12 +55,7 @@ class Emp_Controller extends Controller
         
         return view('/Dashboards.empcontrol', compact('ShowEmps'));
     }
-    // public function destroy($id)
-    // {
-    // Employee::findOrFail($id)->delete();
 
-    // return redirect()->route('employees.index');
-    // }
 
     public function show_Admin()
     {
@@ -70,4 +65,12 @@ class Emp_Controller extends Controller
         
         return view('/Dashboards.admincontrol', compact('ShowAdmins'));
     }
+
+    public function destroy(employee $emp) 
+    {
+        $emp->delete();
+    
+        return redirect()->route('empcontrol.show_Emp')->with('success', 'empcontrol deleted successfully!');
+    }
+
 }
