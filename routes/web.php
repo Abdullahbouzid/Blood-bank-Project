@@ -101,6 +101,9 @@ Route::post("/", [Visitor_Controller::class, 'loginUser']);
 // عرض مراكز التبرع
 Route::get('/Blood_Center', [Center_Controller::class, 'showselect']);
 
+Route::get('/blood_donation', [Donation_Controller::class, 'showCenters']);
+
+
 
 // tast 
 

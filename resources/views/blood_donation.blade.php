@@ -156,10 +156,15 @@
               <input type="date" id="date" name="Dof_Donation" class="form-control exception" style="cursor: pointer;">
 
               <label class="text exception" for="">اسم المركز</label>
-              <select name="Name_Center" id="Name_Center" class="form-control exception" style="text-align: center;">
+              <select name="Name_Center" id="Name_Center" class="form-control exception" style="text-align: center; width: 85%;">
                 <option value="">----اختر اسم المركز----</option>
-                <option value="TR">مؤقت: طرابلس الطبي</option>
+                @foreach ($NameCenters as $Option)
+                       <option value="{{ $Option->id }}">{{ $Option->Addrees }}</option>
+                   @endforeach
+
               </select>
+
+              <img src="{{asset('img/icons8-info-40.png')}}" alt="" title="لتفاصيل اكتر حول المركز توجه نحو صفحة مراكز التبرع" style="height: 25px; margin-top:7px; padding-right: 1%; padding-left: 1%;">
 
             </div>
         </div>
