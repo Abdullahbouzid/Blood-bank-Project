@@ -141,25 +141,19 @@
                             {{-- Type of blood for the Patient --}}
                             <select name="TOB_Patient" id="TOB_Patient" class="form-control"
                                 style="text-align: center ;">
-                                <option value="">----اختر نوع الفصيلة----</option>
-                                <option value="A+">A+</option>
-                                <option value="A-">A-</option>
-                                <option value="B+">B+</option>
-                                <option value="B-">B-</option>
-                                <option value="O+">O+</option>
-                                <option value="O-">O-</option>
-                                <option value="AB+">AB+</option>
-                                <option value="AB-">AB-</option>
+                                <option value="A+" {{$_COOKIE["TOB"] === "A+" ? "selected" : "--"}} >A+</option>
+                                            <option value="A-" {{$_COOKIE["TOB"] === "A-" ? "selected" : "--"}}>A-</option>
+                                            <option value="B+" {{$_COOKIE["TOB"] === "B+" ? "selected" : "--"}}>B+</option>
+                                            <option value="B-" {{$_COOKIE["TOB"] === "B-" ? "selected" : "--"}}>B-</option>
+                                            <option value="O+" {{$_COOKIE["TOB"] === "O+" ? "selected" : "--"}}>O+</option>
+                                            <option value="O-" {{$_COOKIE["TOB"] === "O-" ? "selected" : "--"}}>O-</option>
+                                            <option value="AB+" {{$_COOKIE["TOB"] === "AB+" ? "selected" : "--"}}>AB+</option>
+                                            <option value="AB-" {{$_COOKIE["TOB"] === "AB-" ? "selected" : "--"}}>AB-</option>
                             </select>
 
                             <label class="text exception" for="">الجنس</label>
                             <input type="text" id="Gander_Patient" readonly value = "{{$_COOKIE["Gander"]}}"  name="Gander_Patient" class="form-control exception text-center">
-                            <!-- <select name="Gander_Patient" id="Gander_Patient" readonly value = "{{$_COOKIE["Gander"]}}" class="form-control exception"
-                                style="text-align: center;">
-                                <option value="">--</option>
-                                <option value="Male">ذكر</option>
-                                <option value="Female">انثى</option>
-                            </select> -->
+
                         </div>
 
                         <div class="form-group pt-1 ">

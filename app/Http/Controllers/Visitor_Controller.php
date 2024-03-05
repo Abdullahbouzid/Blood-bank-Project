@@ -57,6 +57,9 @@ class Visitor_Controller extends Controller
             ])
             ->first();
         if ($visitor) {
+            $idVisitor = Visitor::where('Email', $request->input('Email'))
+                ->value('id');
+
             $name = Visitor::where('Email', $request->input('Email'))
                 ->value('Name');
 
@@ -75,6 +78,7 @@ class Visitor_Controller extends Controller
             $gender = Visitor::where('Email', $request->input('Email'))
                 ->value('Gander');
 
+            setcookie("Id", $idVisitor);
             setcookie("User", $name);
             setcookie("DoB", $dateOfBirth);
             setcookie("Adds", $address);
