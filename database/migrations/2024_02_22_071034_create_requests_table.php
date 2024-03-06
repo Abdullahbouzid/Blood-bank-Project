@@ -15,9 +15,11 @@ class CreateRequestsTable extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('visitor_id')->nullable(); 
-            $table->foreignId('employee_id')->nullable(); 
-            $table->boolean('status_request')->default(false);
+            $table->foreignId('visitor_id')->nullable();
+            $table->foreignId('employee_id')->nullable();
+            $table->string('typeofblood')->nullable();
+            $table->integer('no_bags')->nullable();
+            $table->string('status_request')->default(false);
             $table->timestamps();
         });
     }

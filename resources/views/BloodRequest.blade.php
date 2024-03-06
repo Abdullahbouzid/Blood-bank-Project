@@ -118,7 +118,7 @@
 
                         <div class="form-group">
                             <label class="text exception" for="">الاسم الثلاثي</label>
-                            <input type="text" id="Name_Patient" name="Name_Patient" readonly value = "{{$_COOKIE["User"]}}" class="form-control text-center">
+                            <input type="text" id="Name_Patient" name="Name" readonly value = "{{$_COOKIE["User"]}}" class="form-control text-center">
 
                             <label class="date exception" for="">تاريخ الميلاد</label>
                             <input type="date" id="DOB_Patient" name="DOB_Patient" readonly value = "{{$_COOKIE["DoB"]}}" class="form-control exception text-center"
@@ -139,7 +139,7 @@
 
                             <label class="text exception" for="">نوع الفصيلة</label>
                             {{-- Type of blood for the Patient --}}
-                            <select name="TOB_Patient" id="TOB_Patient" class="form-control"
+                            <select name="Typeofblood" id="TOB_Patient" class="form-control"
                                 style="text-align: center ;">
                                 <option value="A+" {{$_COOKIE["TOB"] === "A+" ? "selected" : "--"}} >A+</option>
                                             <option value="A-" {{$_COOKIE["TOB"] === "A-" ? "selected" : "--"}}>A-</option>
@@ -159,14 +159,14 @@
                         <div class="form-group pt-1 ">
 
                             <label class="text exception" for="">عدد الاكياس</label>
-                            <input type="number" id="Adds_Patient" name="Adds_Patient" min = "1" class="form-control">
+                            <input type="number" id="Adds_Patient" name="NO_Bags" min = "1" class="form-control">
 
                             <label class="text exception" for="">حالة الطلب</label>
-                            <select name="State_of_Patient" id="State_of_Patient" class="form-control exception"
+                            <select name="Status_Request" id="State_of_Patient" class="form-control exception"
                                 style="text-align: center;">
                                 <option value="">--</option>
-                                <option value="Urgent">مستعجل</option>
-                                <option value="nonUrgent">غير مستعجل</option>
+                                <option value="مستعجل">مستعجل</option>
+                                <option value="غير مستعجل">غير مستعجل</option>
                             </select>
 
                         </div>
