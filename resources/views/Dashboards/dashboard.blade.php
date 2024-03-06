@@ -69,9 +69,9 @@
                   </a>
                 </li>
                 <li>
-                  <a href="visitcontrol" class="nav-link px-3">
+                  <a href="visitcontrol" class="nav-link px-3" >
                     <span class="me-2"><i class="bi bi-person-circle px-3" style="color: white;"></i></span>
-                    <span  style="color: white;">المستخدمين</span>
+                    <span  style="color: white; ">المستخدمين</span>
                   </a>
                 </li>
                 <a  class="nav-link px-3 sidebar-link" data-bs-toggle="collapse"  href="#layouts">
@@ -128,7 +128,9 @@
             </nav>
           </div>
           <span style="color: white; padding-right: 30%;">{{$_COOKIE["Type"]}}: {{$_COOKIE["User"]}}</span>
-      </div>
+          <a href="login_admin" style="color: white; padding-right: 30%; text-decoration: none;">تسجيل الخروج</a>
+
+        </div>
       <!-- offcanvas -->
       <main class="mt-5 pt-1" >
         <div class="container-fluid">
