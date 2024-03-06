@@ -92,6 +92,8 @@ Route::post("/Blood_Request", [Request_Controller::class, 'store']);
 
 Route::post("/", [Visitor_Controller::class, 'loginUser']);
 
+Route::post("/login_admin", [Emp_Controller::class, 'login']);
+
 // ############################################
 
 

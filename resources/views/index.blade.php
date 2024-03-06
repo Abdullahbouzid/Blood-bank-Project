@@ -44,31 +44,41 @@
               <label class="text" for="">البريد الالكتروني</label>
               <input type="email" id="email" name="Email" value="{{old('Email')}}"
                 class="form-control text-center mt-1 mb-1" placeholder="user@email.com">
-              <span style="color: red; display:block;">
                 @error('Email')
-                البريد الالكتروني المدخل غير مسجل لدينا. يرجى التحقق مرة اخرى او التسجيل
-                <!-- {{ $message }} -->
-
-                @enderror
+              <span style="color: red; display:block;">
+              @if ($message == 'The selected email is invalid.')
+               البريد الالكتروني المدخل غير صحيح . يرجى التحقق مرة اخرى او انشاء حساب
+               @else
+            {{ $message }}
+                @endif
               </span>
+              @enderror
 
               <label class="text mt-2" for="">كلمة المرور</label>
               <input type="password" id="password" name="Password" value="{{old('Password')}}"
                 class="form-control text-center mt-1 mb-2" placeholder="ادخل  كلمة المرور">
-              <span style="color: red">
                 @error('Password')
-                {{$message}}
-                <br>
-                @enderror
+              <span style="color: red">
+              @if (
+  $message == 'The password must be at least 8 characters.'
+)
+كلمة المرور يجب الا تقل عن 8 خانات
+@elseif (
+  $message == 'The selected password is invalid.'
+)
+                    كلمة المرور المدخلة غير صحيحة  
+
+                 @else
+                {{ $message }}
+                @endif
               </span>
+              @enderror
             </div>
             <br>
 
             <div class="form-group">
 
               <button type="submit" class="submit">تسجيل الدخول</button>
-              {{-- <button type="submit" class="submit"><a href="home" --}} {{--
-                  style=" color: white; font-size: 18px; font-weight: bold;">تسجيل الدخول</a></button> --}}
 
             </div>
             <br>

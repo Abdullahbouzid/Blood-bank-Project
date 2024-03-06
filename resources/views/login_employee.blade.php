@@ -29,7 +29,7 @@
         <div class="row pt-5">
             <div class="col-sm-6">
                 <div class="bg-white pt-4 p-5 my-5"
-                    style=" box-shadow: -1px 4px 1px -1px #616263;border-radius: 20px; color: #616263;">
+                    style="border-radius: 20px; color: #616263;">
 
                     <div class="contianer" style="display: flex; justify-content: center;">
                         <img src="{{asset('img/blood bank.png')}}" alt="Logo" height="130px">

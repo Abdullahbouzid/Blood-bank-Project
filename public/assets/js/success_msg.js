@@ -67,22 +67,22 @@ function checkDataRequest() {
 function checkData_CreateVisitor() {
     var username = document.getElementById('username').value;
     var email = document.getElementById('email').value;
+    var dob = document.getElementById('DOB_Visitor').value;
+    var adds = document.getElementById('adds').value;
+    var phone = document.getElementById('phone').value;
+    var tob = document.getElementById('TOB_Visitor').value;
+    var gender = document.getElementById('gender').value;
     var password = document.getElementById('password').value;
     var password_again = document.getElementById('password_again').value;
 
     var emailErrorElement = document.getElementById('email-error');
 
-    if (!username || !email || !password || !password_again) {
+    if (!username || !email || !dob || !adds ||
+        !phone || !tob || !gender || !password || !password_again) {
         alert("من فضلك قم بالتأكد من إدخال جميع البيانات المطلوبة ");
 
         return false;
     }
-
-    // if (emailErrorElement.dataset.error === 'emailExists') {
-    //     alert("البريد الالكتروني مسجل لدينا مسبقا");
-
-    //     return false;
-    // }
 
     return true;
 
@@ -113,16 +113,8 @@ function checkData_LoginVisitor() {
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
 
-    // var emailErrorElement = document.getElementById('email-error');
-
     if (!email || !password) {
         alert("أدخل بيانات تسجيل الدخول الخاصة بك");
-
-        return false;
-    }
-
-    if (emailErrorElement.dataset.error === 'emailNotExists') {
-        alert("البريد الالكتروني المدخل غير مسجل لدينا. يرجى التحقق مرة اخرى او التسجيل");
 
         return false;
     }
@@ -130,3 +122,18 @@ function checkData_LoginVisitor() {
     return true;
 
 }
+
+function checkData_LoginEmp() {
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+
+    if (!email || !password) {
+        alert("أدخل بيانات تسجيل الدخول الخاصة بك");
+
+        return false;
+    }
+
+    return true;
+
+}
+

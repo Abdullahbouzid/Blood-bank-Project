@@ -29,7 +29,7 @@
         <div class="row pt-5">
             <div class="col-sm-6">
                 <div class="bg-white pt-4 p-5 my-5"
-                    style=" box-shadow: -1px 4px 1px -1px #616263;border-radius: 20px; color: #616263;">
+                    style=";border-radius: 20px; color: #616263;">
 
                     <div class="contianer" style="display: flex; justify-content: center;">
                         <img src="{{asset('img/blood bank.png')}}" alt="Logo" height="130px">
@@ -37,28 +37,49 @@
                     </div>
 
                     <div class="container">
-                        <form>
-
+                    <form action="/login_admin" method="post" onsubmit="return checkData_LoginEmp()">
+                        @csrf
                             <div class="form-group pt-4">
 
                                 <label class="text" for="">البريد الالكتروني</label>
-                                <input type="email" id="" name="email" required class="form-control text-center mt-1"
+                                <input type="email" id="email" name="Email" value="{{old('Email')}}" class="form-control text-center mt-1"
                                     placeholder="user@email.com">
+                                    @error('Email')
+              <span style="color: red; display:block;">
+              @if ($message == 'The selected email is invalid.')
+               البريد الالكتروني المدخل غير صحيح . يرجى التحقق مرة اخرى او انشاء حساب
+               @else
+            {{ $message }}
+                @endif
+              </span>
+              @enderror
 
                                 <label class="text pt-3" for="">كلمة المرور</label>
-                                <input type="text" id="" name="password" required
+                                <input type="password" id="password" name="Password"  value="{{old('Password')}}"
                                     class="form-control text-center mt-1 mb-1" placeholder="ادخل  كلمة السر">
+                                    @error('Password')
+              <span style="color: red">
+              @if (
+    $message == 'The password must be at least 8 characters.'
+)
+كلمة المرور يجب الا تقل عن 8 خانات
+@elseif (
+    $message == 'The selected password is invalid.'
+)
+                    كلمة المرور المدخلة غير صحيحة  
 
+                 @else
+                {{ $message }}
+                @endif
+              </span>
+              @enderror
                             </div>
 
                             <br>
 
                             <div class="form-group">
 
-                                <!-- <button type="submit" class="submit" >تسجيل الدخول</button> -->
-                                <button type="submit" class="submit"><a href=""
-                                        style=" color: white; font-size: 18px; font-weight: bold;">تسجيل
-                                        الدخول</a></button>
+                                <button type="submit" class="submit" >تسجيل الدخول</button>
 
                             </div>
 
@@ -70,6 +91,8 @@
         </div>
 
     </div>
+
+    <script src="/assets/js/success_msg.js"></script>
 
 </body>
 

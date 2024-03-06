@@ -128,6 +128,8 @@
             </ul>
           </nav>
         </div>
+        <span style="color: white; padding-right: 30%;">{{$_COOKIE["Type"]}}: {{$_COOKIE["User"]}}</span>
+
       </div>
       <!-- offcanvas -->
      

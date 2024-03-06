@@ -39,11 +39,12 @@
                             style="padding-right: 39%;">
                         <br>
                         <form action="/CreateAccount" method="post" onsubmit="return checkData_CreateVisitor()">
+                        <!-- <form action="/CreateAccount" method="post" onsubmit=""> -->
                             @csrf
 
                             <div class="form-group" style = "">
                                 <label class="text mb-1" for="" style = "">الاسم الثلاثي</label>
-                                <input type="username" id="username" name="Name" value="{{old('Username')}}"
+                                <input type="username" id="username" name="Name" value="{{old('Name')}}"
                                        class="form-control text-center" style = "" placeholder="اكتب اسمك الثلاثي">
                             </div>
 
@@ -52,30 +53,33 @@
                                         <label class="text mb-1" for="" style = "display: block;">البريد الالكتروني</label>
                                         <input type="email" id="email" name="Email" value="{{old('Email')}}"
                                                class="form-control text-center" style = "display: inline;" placeholder="user@email.com"> 
+                                               @error('Email')
                                                 <!-- <span id="email-error" data-error="emailExists" style="color: red; display:block;"> -->
-                                                <!-- @error('Email') -->
-                                                <!-- البريد الالكتروني مسجل لدينا مسبقا -->
-                                                <!-- {{ $message }} -->
+                                                <span style="color: red; display:block;">
+                                                @if ($message == 'The email has already been taken.')
+                                                      البريد الالكتروني موجود مسبقا
 
-                                                <!-- @enderror -->
-                                                <!-- </span> -->
+                                                @endif
+
+                                            </span> 
+                                                @enderror
                                     </div>
                                     <div class="form-group" style = "">
                                         <label class="text mb-1" for="" style = "display: block;">تاريخ الميلاد</label>
-                                        <input type="date" id="DOB_Visitor" name="DoB" class="form-control"
+                                        <input type="date" id="DOB_Visitor" name="DoB" value="{{old('DoB')}}" class="form-control"
                                                style="cursor: pointer;">
                                     </div>
                                     <div class="form-group" style = "">
                                         <label class="text mb-1 mt-1" for="">عنوان السكن</label>
-                                        <input type="text" id="Adds_Visitor" name="Addrees" class="form-control">
+                                        <input type="text" id="adds" name="Addrees" value="{{old('Addrees')}}" class="form-control">
                                     </div>
                                     <div class="form-group" style = "">
                                         <label class="text mb-1 mt-1" for="">رقم الهاتف</label>
-                                        <input type="text" id="Ph_Visitor" name="Phone" class="form-control">
+                                        <input type="text" id="phone" name="Phone" value="{{old('Phone')}}" class="form-control">
                                     </div>
                                     <div class="form-group" style = "">
                                         <label class="text mb-1 mt-1" for="">نوع الفصيلة</label>
-                                        <select name="Typeofblood" id="TOB_Visitor" class="form-control"
+                                        <select name="Typeofblood" id="TOB_Visitor" value="{{old('Typeofblood')}}" class="form-control"
                                                 style="text-align: center ;">
                                             <option value="">----اختر نوع الفصيلة----</option>
                                             <option value="A+">A+</option>
@@ -90,7 +94,7 @@
                                     </div>
                                     <div class="form-group" style = "">
                                         <label class="text mb-1 mt-1" for="">الجنس</label>
-                                        <select name="Gander" id="Gender_Visitor" class="form-control"
+                                        <select name="Gander" id="gender" value="{{old('Gander')}}" class="form-control" 
                                                 style="text-align: center; display: flex; align-items: center; width:99%; margin-left: 50%;">
                                             <option value="">--</option>
                                             <option value="ذكر">ذكر</option>

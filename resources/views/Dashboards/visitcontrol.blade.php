@@ -129,6 +129,8 @@
             </ul>
           </nav>
         </div>
+        <span style="color: white; padding-right: 30%;">{{$_COOKIE["Type"]}}: {{$_COOKIE["User"]}}</span>
+
       </div>
       <!-- offcanvas -->
       <main class="mt-5 pt-5" >
@@ -163,7 +165,7 @@
                       <tbody>
                        
                          
-                            @foreach ($vitsits  as $vitsit)
+                            @foreach ($vitsits as $vitsit)
                              <tr>
                               <td>{{ $vitsit->id }}</td>
                               <td>{{ $vitsit->Name }}</td>
