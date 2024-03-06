@@ -120,4 +120,7 @@ class Visitor_Controller extends Controller
 
         return redirect()->route('visitcontrol.index')->with('success', 'visitcontrol deleted successfully!');
     }
+
+
+   
 }
