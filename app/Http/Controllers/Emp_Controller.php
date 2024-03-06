@@ -7,27 +7,29 @@ use Illuminate\Http\Request;
 
 class Emp_Controller extends Controller
 {
-    //حفظ بيانات موظف جديد
-    // public function requestPatient()
-    // {
+    public function store()
+    {
 
-    //     $request = new Request;
-    //     $request->Name_Emp = trim(request()->Name_Emp);
-    //     $request->DoB_Emp = trim(request()->DoB_Emp);
-    //     $request->Type_Emp = trim(request()->Type_Emp);
-    //     $request->Email_Emp = trim(request()->Email_Emp);
-    //     $request->Phone_Emp = trim(request()->Phone_Emp);
-    //     $request->password_Emp = trim(request()->password_Emp);
-    //     $request->Adds_Emp = trim(request()->Adds_Emp);
-    //     $request->Gander_Emp = trim(request()->Gander_Emp);
+        $emp = new employee;
+       
+        $emp->id = trim(request()->id);
+        $emp->DoB = trim(request()->DoB);
+        $emp->Name = trim(request()->Name);
+        $emp->Type = trim(request()->Type);
+        $emp->Addrees = trim(request()->Addrees);
+        $emp->Email = trim(request()->Email);
+        $emp->Phone = trim(request()->Phone);
+        $emp->Gander = trim(request()->Gander);
+        $emp->Password = trim(request()->Password);
+        $emp->Bank_id = trim(request()->Bank_id);
+        
+        $emp->save();
 
-    //     $request->save();
+        sleep(1);
+        header("Location: /empcontrol");
+        exit;
 
-    //     sleep(1);
-    //     header("Location: /dashboard");
-    //     exit;
-
-    // }
+    }
 
     public function login(Request $request)
     {
@@ -45,16 +47,23 @@ class Emp_Controller extends Controller
 
     public function show_Emp()
     {
-        // $ShowEmps = employee::all();
+      
         $ShowEmps = employee::where('Type', 'موظف')->get();
-        // $ShowEmps = employee::where('Type', 'موظف')
-        //             ->join('banks', 'employees.Bank_id', '=', 'banks.id')
-        //             ->select('employees.*', 'banks.bank_name', 'banks.bank_address')
-        //             ->get();
-
+       
+        $banknames= Bank::select('Name')->distinct()->get();
+         $banks =Bank::select('Addrees')->distinct()->get();
+      
         
-        return view('/Dashboards.empcontrol', compact('ShowEmps'));
+        return view('/Dashboards.empcontrol', compact('ShowEmps','banknames','banks'));
     }
+    
+    
+    // public function getWorkplaces(Request $request)
+    // {
+    // $banknames = $request->banknames;
+    // $banknames = Bank::where('Name', $banknames)->get();
+    // return view('control.getWorkplaces', compact('banknames'));
+    // }
 
 
     public function show_Admin()
@@ -72,5 +81,8 @@ class Emp_Controller extends Controller
     
         return redirect()->route('empcontrol.show_Emp')->with('success', 'empcontrol deleted successfully!');
     }
+
+ 
+
 
 }

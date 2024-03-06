@@ -17,7 +17,7 @@ class CreateCentersTable extends Migration
             $table->id();
             $table->string('Name')->nullable();
             $table->string('Addrees')->nullable();
-            $table->string('Type')->nullable();
+            $table->string('Type')->default('متحرك');
             $table->foreignId('bank_id')->nullable(); 
             $table->timestamps();
         });

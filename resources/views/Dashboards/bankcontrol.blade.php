@@ -155,9 +155,7 @@
             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
               <input type="text" class="form-control" name="Addrees" placeholder="العنوان" aria-label="Last name">
             </div>
-            <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="text" class="form-control" name="Type" placeholder="نوع المصرف" aria-label="Last name">
-            </div>
+          
           <div class="mt-3">
            <button type="submit" class="btn btn-primary " > إضافة</button>
           </div>

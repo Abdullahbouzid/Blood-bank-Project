@@ -17,8 +17,8 @@ class CreateBanksTable extends Migration
             $table->id();
             $table->string('Name')->nullable();
             $table->string('Addrees')->nullable();
-            $table->string('Type')->nullable();
-            
+            $table->string('Type')->default('ثابت');
+        
    
             $table->timestamps();
         });

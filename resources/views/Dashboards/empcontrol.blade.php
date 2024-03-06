@@ -135,65 +135,68 @@
         <br>
         <h3 style="text-align: center">لإضافة الموظف يجب تعبئة البيانات الاتية</h3>
         <br>
-
+ 
         <div class="row">
 
           <div class="col-lg-1 col-md-1 ">
           </div>
           <div class="col-lg-10 col-md-12 col-sm-12">
-            <form action="">
-              <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12">
+              <form action="/empcontrol" method="post" onsubmit="return checkDataRequest()">
+                   @csrf
+               <div class="row">
+                
+             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
+               <input type="number" class="form-control" name="id" placeholder="رقم الموظف" aria-label="First name">
+             </div>
+             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
+               <input type="text" class="form-control" name="Name" placeholder="اسم الموظف" aria-label="Last name">
+             </div>
+             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
+               <input type="text" class="form-control" name="Addrees" placeholder="العنوان" aria-label="Last name">
+             </div>
+             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
+               <input type="text" class="form-control" name="Type" placeholder="الصفة الوظيفية" aria-label="Last name">
+             </div> 
+             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
+              <input type="email" class="form-control" name="Email" placeholder="البريد الالكتروني" aria-label="Last name">
+            </div> 
             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="number" class="form-control" placeholder="رقم الموظف" aria-label="First name">
-            </div>
-            <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="text" class="form-control" placeholder="اسم الموظف" aria-label="Last name">
-            </div>
-
-            <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="date" class="form-control" placeholder="تاريح الميلاد" aria-label="Last name">
-            </div>
-            <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="text" class="form-control" placeholder="الصفة الوظيفية" aria-label="Last name">
-            </div>
-            <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="text" class="form-control" placeholder="العنوان" aria-label="Last name">
-            </div>
-            <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="text" class="form-control" placeholder="رقم الهاتف" aria-label="Last name">
-            </div>
-            
-            <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="email" class="form-control" placeholder="البريد الالكتروني" aria-label="Last name">
-            </div>
-            <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="password" class="form-control" placeholder="كلمة المرور" aria-label="Last name">
-            </div>
-
-            <div class="form-check col-lg-2 col-md-4 col-sm-12 mt-3">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-              <label class="form-check-label" for="flexRadioDefault1">
-                ذكر
-              </label>
-            </div>
-            <div class="form-check col-lg-2 col-md-4 col-sm-12 mt-3">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
-                انثي
-              </label>
-            </div>
-          <div class="mt-3">
-           <button type="button" class="btn btn-primary " > إضافة</button></div>
-            </div>
- 
+              <input type="password" class="form-control" name="Password" placeholder="كلمة السر" aria-label="Last name">
+            </div> 
+            <div class="col-lg-6 col-md-10 col-sm-12 mt-3">   
+              <select class="form-control" id="Gander" name="Gander">
+              
+                    <option > ذكر</option>
+                    <option >انثي </option>
           
+            </select> 
+          </div>
+          <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
+            <input type="date" class="form-control" name="DoB" placeholder="تاريخ الميلاد" aria-label="Last name">
+          </div> 
+          <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
+            <input type="number" class="form-control" name="Phone" placeholder="رقم الهاتف" aria-label="Last name">
+          </div> 
+             
+             
+             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">   
+              <select class="form-control" id="Bank_id" >
+                @foreach ($banks as $bank)
+                    <option value="{{ $bank->id }}">{{ $bank->Addrees }}</option>
+                @endforeach
+          
+            </select> 
+          </div>
+           <div class="mt-3">
+            <button type="submit" class="btn btn-primary " > إضافة</button>
+           </div>
+               </div>
+           </form>
+           </div>
 
-            </div>
            
 
-              </div>
-              
-            </form>
           </div>
           <div class="col-lg-1 col-md-1 ">
           </div>
@@ -232,7 +235,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ($ShowEmps as $ShowEmp)
+                        @foreach ($ShowEmps  as $ShowEmp)
                         <tr>
                           <td>{{ $ShowEmp->id }}</td>
                           <td>{{ $ShowEmp->Name }}</td>
@@ -243,7 +246,7 @@
                           <td>{{ $ShowEmp->Gander }}</td>
                           <td>{{ $ShowEmp->Email }}</td>
                           <td>{{ $ShowEmp->password }}</td>
-                          {{-- <td>{{ $ShowEmp->bank_name }}</td> --}}
+                          <td>{{ $ShowEmp->bank_name }}</td>
                           <td> <button type="button" class="btn btn-primary">تعديل</button></td>
                           <td>
                           <form action="{{ route('empcontrol.destroy', $ShowEmp->id) }}" method="POST">
@@ -287,6 +290,8 @@
             });
 
         </script>
+
+        
 
 
       </body>
