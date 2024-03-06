@@ -140,6 +140,10 @@ Route::get('/empcontrol', [Emp_Controller::class, 'show_Emp'])->name('empcontrol
 //حذف موظف
 Route::delete('/empcontrol/{emp}', [Emp_Controller::class, 'destroy'])->name('empcontrol.destroy');
 
+Route::post('/empcontrol', [Emp_Controller::class, 'store']);
+// Route::get('/empcontrol/{emp}', [Emp_Controller::class, 'getWorkplaces'])->name('control.getWorkplaces');
+
+
 
 
 
