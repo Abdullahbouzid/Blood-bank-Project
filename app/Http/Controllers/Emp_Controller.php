@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\employee;
 use App\Models\Bank;
 use Illuminate\Http\Request;
@@ -35,16 +36,50 @@ class Emp_Controller extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->only('Email_Emp', 'password_Emp');
-    
-        if (Auth::attempt($credentials)) {
-            // تم التحقق بنجاح من مصداقية المستخدم
-            return redirect()->route('home'); // توجيه إلى الواجهة الأخرى
-            return "hi ";
+        $request->validate([
+            'Email' => ['required', 'email', 'exists:employees'],
+            'Password' => ['required', 'min:8', 'exists:employees']
+        ]);
+        // 
+
+        $visitor = DB::table('employees')
+            ->where([
+                ['Email', '=', $request->input('Email')],
+                ['password', '=', $request->input('Password')]
+            ])
+            ->first();
+        if ($visitor) {
+            $idEmp = employee::where('Email', $request->input('Email'))
+                ->value('id');
+
+            $name = employee::where('Email', $request->input('Email'))
+                ->value('Name');
+
+            $type = employee::where('Email', $request->input('Email'))
+                ->value('Type');
+
+            $address = employee::where('Email', $request->input('Email'))
+                ->value('Addrees');
+
+            $phone = employee::where('Email', $request->input('Email'))
+                ->value('Phone');
+
+            $gender = employee::where('Email', $request->input('Email'))
+                ->value('Gander');
+
+            setcookie("Id", $idEmp);
+            setcookie("User", $name);
+            setcookie("Type", $type);
+            setcookie("Adds", $address);
+            setcookie("phone", $phone);
+            setcookie("Gander", $gender);
+
+            return redirect('/dashboard');
+
         } else {
-            // فشل التحقق من مصداقية المستخدم
-            return redirect()->back()->withErrors(['Email_Emp' => 'خطأ في بيانات الاعتماد']);
+            return redirect('/login_admin');
         }
+
     }
 
     public function show_Emp()
@@ -69,17 +104,17 @@ class Emp_Controller extends Controller
 
     public function show_Admin()
     {
-      
+
         $ShowAdmins = employee::where('Type', 'مسؤول')->get();
 
-        
+
         return view('/Dashboards.admincontrol', compact('ShowAdmins'));
     }
 
-    public function destroy(employee $emp) 
+    public function destroy(employee $emp)
     {
         $emp->delete();
-    
+
         return redirect()->route('empcontrol.show_Emp')->with('success', 'empcontrol deleted successfully!');
     }
 

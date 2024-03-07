@@ -6,6 +6,7 @@ use App\Models\Visitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 
 class Visitor_Controller extends Controller
@@ -13,7 +14,7 @@ class Visitor_Controller extends Controller
     public function store()
     {
         request()->validate([
-            'Email' => ['unique:visitors,Email'],
+            'Email' => ['unique:visitors', 'email'],
             'Password' => ['required', 'min:8']
         ]);
 
@@ -66,8 +67,9 @@ class Visitor_Controller extends Controller
     {
         $request->validate([
             'Email' => ['required', 'email', 'exists:visitors'],
-            'Password' => ['required', 'min:8']
+            'Password' => ['required', 'min:8', 'exists:visitors']
         ]);
+        // 
 
         $visitor = DB::table('visitors')
             ->where([
@@ -110,8 +112,8 @@ class Visitor_Controller extends Controller
         } else {
             return redirect('/');
         }
-    }
 
+    }
 
 
     public function destroy(Visitor $vitsit)
@@ -122,5 +124,4 @@ class Visitor_Controller extends Controller
     }
 
 
-   
 }

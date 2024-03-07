@@ -128,6 +128,10 @@
             </ul>
           </nav>
         </div>
+        <span style="color: white; padding-right: 30%;">{{$_COOKIE["Type"]}}: {{$_COOKIE["User"]}}</span>
+        <a href="login_admin" style="color: white; padding-right: 30%; text-decoration: none;">تسجيل الخروج</a>
+
+
       </div>
       <!-- offcanvas -->
       <main class="mt-5 pt-5" >
@@ -234,7 +238,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ($ShowEmps  as $ShowEmp)
+                        @foreach ($ShowEmps as $ShowEmp)
                         <tr>
                           <td>{{ $ShowEmp->id }}</td>
                           <td>{{ $ShowEmp->Name }}</td>
