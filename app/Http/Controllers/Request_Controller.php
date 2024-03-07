@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Requestt;
+use App\Models\Visitor;
 
 class Request_Controller extends Controller
 {
@@ -24,5 +25,21 @@ class Request_Controller extends Controller
         header("Location: /Blood_Request");
         exit;
 
+    }
+
+
+    public function show_request()
+    {
+        $show_requests = Requestt::with('visitors')->get();
+
+
+        return view('/Dashboards.requestcontrol', compact('show_requests'));
+    }
+
+    public function destroy(Requestt $req) 
+    {
+        $req->delete();
+    
+        return redirect()->route('requestcontrol.index')->with('success', 'Blood bank deleted successfully!');
     }
 }

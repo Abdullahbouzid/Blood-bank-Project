@@ -154,10 +154,11 @@
                           <th>تاريخ الميلاد</th>
                           <th>عنوان</th>
                           <th>رقم الهاتف</th>
+                           <th>الجنس</th>
                           <th>فصيلة الدم</th>
-                          <th>الجنس</th>
+                         
                           <th>الايميل </th>
-                          <th>كلمة السر</th>
+                  
                         </tr>
                       </thead>
                       <tbody>
@@ -173,7 +174,7 @@
                               <td>{{ $vitsit->Gander }}</td>
                               <td>{{ $vitsit->Typeofblood}}</td>
                               <td>{{ $vitsit->Email }}</td>
-                              <td>{{ $vitsit->Password }}</td>
+                           
                               <td> <button type="button" class="btn btn-primary">تعديل</button></td>
                               <td>
                                 <form action="{{ route('visitcontrol.destroy', $vitsit->id) }}" method="POST">

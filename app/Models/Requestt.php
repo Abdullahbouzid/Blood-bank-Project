@@ -9,6 +9,16 @@ class Requestt extends Model
 {
     use HasFactory;
     protected $table = 'requests';
+    protected $fillable = [
+        
+        'id',
+        'DoB',
+        'typeofblood',
+        'no_bags',
+        'status_request',
+        'visitor_id',
+        'employee_id'
+    ];
 
 
     public function visitors()

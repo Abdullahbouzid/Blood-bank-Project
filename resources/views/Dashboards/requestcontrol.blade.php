@@ -146,34 +146,32 @@
                     <table id="example" class="table table-striped data-table" style="width: 100%">
                       <thead>
                         <tr>
-                          <th>Name</th>
-                          <th>Position</th>
-                          <th>Office</th>
-                          <th>Age</th>
-                          <th>Start date</th>
-                          <th>Salary</th>
+                          <th>رقم الطلب</th>
+                          <th>الاسم</th>
+                          <th>نوع الدم</th>
+                          <th>عدد الاكياس</th>
+                          <th> الحالة</th>
+                        
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <td>Tiger Nixon</td>
-                          <td>System Architect</td>
-                          <td>Edinburgh</td>
-                          <td>61</td>
-                          <td>2011/04/25</td>
-                          <td>$320,800</td>
-                        </tr>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <th>Name</th>
-                          <th>Position</th>
-                          <th>Office</th>
-                          <th>Age</th>
-                          <th>Start date</th>
-                          <th>Salary</th>
-                        </tr>
-                      </tfoot>
+                      @foreach ($show_requests as $show_request)
+                      <tr>
+                          <td>{{ $show_request->id }}</td>
+                          <td>{{ $show_request->visitor_id }}</td>
+                          <td>{{ $show_request->typeofblood }}</td>
+                          <td>{{ $show_request->no_bags }}</td>
+                          <td>{{ $show_request->status_request }}</td>
+                  
+                                               <td> <button type="button" class="btn btn-primary">تعديل</button></td>
+                                            <td>
+                                            <form action="{{ route('requestcontrol.destroy', $show_request->id) }}" method="POST">
+                                              @csrf
+                                              @method('DELETE')
+                                              <button type="submit" class="btn btn-danger">حذف</button> 
+                                          </form>
+                                            </td>
+                                           </tr>
+                                              @endforeach
                     </table>
                   </div>
                 </div>

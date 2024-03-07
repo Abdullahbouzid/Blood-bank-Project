@@ -134,33 +134,38 @@
         <div class="container-fluid">
           <h3 style="text-align: center">لإضافة مركز تبرع جديد يجب تعبئة البيانات الاتية</h3>
           <br>
-          <div class="row ">
-
-            <div class="col-lg-1 col-md-1 ">
-            </div>
-            <div class="col-lg-10 col-md-12 col-sm-12">
-              <form action="">
-                <div class="row">
-              <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-                <input type="number" class="form-control" placeholder="رقم المركز" aria-label="First name">
-              </div>
-              <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-                <input type="text" class="form-control" placeholder="البلدية التابع لها" aria-label="Last name">
-              </div>
-              <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-                <input type="text" class="form-control" placeholder="العنوان" aria-label="Last name">
-              </div>
-             
-            <div class="mt-3">
-             <button type="button" class="btn btn-primary " > إضافة</button></div>
-              </div>
-   
+          <form action="/centercontrol" method="post" onsubmit="return checkDataRequest()">
+            @csrf
+        <div class="row">
+         
+    
+      <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
+        <input type="text" class="form-control" id="Name" name="Name" placeholder="البلدية التابع لها" aria-label="Last name">
+      </div>
+      <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
+        <input type="text" class="form-control" id="Addrees" name="Addrees" placeholder="العنوان" aria-label="Last name">
+      </div> 
+      <div class="col-lg-6 col-md-10 col-sm-12 mt-3">   
+                <select class="form-control" id="Bank_id"  name="Bank_id" >
+                  <option > يتبع الى المصرف</option>
+                  @foreach ($banks as $bank)
+                  <script>
+                    
+                  </script>
+                      <option value="{{ $bank->id }}">{{ $bank->Addrees }}</option>
+                  @endforeach
             
-  
-              </div>
+              </select> 
+            </div>
+    
+    <div class="mt-3">
+     <button type="submit" class="btn btn-primary " > إضافة</button>
+    </div>
+        </div>
+    </form>
              
-  
-                </div>
+             
+       
                 
               </form>
             </div>
@@ -183,6 +188,7 @@
                           <th>اسم البلدية</th>
                           <th>عنوان</th>
                           <th>النوع</th>
+                          <th>المصرف التابع له</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -192,8 +198,16 @@
                           <td>{{ $ShowCenter->Name }}</td>
                           <td>{{ $ShowCenter->Addrees }}</td>
                           <td>{{ $ShowCenter->Type }}</td>
+                          <td>{{ $ShowCenter->Bank->Addrees }}</td>
+
                           <td> <button type="button" class="btn btn-primary">تعديل</button></td>
-                          <td> <button type="button" class="btn btn-danger">حذف</button></td>
+                          <td>
+                            <form action="{{ route('centercontrol.destroy', $ShowCenter->id) }}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger">حذف</button>
+                          </form>
+                            </td>
                         </tr>
                         @endforeach 
                       </tbody>
@@ -214,6 +228,22 @@
         <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>
         <script src="{{asset('assets/js/dataTables.bootstrap5.min.js')}}"></script>
         <script src="{{asset('assets//js/script.js')}}"></script>
+
+
+        <script>
+       
+
+          document.querySelectorAll('.btn-danger').forEach(button => {
+           button.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+                if (confirm('هل أنت متأكد من حذف مصرف الدم؟')) {
+               this.form.submit(); // Submit the form manually
+                         }
+                });
+            });
+
+        </script>
       </body>
     </html>
     

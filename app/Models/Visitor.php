@@ -9,15 +9,27 @@ class Visitor extends Model
 {
     use HasFactory;
     protected $table = 'visitors';
+    protected $fillable = [
+        'Name',
+        'id',
+        'DoB',
+        'Email',
+        'Phone',
+        'Gander',
+        'Addrees',
+        'Password',
+        'Typeofblood'
+    ];
 
     public function requests()
     {
-        return $this->hasMany(request::class);
+        return $this->hasMany(Requestt::class);
     }
 
 
     public function donations()
     {
-        return $this->hasMany(donation::class);
+        return $this->hasMany(Donation::class);
     }
+    
 }

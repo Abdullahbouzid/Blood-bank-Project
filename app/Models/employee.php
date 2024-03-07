@@ -10,16 +10,15 @@ class employee extends Model
     use HasFactory;
     protected $table = 'employees';
 
-    protected $fillable =[
-        'id',
+    protected $fillable = [
         'Name',
         'DoB',
         'Type',
         'Email',
         'Phone',
         'password',
-        'Address',
-        'Gander',
+        'Addrees',
+        'Gender',
         'Bank_id',
     ];
 
@@ -54,7 +53,7 @@ class employee extends Model
   
     public function bank()
     {
-    return $this->belongsTo(Bank::class);
+        return $this->belongsTo(Bank::class);
     }
 
 //     public function centers()

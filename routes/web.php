@@ -139,6 +139,7 @@ Route::get('/empcontrol', [Emp_Controller::class, 'show_Emp'])->name('empcontrol
 Route::delete('/empcontrol/{emp}', [Emp_Controller::class, 'destroy'])->name('empcontrol.destroy');
 
 Route::post('/empcontrol', [Emp_Controller::class, 'store']);
+
 // Route::get('/empcontrol/{emp}', [Emp_Controller::class, 'getWorkplaces'])->name('control.getWorkplaces');
 
 
@@ -152,10 +153,28 @@ Route::get('/admincontrol', [Emp_Controller::class, 'show_Admin'])->name('show a
 
 #########وحدة التحكم في المراكز##################
 //وحدة التحكم عرض مراكز التبرع
-Route::get('/centercontrol', [Center_Controller::class, 'show_center_incontrol']);
+Route::get('/centercontrol', [Center_Controller::class, 'show_center_incontrol'])->name('centercontrol.index');
+//حفظ بيانات مركز
+Route::post('/centercontrol', [Center_Controller::class, 'store']);
+//
+Route::delete('/centercontrol/{Center}', [Center_Controller::class, 'destroy'])->name('centercontrol.destroy');
 
 
 
+################وحدة التحكم في طلبات  طلب الدم################
+Route::get('/requestcontrol', [Request_Controller::class, 'show_request'])->name('requestcontrol.index');
+
+Route::delete('/requestcontrol/{req}', [Request_Controller::class, 'destroy'])->name('requestcontrol.destroy');
+
+
+
+
+
+
+
+################وحدة التحكم في طلبات التبرع################
+Route::get('/donationcontrol', [Donation_Controller::class, 'show_donation'])->name('donationcontrol.index');
+Route::delete('/donationcontrol/{don}', [Donation_Controller::class, 'destroy'])->name('donationcontrol.destroy');
 
 
 ##### //وحدة التحكم في الزائرين #####
@@ -166,4 +185,6 @@ Route::delete('/visitcontrol/{vitsit}', [Visitor_Controller::class, 'destroy'])-
 
 
 ###########وحدة التجكم في المخزون#######
-Route::get('/blood_storage', [StorageController::class, 'index'])->name('blood_storage');
+Route::get('/blood_storage', [StorageController::class, 'index'])->name('blood_storage.index');
+
+// Route::get('/blood_storage', [countController::class, 'Show_count_ofBlood']);

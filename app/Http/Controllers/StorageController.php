@@ -17,8 +17,17 @@ class StorageController extends Controller
         } else {
             $visitors = Visitor::where('Typeofblood', $selectedBloodType)->get();
         }
+        $Ap = Visitor::where('Typeofblood', 'A+')->count();
+        $An = Visitor::where('Typeofblood', 'A-')->count();
+        $Bp = Visitor::where('Typeofblood', 'B+')->count();
+        $Bn = Visitor::where('Typeofblood', 'B-')->count();
+        $On = Visitor::where('Typeofblood', 'O-')->count();
+        $Op = Visitor::where('Typeofblood', 'O+')->count();
+        $ABn = Visitor::where('Typeofblood', 'AB-')->count();
+        $ABp = Visitor::where('Typeofblood', 'AB+')->count();
 
-        return view('/Dashboards.blood_storage', compact('visitors', 'bloodTypes', 'selectedBloodType'));
+        
+        return view('/Dashboards.blood_storage', compact('visitors', 'bloodTypes', 'selectedBloodType','ABp','ABn','Op','On','Bn','Bp','An','Ap'));
     }
 }
 

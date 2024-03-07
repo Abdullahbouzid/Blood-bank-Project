@@ -17,7 +17,7 @@ class CreateEmployeesTable extends Migration
             $table->id();
             $table->string('Name')->nullable();
             $table->date('DoB')->nullable();
-            $table->string('Type')->nullable();
+            $table->string('Type')->default('موظف');
             $table->string('Email')->nullable();
             $table->bigInteger('Phone')->nullable(); 
             $table->integer('password')->nullable(); 

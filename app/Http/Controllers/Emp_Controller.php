@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\employee;
 use App\Models\Bank;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\DB;
 
 class Emp_Controller extends Controller
 {
@@ -12,16 +14,16 @@ class Emp_Controller extends Controller
 
         $emp = new employee;
        
-        $emp->id = trim(request()->id);
+        // $emp->id = trim(request()->id);
         $emp->DoB = trim(request()->DoB);
         $emp->Name = trim(request()->Name);
-        $emp->Type = trim(request()->Type);
         $emp->Addrees = trim(request()->Addrees);
         $emp->Email = trim(request()->Email);
         $emp->Phone = trim(request()->Phone);
         $emp->Gander = trim(request()->Gander);
         $emp->Password = trim(request()->Password);
         $emp->Bank_id = trim(request()->Bank_id);
+
         
         $emp->save();
 
@@ -48,13 +50,12 @@ class Emp_Controller extends Controller
     public function show_Emp()
     {
       
-        $ShowEmps = employee::where('Type', 'موظف')->get();
+        $ShowEmps = employee::with('bank')->where('Type', 'موظف')->get();
        
-        $banknames= Bank::select('Name')->distinct()->get();
-         $banks =Bank::select('Addrees')->distinct()->get();
-      
-        
-        return view('/Dashboards.empcontrol', compact('ShowEmps','banknames','banks'));
+        // $banknames= Bank::select('Name')->distinct()->get();
+        $banks =Bank::all();
+           return view('/Dashboards.empcontrol', compact('ShowEmps','banks'));
+        // return view('/Dashboards.empcontrol', compact('ShowEmps','banknames','banks'));
     }
     
     

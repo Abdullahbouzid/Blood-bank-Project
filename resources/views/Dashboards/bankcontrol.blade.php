@@ -185,7 +185,7 @@
                     <input type="hidden" id="editId" name="id">
                     <div class="row">
                       <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-                        <input type="number" class="form-control" id="editNumber" name="number" placeholder="رقم المصرف" aria-label="First name">
+                        <input type="d" class="form-control" id="editNumber" name="number" placeholder="رقم المصرف" aria-label="First name">
                       </div>
                       <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
                         <input type="text" class="form-control" id="editName" name="Name" placeholder="البلدية التابع لها" aria-label="Last name">
