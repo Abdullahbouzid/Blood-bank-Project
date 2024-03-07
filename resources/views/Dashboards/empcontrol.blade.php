@@ -167,7 +167,8 @@
               <input type="email" class="form-control" name="Email" id="Email" placeholder="البريد الالكتروني" aria-label="Last name">
             </div> 
             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="password" class="form-control" name="Password" id = "Password" placeholder="كلمة السر" aria-label="Last name">
+
+              <input type="password" class="form-control" name="password" id = "Password" placeholder="كلمة السر" aria-label="Last name">
             </div> 
             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">   
               <select class="form-control" id="Gander" name="Gander">

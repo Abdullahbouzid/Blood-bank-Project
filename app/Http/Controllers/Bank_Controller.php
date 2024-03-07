@@ -21,7 +21,7 @@ class Bank_Controller extends Controller
     {
 
         $bank = new Bank;
-        $bank->id = trim(request()->id);
+        // $bank->id = trim(request()->id);
         $bank->Name = trim(request()->Name);
      
         $bank->Addrees = trim(request()->Addrees);

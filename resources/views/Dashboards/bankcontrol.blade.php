@@ -184,7 +184,7 @@
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                  <form action="/bankcontrol/update" method="post" onsubmit="return checkDataBank()">
+                  <form action="/bankcontrol" method="post" onsubmit='"'>
                     @csrf
                     <input type="hidden" id="editId" name="id">
                     <div class="row">
@@ -265,8 +265,6 @@
         </div>
       </main>
 
-      <script src="/assets/js/success_msg.js"></script>
-
         <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('assets/js/bootstrap.bundle.min.map.js')}}"></script>        
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
@@ -288,6 +286,9 @@
             });
 
         </script>
+
+              <script src="/assets/js/success_msg.js"></script>
+
 
         {{-- <script>
          $(".btn-primary").click(function(event) {

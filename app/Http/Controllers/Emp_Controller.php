@@ -26,7 +26,7 @@ class Emp_Controller extends Controller
         $emp->Email = trim(request()->Email);
         $emp->Phone = trim(request()->Phone);
         $emp->Gander = trim(request()->Gander);
-        $emp->Password = trim(request()->Password);
+        $emp->password = trim(request()->password);
         $emp->Bank_id = trim(request()->Bank_id);
         
         $emp->save();
@@ -91,7 +91,7 @@ class Emp_Controller extends Controller
         $ShowEmps = employee::where('Type', 'موظف')->get();
        
         $banknames= Bank::select('Name')->distinct()->get();
-         $banks =Bank::select('Addrees')->distinct()->get();
+         $banks =Bank::all();
       
         
         return view('/Dashboards.empcontrol', compact('ShowEmps','banknames','banks'));

@@ -158,11 +158,11 @@ function checkDataEmp() {
 }
 
 function checkDataCenter() {
-    var iD = document.getElementById('BankID').value;
     var name = document.getElementById('Name').value;
     var adds = document.getElementById('Addrees').value;
+    var bank_id = document.getElementById('Bank_id').value;
 
-    if (!iD || !name || !adds) {
+    if (!name || !adds || !bank_id) {
         alert("من فضلك قم بالتأكد من إدخال جميع البيانات المطلوبة ");
 
         return false;
@@ -172,8 +172,8 @@ function checkDataCenter() {
 }
 
 function checkDataBank() {
-    var name = document.getElementById('editName').value;
-    var adds = document.getElementById('editAddrees').value;
+    var name = document.getElementById('Name').value;
+    var adds = document.getElementById('Addrees').value;
 
     if (!name || !adds) {
         alert("من فضلك قم بالتأكد من إدخال جميع البيانات المطلوبة ");
