@@ -166,7 +166,7 @@
                           <td>{{ $show_request->no_bags }}</td>
                           <td>{{ $show_request->status_request }}</td>
                   
-                                               <td> <button type="button" class="btn btn-primary">تعديل</button></td>
+                                               <td> <button type="button" class="btn btn-primary">موافقة</button></td>
                                             <td>
                                             <form action="{{ route('requestcontrol.destroy', $show_request->id) }}" method="POST">
                                               @csrf

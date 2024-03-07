@@ -155,9 +155,9 @@
                               <th>اسم المتبرع</th>
                               <th>رقم هاتفه</th>
                               <th>فصيلة الدم</th>
-                              <th>العنوان</th>
+                          
                               <th>تاريخ طلب الدم</th>
-                              <th>اسم المركز</th>
+                           
                             </tr>
                           </thead>
                           <tbody>
@@ -166,11 +166,12 @@
                               @foreach ($showdonations as $showdonation)
     <tr>
         <td>{{ $showdonation->id }}</td>
-        <td>{{ isset($showdonation->visitor) ? $showdonation->visitor->id : '-' }}</td>
         <td>{{ isset($showdonation->visitor) ? $showdonation->visitor->Name : '-' }}</td>
         <td>{{ isset($showdonation->visitor) ? $showdonation->visitor->Phone : '-' }}</td>
-        <td>{{ isset($showdonation->visitor) ? $showdonation->visitor->Address : '-' }}</td> <td>{{ $showdonation->Dof_Donation }}</td>
-        <td>{{ isset($showdonation->center) ? $showdonation->center->Address : '-' }}</td> 
+        <td>{{ isset($showdonation->visitor) ? $showdonation->visitor->Typeofblood : '-' }}</td>
+      
+        <td>{{ $showdonation->Dof_Donation }}</td>
+      
 
                               <td> <button type="button" class="btn btn-primary">تعديل</button></td>
                           <td>
