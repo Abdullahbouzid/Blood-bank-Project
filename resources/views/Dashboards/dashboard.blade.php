@@ -203,7 +203,7 @@
             </div>
             <div class="col-md-3 mb-3">
               <div class="card bg-secondary text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد
+                <div class="card-body py-5  offcanvas-center "><h1>{{$req}}</h1>
                   <img src="{{asset('img/icon/blood-test.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -216,7 +216,7 @@
             </div>
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد
+                <div class="card-body py-5  offcanvas-center "><h1>{{$don}}</h1>
                   <img src="{{asset('img/icon/blood-donation.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -229,7 +229,7 @@
             </div>
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                <div class="card-body py-5  offcanvas-center "><h1>{{$don}}</h1>
                   <img src="{{asset('img/icon/Bloodpak.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">

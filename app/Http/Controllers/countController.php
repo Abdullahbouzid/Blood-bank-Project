@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Center;
 use App\Models\Bank;
 use App\Models\employee;
+use App\Models\Donation;
+use App\Models\Requestt;
 use App\Models\Visitor;
 use Illuminate\Http\Request;
 
@@ -18,8 +20,11 @@ class countController extends Controller
         $AdminCount = employee::where('Type', 'مسؤول')->count();
         $EmpCount = employee::where('Type', 'موظف')->count();
         $vistorCount=Visitor::count();
+        $don=Donation::count();
+        $req=Requestt::count();
      
-        return view('/Dashboards.dashboard', compact('CentersCount','BanksCount',
+
+        return view('/Dashboards.dashboard', compact('CentersCount','BanksCount','don','req',
         'AdminCount','EmpCount','vistorCount'));
     }
     // public function Show_count_ofBlood()

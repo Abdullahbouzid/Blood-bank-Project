@@ -89,7 +89,7 @@
                 
 
                 <!-- start of posting-->
-                  <form method="POST" action="">
+                  {{-- <form method="POST" action="">
                         @csrf 
                         <div class="row align-items-center pt-5" >
                    
@@ -122,7 +122,7 @@
                             <a href="/Blood_Center?type=a&name=abc">بحث</a>
                           </button>
                            </div></div>
-                          </form>
+                          </form> --}}
                           
 
                            <div class="row align-items-center pt-5">

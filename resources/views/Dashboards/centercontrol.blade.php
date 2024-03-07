@@ -138,7 +138,6 @@
         <div class="container-fluid">
           <h3 style="text-align: center">لإضافة مركز تبرع جديد يجب تعبئة البيانات الاتية</h3>
           <br>
-<<<<<<< HEAD
           <div class="row ">
 
             <div class="col-lg-1 col-md-1 ">
@@ -160,35 +159,11 @@
              <button type="submit" class="btn btn-primary " > إضافة</button></div>
               </div>
    
-=======
-          <form action="/centercontrol" method="post" onsubmit="return checkDataRequest()">
-            @csrf
-        <div class="row">
-         
-    
-      <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-        <input type="text" class="form-control" id="Name" name="Name" placeholder="البلدية التابع لها" aria-label="Last name">
-      </div>
-      <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-        <input type="text" class="form-control" id="Addrees" name="Addrees" placeholder="العنوان" aria-label="Last name">
-      </div> 
-      <div class="col-lg-6 col-md-10 col-sm-12 mt-3">   
-                <select class="form-control" id="Bank_id"  name="Bank_id" >
-                  <option > يتبع الى المصرف</option>
-                  @foreach ($banks as $bank)
-                  <script>
-                    
-                  </script>
-                      <option value="{{ $bank->id }}">{{ $bank->Addrees }}</option>
-                  @endforeach
->>>>>>> 70205131b1109eff30c98f696fc431e3a5ee3017
             
               </select> 
             </div>
     
-    <div class="mt-3">
-     <button type="submit" class="btn btn-primary " > إضافة</button>
-    </div>
+  
         </div>
     </form>
              

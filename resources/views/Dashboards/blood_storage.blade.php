@@ -141,7 +141,7 @@
            
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">{{ $An }}
+                <div class="card-body py-5  offcanvas-center "><h1>{{ $An }}</h1>
                   <img src="{{asset('img/icon/Bloodtype/A-.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -156,7 +156,7 @@
 
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">{{$Ap}}
+                <div class="card-body py-5  offcanvas-center "><h1>{{$Ap}}</h1>
                   <img src="{{asset('img/icon/Bloodtype/A.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -171,7 +171,7 @@
 
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">{{$Bn}}
+                <div class="card-body py-5  offcanvas-center "><h1>{{$Bn}}</h1>
                   <img src="{{asset('img/icon/Bloodtype/BB-.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -186,7 +186,7 @@
 
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">{{$Bp}}
+                <div class="card-body py-5  offcanvas-center "><h1>{{$Bp}}</h1>
                   <img src="{{asset('img/icon/Bloodtype/B.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -201,7 +201,7 @@
 
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">{{$On}}
+                <div class="card-body py-5  offcanvas-center "><h1>{{$On}}</h1>
                   <img src="{{asset('img/icon/Bloodtype/O-.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -216,7 +216,7 @@
 
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">{{$Op}}
+                <div class="card-body py-5  offcanvas-center "><h1>{{$Op}}</h1>
                   <img src="{{asset('img/icon/Bloodtype/O.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -231,7 +231,7 @@
 
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">{{$ABn}}
+                <div class="card-body py-5  offcanvas-center "><h1>{{$ABn}}</h1>
                   <img src="{{asset('img/icon/Bloodtype/AB-.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -245,7 +245,7 @@
 
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">{{$ABp}}
+                <div class="card-body py-5  offcanvas-center "><h1>{{$ABp}}</h1>
                   <img src="{{asset('img/icon/Bloodtype/AB.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
