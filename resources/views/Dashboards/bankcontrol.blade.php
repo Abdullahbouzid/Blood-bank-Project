@@ -184,7 +184,7 @@
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                  <form action="/bankcontrol/update" method="post" onsubmit="return checkDataRequest()">
+                  <form action="/bankcontrol/update" method="post" onsubmit="return checkDataBank()">
                     @csrf
                     <input type="hidden" id="editId" name="id">
                     <div class="row">
