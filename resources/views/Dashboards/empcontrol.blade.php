@@ -160,7 +160,7 @@
                     @enderror
              </div>
              <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-               <input type="text" class="form-control" name="Addrees" id="Addrees"  placeholder="العنوان" aria-label="Last name">
+               <input type="text" class="form-control" name="Addrees" id="Addrees" placeholder="العنوان" aria-label="Last name">
              </div>
            
              <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
@@ -279,8 +279,6 @@
         </div>
       </main>
 
-      <script src="/assets/js/success_msg.js"></script>
-
         <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('assets/js/bootstrap.bundle.min.map.js')}}"></script>        
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
@@ -305,6 +303,7 @@
         </script>
 
         
+      <script src="/assets/js/success_msg.js"></script>
 
 
       </body>

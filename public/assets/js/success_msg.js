@@ -140,7 +140,6 @@ function checkData_LoginEmp() {
 function checkDataEmp() {
     var name = document.getElementById('Name').value;
     var adds = document.getElementById('Addrees').value;
-    var type = document.getElementById('Type').value;
     var email = document.getElementById('Email').value;
     var pass = document.getElementById('Password').value;
     var gender = document.getElementById('Gander').value;
@@ -148,8 +147,8 @@ function checkDataEmp() {
     var phone = document.getElementById('Phone').value;
     var bank_Name = document.getElementById('Bank_id').value;
 
-    if (!email || !password || !name || !adds ||
-        !type || !pass || !gender || !dob || !phone || !bank_Name) {
+    if (!name || !adds || !email || !pass || !gender ||
+        !dob || !phone || !bank_Name) {
         alert("من فضلك قم بالتأكد من إدخال جميع البيانات المطلوبة ");
 
         return false;
@@ -164,6 +163,19 @@ function checkDataCenter() {
     var adds = document.getElementById('Addrees').value;
 
     if (!iD || !name || !adds) {
+        alert("من فضلك قم بالتأكد من إدخال جميع البيانات المطلوبة ");
+
+        return false;
+    }
+
+    return true;
+}
+
+function checkDataBank() {
+    var name = document.getElementById('editName').value;
+    var adds = document.getElementById('editAddrees').value;
+
+    if (!name || !adds) {
         alert("من فضلك قم بالتأكد من إدخال جميع البيانات المطلوبة ");
 
         return false;
