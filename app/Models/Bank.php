@@ -25,6 +25,6 @@ class Bank extends Model
 
     public function centers()
     {
-    return $this->hasMany(Center::class);
+        return $this->hasMany(Center::class);
     }
 }

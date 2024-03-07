@@ -64,15 +64,41 @@ class Center_Controller extends Controller
     public function show_center_incontrol()
     {
         // قم بإرجاع جميع البيانات المتاحة في جدول "مصرف الدم"
-        $ShowCenters = Center::all();
-        
-        return view('/Dashboards.centercontrol', compact('ShowCenters'));
+        $ShowCenters = Center::with('bank')->get();
+        $banks=Bank::all();        
+
+        return view('/Dashboards.centercontrol', compact('ShowCenters','banks'));
+
     }
-    // public function center_count()
-    // {
-    //     // قم بإرجاع جميع البيانات المتاحة في جدول "مصرف الدم"
-    //     $CentersCount = Bank::count();
+    
+    public function store()
+    {
+
+        $center = new Center;
+       
+        $center->Name = trim(request()->Name);
+        $center->Addrees = trim(request()->Addrees);
+        $center->Bank_id = trim(request()->Bank_id);
+
         
-    //     return view('/Dashboards.dashboard', compact('CentersCount'));
-    // }
+        $center->save();
+
+        sleep(1);
+        header("Location: /centercontrol");
+        exit;
+
+    }
+
+    public function destroy(Center $Center) 
+    {
+        $Center->delete();
+
+
+    
+        return redirect()->route('centercontrol.index')->with('success', ' deleted successfully!');
+    }
+
+
+
+
 }

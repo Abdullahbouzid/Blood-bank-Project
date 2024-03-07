@@ -157,7 +157,7 @@
                          
                           <th>الاسم</th>
                           <th>تاريخ الميلاد</th>
-                          <th>نوع</th>
+                        
                           <th>عنوان</th>
                           <th>رقم الهاتف</th>
                           <th>الجنس</th>
@@ -170,7 +170,7 @@
                           
                           <td>{{ $ShowAdmin->Name }}</td>
                           <td>{{ $ShowAdmin->DoB }}</td>
-                          <td>{{ $ShowAdmin->Type }}</td>
+                        
                           <td>{{ $ShowAdmin->Addrees }}</td>
                           <td>{{ $ShowAdmin->Phone }}</td>
                           <td>{{ $ShowAdmin->Gander }}</td>

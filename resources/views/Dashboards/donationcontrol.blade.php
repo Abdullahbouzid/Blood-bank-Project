@@ -148,35 +148,46 @@
                   <div class="table-responsive">
                     <table id="example" class="table table-striped data-table" style="width: 100%">
                       <thead>
-                        <tr>
-                          <th>Name</th>
-                          <th>Position</th>
-                          <th>Office</th>
-                          <th>Age</th>
-                          <th>Start date</th>
-                          <th>Salary</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Tiger Nixon</td>
-                          <td>System Architect</td>
-                          <td>Edinburgh</td>
-                          <td>61</td>
-                          <td>2011/04/25</td>
-                          <td>$320,800</td>
-                        </tr>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <th>Name</th>
-                          <th>Position</th>
-                          <th>Office</th>
-                          <th>Age</th>
-                          <th>Start date</th>
-                          <th>Salary</th>
-                        </tr>
-                      </tfoot>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>رقم التبرع</th>
+                              <th>اسم المتبرع</th>
+                              <th>رقم هاتفه</th>
+                              <th>فصيلة الدم</th>
+                              <th>العنوان</th>
+                              <th>تاريخ طلب الدم</th>
+                              <th>اسم المركز</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {{-- @foreach ($showdonations as $showdonation)
+                            <tr> --}}
+                              @foreach ($showdonations as $showdonation)
+    <tr>
+        <td>{{ $showdonation->id }}</td>
+        <td>{{ isset($showdonation->visitor) ? $showdonation->visitor->id : '-' }}</td>
+        <td>{{ isset($showdonation->visitor) ? $showdonation->visitor->Name : '-' }}</td>
+        <td>{{ isset($showdonation->visitor) ? $showdonation->visitor->Phone : '-' }}</td>
+        <td>{{ isset($showdonation->visitor) ? $showdonation->visitor->Address : '-' }}</td> <td>{{ $showdonation->Dof_Donation }}</td>
+        <td>{{ isset($showdonation->center) ? $showdonation->center->Address : '-' }}</td> 
+
+                              <td> <button type="button" class="btn btn-primary">تعديل</button></td>
+                          <td>
+                          <form action="{{ route('donationcontrol.destroy', $showdonation->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">حذف</button>
+                        </form>
+                          </td>
+                         </tr>
+                            @endforeach
+                          </tbody>
+                        </table>
+                        
+                       
+                  
+                  
                     </table>
                   </div>
                 </div>

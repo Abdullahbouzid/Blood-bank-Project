@@ -141,7 +141,7 @@
            
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                <div class="card-body py-5  offcanvas-center ">{{ $An }}
                   <img src="{{asset('img/icon/Bloodtype/A-.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -156,7 +156,7 @@
 
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                <div class="card-body py-5  offcanvas-center ">{{$Ap}}
                   <img src="{{asset('img/icon/Bloodtype/A.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -171,7 +171,7 @@
 
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                <div class="card-body py-5  offcanvas-center ">{{$Bn}}
                   <img src="{{asset('img/icon/Bloodtype/BB-.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -186,7 +186,7 @@
 
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                <div class="card-body py-5  offcanvas-center ">{{$Bp}}
                   <img src="{{asset('img/icon/Bloodtype/B.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -201,7 +201,7 @@
 
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                <div class="card-body py-5  offcanvas-center ">{{$On}}
                   <img src="{{asset('img/icon/Bloodtype/O-.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -216,7 +216,7 @@
 
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                <div class="card-body py-5  offcanvas-center ">{{$Op}}
                   <img src="{{asset('img/icon/Bloodtype/O.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -231,7 +231,7 @@
 
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                <div class="card-body py-5  offcanvas-center ">{{$ABn}}
                   <img src="{{asset('img/icon/Bloodtype/AB-.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -245,7 +245,7 @@
 
             <div class="col-md-3 mb-3">
               <div class="card bg-danger text-white h-100">
-                <div class="card-body py-5  offcanvas-center ">عدد الاكياس
+                <div class="card-body py-5  offcanvas-center ">{{$ABp}}
                   <img src="{{asset('img/icon/Bloodtype/AB.png')}}" alt="Logo" height="100px" style="margin-right: 100px">
                </div>
                 <div class="card-footer d-flex">
@@ -272,7 +272,7 @@
 
 
 
-    <form action="{{ route('blood_storage') }}" method="GET">
+    <form action="{{ route('blood_storage.index') }}" method="GET">
         <select name="blood_type">
             <option value="">جميع فصائل الدم</option>
             @foreach ($bloodTypes as $bloodType)
@@ -283,6 +283,8 @@
 
     </form>
   <br>
+  
+  
 
     <table class="table table-bordered">
         <thead>

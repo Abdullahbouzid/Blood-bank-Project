@@ -9,11 +9,21 @@ class Donation extends Model
 {
     use HasFactory;
     protected $table = 'donations';
-    public function visitors()
-        {
-            return $this->belongsTo(Visitor::class);
-        }
+    protected $fillable = [
+        'Dof_Donation',
+        'visitor_id',
+        'center_id',
+    ];
 
+
+    public function visitor()
+    {
+        return $this->belongsTo(Visitor::class);
+    }
+    public function center()
+    {
+        return $this->belongsTo(Center::class);
+    }
     public function employees()
         {
             return $this->belongsTo(Employee::class);

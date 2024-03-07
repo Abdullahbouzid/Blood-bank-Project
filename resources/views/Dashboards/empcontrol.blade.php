@@ -150,9 +150,7 @@
                    @csrf
                <div class="row">
                 
-             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-               <input type="number" class="form-control" name="id" id = "id" placeholder="رقم الموظف" aria-label="First name">
-             </div>
+            
              <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
                <input type="text" class="form-control" name="Name" id="Name" placeholder="اسم الموظف" aria-label="Last name">
                @error('Name')
@@ -164,9 +162,7 @@
              <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
                <input type="text" class="form-control" name="Addrees" id="Addrees"  placeholder="العنوان" aria-label="Last name">
              </div>
-             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-               <input type="text" class="form-control" name="Type" id="Type" placeholder="الصفة الوظيفية" aria-label="Last name">
-             </div> 
+           
              <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
               <input type="email" class="form-control" name="Email" id="Email" placeholder="البريد الالكتروني" aria-label="Last name">
             </div> 
@@ -175,7 +171,7 @@
             </div> 
             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">   
               <select class="form-control" id="Gander" name="Gander">
-              
+                <option > الجنس</option>
                     <option > ذكر</option>
                     <option >انثي </option>
           
@@ -190,8 +186,10 @@
              
              
              <div class="col-lg-6 col-md-10 col-sm-12 mt-3">   
-              <select class="form-control" id="Bank_id" >
-                @foreach ($banks as $bank)
+              <select class="form-control" id="Bank_id"  name="Bank_id" >
+              
+               <option value="">مصرف الدم التابع لها</option>
+                 @foreach ($banks as $bank)
                     <option value="{{ $bank->id }}">{{ $bank->Addrees }}</option>
                 @endforeach
           
@@ -232,15 +230,16 @@
                         @method('DELETE') --}}
                       <thead>
                         <tr>
-                          <th>رقم</th>
+                          <th>#</th>
                           <th>الاسم</th>
                           <th>تاريخ الميلاد</th>
-                          <th>نوع</th>
+                   
                           <th>عنوان</th>
                           <th>رقم الهاتف</th>
                           <th>الجنس</th>
                           <th>الايميل </th>
-                          <th>كلمة السر</th>
+                         
+
                         </tr>
                       </thead>
                       <tbody>
@@ -249,13 +248,15 @@
                           <td>{{ $ShowEmp->id }}</td>
                           <td>{{ $ShowEmp->Name }}</td>
                           <td>{{ $ShowEmp->DoB }}</td>
-                          <td>{{ $ShowEmp->Type }}</td>
+                          
                           <td>{{ $ShowEmp->Addrees }}</td>
                           <td>{{ $ShowEmp->Phone }}</td>
                           <td>{{ $ShowEmp->Gander }}</td>
                           <td>{{ $ShowEmp->Email }}</td>
-                          <td>{{ $ShowEmp->password }}</td>
-                          <td>{{ $ShowEmp->bank_name }}</td>
+                       
+                         {{-- <td>{{ $ShowEmp->bank->Name }}</td> --}}
+                        
+
                           <td> <button type="button" class="btn btn-primary">تعديل</button></td>
                           <td>
                           <form action="{{ route('empcontrol.destroy', $ShowEmp->id) }}" method="POST">
@@ -267,7 +268,7 @@
                         </tr>
                         @endforeach 
                       </tbody>
-                      </form>
+                      {{-- </form> --}}
                     </table>
                   </div>
                 </div>
