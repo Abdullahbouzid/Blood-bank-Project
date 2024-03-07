@@ -143,20 +143,20 @@
             <div class="col-lg-1 col-md-1 ">
             </div>
             <div class="col-lg-10 col-md-12 col-sm-12">
-              <form action="">
+              <form action="/centercontrol" method="post" onsubmit="return checkDataCenter()">
                 <div class="row">
               <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-                <input type="number" class="form-control" placeholder="رقم المركز" aria-label="First name">
+                <input type="number" class="form-control" id = "BankID" placeholder="رقم المركز" aria-label="First name">
               </div>
               <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-                <input type="text" class="form-control" placeholder="البلدية التابع لها" aria-label="Last name">
+                <input type="text" class="form-control" id = "Name" placeholder="البلدية التابع لها" aria-label="Last name">
               </div>
               <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-                <input type="text" class="form-control" placeholder="العنوان" aria-label="Last name">
+                <input type="text" class="form-control" id = "Addrees" placeholder="العنوان" aria-label="Last name">
               </div>
              
             <div class="mt-3">
-             <button type="button" class="btn btn-primary " > إضافة</button></div>
+             <button type="submit" class="btn btn-primary " > إضافة</button></div>
               </div>
    
             
@@ -211,6 +211,9 @@
           
         </div>
       </main>
+
+      <script src="/assets/js/success_msg.js"></script>
+
         <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('assets/js/bootstrap.bundle.min.map.js')}}"></script>        
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>

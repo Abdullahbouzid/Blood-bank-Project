@@ -12,9 +12,13 @@ class Emp_Controller extends Controller
 {
     public function store()
     {
+        request()->validate([
+            'Name' => ['unique:employees'],
+            // 'Password' => ['required', 'min:8']
+        ]);
 
         $emp = new employee;
-       
+
         $emp->id = trim(request()->id);
         $emp->DoB = trim(request()->DoB);
         $emp->Name = trim(request()->Name);
@@ -25,7 +29,7 @@ class Emp_Controller extends Controller
         $emp->Gander = trim(request()->Gander);
         $emp->Password = trim(request()->Password);
         $emp->Bank_id = trim(request()->Bank_id);
-        
+
         $emp->save();
 
         sleep(1);
@@ -84,17 +88,17 @@ class Emp_Controller extends Controller
 
     public function show_Emp()
     {
-      
+
         $ShowEmps = employee::where('Type', 'موظف')->get();
-       
-        $banknames= Bank::select('Name')->distinct()->get();
-         $banks =Bank::select('Addrees')->distinct()->get();
-      
-        
-        return view('/Dashboards.empcontrol', compact('ShowEmps','banknames','banks'));
+
+        $banknames = Bank::select('Name')->distinct()->get();
+        $banks = Bank::select('Addrees')->distinct()->get();
+
+
+        return view('/Dashboards.empcontrol', compact('ShowEmps', 'banknames', 'banks'));
     }
-    
-    
+
+
     // public function getWorkplaces(Request $request)
     // {
     // $banknames = $request->banknames;
@@ -119,7 +123,7 @@ class Emp_Controller extends Controller
         return redirect()->route('empcontrol.show_Emp')->with('success', 'empcontrol deleted successfully!');
     }
 
- 
+
 
 
 }

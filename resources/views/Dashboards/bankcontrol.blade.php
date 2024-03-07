@@ -146,7 +146,7 @@
           <div class="col-lg-1 col-md-1 ">
           </div>
           <div class="col-lg-10 col-md-12 col-sm-12">
-             <form action="/bankcontrol" method="post" onsubmit="return checkDataRequest()">
+             <form action="/bankcontrol" method="post" onsubmit="return checkDataBank()">
                   @csrf
               <div class="row">
                
@@ -154,10 +154,10 @@
               <input type="number" class="form-control" name="id" placeholder="رقم المصرف" aria-label="First name">
             </div>
             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="text" class="form-control" name="Name" placeholder="البلدية التابع لها" aria-label="Last name">
+              <input type="text" class="form-control" name="Name" id = "Name" placeholder="البلدية التابع لها" aria-label="Last name">
             </div>
             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="text" class="form-control" name="Addrees" placeholder="العنوان" aria-label="Last name">
+              <input type="text" class="form-control" name="Addrees" id = "Addrees" placeholder="العنوان" aria-label="Last name">
             </div>
           
           <div class="mt-3">
@@ -264,6 +264,9 @@
           
         </div>
       </main>
+
+      <script src="/assets/js/success_msg.js"></script>
+
         <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('assets/js/bootstrap.bundle.min.map.js')}}"></script>        
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>

@@ -146,27 +146,32 @@
           </div>
           <div class="col-lg-10 col-md-12 col-sm-12">
             <div class="col-lg-10 col-md-12 col-sm-12">
-              <form action="/empcontrol" method="post" onsubmit="return checkDataRequest()">
+              <form action="/empcontrol" method="post" onsubmit="return checkDataEmp()">
                    @csrf
                <div class="row">
                 
              <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-               <input type="number" class="form-control" name="id" placeholder="رقم الموظف" aria-label="First name">
+               <input type="number" class="form-control" name="id" id = "id" placeholder="رقم الموظف" aria-label="First name">
              </div>
              <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-               <input type="text" class="form-control" name="Name" placeholder="اسم الموظف" aria-label="Last name">
+               <input type="text" class="form-control" name="Name" id="Name" placeholder="اسم الموظف" aria-label="Last name">
+               @error('Name')
+                     <span style="color: red; display:block;">
+                          {{$message}}
+                  </span> 
+                    @enderror
              </div>
              <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-               <input type="text" class="form-control" name="Addrees" placeholder="العنوان" aria-label="Last name">
+               <input type="text" class="form-control" name="Addrees" id="Addrees"  placeholder="العنوان" aria-label="Last name">
              </div>
              <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-               <input type="text" class="form-control" name="Type" placeholder="الصفة الوظيفية" aria-label="Last name">
+               <input type="text" class="form-control" name="Type" id="Type" placeholder="الصفة الوظيفية" aria-label="Last name">
              </div> 
              <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="email" class="form-control" name="Email" placeholder="البريد الالكتروني" aria-label="Last name">
+              <input type="email" class="form-control" name="Email" id="Email" placeholder="البريد الالكتروني" aria-label="Last name">
             </div> 
             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-              <input type="password" class="form-control" name="Password" placeholder="كلمة السر" aria-label="Last name">
+              <input type="password" class="form-control" name="Password" id = "Password" placeholder="كلمة السر" aria-label="Last name">
             </div> 
             <div class="col-lg-6 col-md-10 col-sm-12 mt-3">   
               <select class="form-control" id="Gander" name="Gander">
@@ -177,10 +182,10 @@
             </select> 
           </div>
           <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-            <input type="date" class="form-control" name="DoB" placeholder="تاريخ الميلاد" aria-label="Last name">
+            <input type="date" class="form-control" name="DoB" id= "DoB" placeholder="تاريخ الميلاد" aria-label="Last name">
           </div> 
           <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-            <input type="number" class="form-control" name="Phone" placeholder="رقم الهاتف" aria-label="Last name">
+            <input type="number" class="form-control" name="Phone" id = "Phone" placeholder="رقم الهاتف" aria-label="Last name">
           </div> 
              
              
@@ -272,6 +277,9 @@
           
         </div>
       </main>
+
+      <script src="/assets/js/success_msg.js"></script>
+
         <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('assets/js/bootstrap.bundle.min.map.js')}}"></script>        
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
