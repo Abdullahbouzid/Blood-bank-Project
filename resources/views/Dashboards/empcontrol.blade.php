@@ -182,7 +182,7 @@
             <input type="date" class="form-control" name="DoB" id= "DoB" placeholder="تاريخ الميلاد" aria-label="Last name">
           </div> 
           <div class="col-lg-6 col-md-10 col-sm-12 mt-3">
-            <input type="number" class="form-control" name="Phone" id = "Phone" placeholder="رقم الهاتف" aria-label="Last name">
+            <input type="number" class="form-control" min = 0 name="Phone" id = "Phone" placeholder="رقم الهاتف" aria-label="Last name">
           </div> 
              
              

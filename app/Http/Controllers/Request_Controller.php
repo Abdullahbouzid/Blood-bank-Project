@@ -30,7 +30,7 @@ class Request_Controller extends Controller
 
     public function show_request()
     {
-        $show_requests = Requestt::with('visitors')->get();
+        $show_requests = Requestt::with('visitor')->get();
 
 
         return view('/Dashboards.requestcontrol', compact('show_requests'));

@@ -202,7 +202,7 @@
                           <td>{{ $ShowCenter->Name }}</td>
                           <td>{{ $ShowCenter->Addrees }}</td>
                           <td>{{ $ShowCenter->Type }}</td>
-                          <td>{{ $ShowCenter->Bank->Addrees }}</td>
+                          {{-- <td>{{ $ShowCenter->Bank->Addrees }}</td> --}}
 
                           <td> <button type="button" class="btn btn-primary">تعديل</button></td>
                           <td>

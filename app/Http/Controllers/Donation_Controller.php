@@ -42,6 +42,7 @@ class Donation_Controller extends Controller
     public function show_donation()
     {
         $showdonations = Donation::with('visitor', 'center')->get();
+        
 
         return view('/Dashboards.donationcontrol', compact('showdonations'));
     }

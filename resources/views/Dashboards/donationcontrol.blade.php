@@ -142,7 +142,7 @@
             <div class="col-md-12 mb-3">
               <div class="card">
                 <div class="card-header">
-                  <span><i class="bi bi-table me-2"></i></span> Data Table
+                  <span><i class="bi bi-table me-2"></i></span> جدول طلبات التبرع بالدم
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -173,12 +173,12 @@
         <td>{{ $showdonation->Dof_Donation }}</td>
       
 
-                              <td> <button type="button" class="btn btn-primary">تعديل</button></td>
+                              <td> <button type="button" class="btn btn-primary">موافقة</button></td>
                           <td>
                           <form action="{{ route('donationcontrol.destroy', $showdonation->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">حذف</button>
+                            <button type="submit" class="btn btn-danger">رفض</button>
                         </form>
                           </td>
                          </tr>

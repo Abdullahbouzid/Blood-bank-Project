@@ -15,13 +15,14 @@ class Requestt extends Model
         'DoB',
         'typeofblood',
         'no_bags',
+
         'status_request',
         'visitor_id',
         'employee_id'
     ];
 
 
-    public function visitors()
+   public function visitor()
     {
         return $this->belongsTo(Visitor::class);
     }

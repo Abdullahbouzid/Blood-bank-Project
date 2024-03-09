@@ -143,7 +143,7 @@
             <div class="col-md-12 mb-3">
               <div class="card">
                 <div class="card-header">
-                  <span><i class="bi bi-table me-2"></i></span> Data Table
+                  <span><i class="bi bi-table me-2"></i></span> جدول طلبات الدم
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -157,11 +157,12 @@
                           <th> الحالة</th>
                         
                         </tr>
+
                       </thead>
                       @foreach ($show_requests as $show_request)
                       <tr>
                           <td>{{ $show_request->id }}</td>
-                          <td>{{ $show_request->visitor_id }}</td>
+                          <td>{{ isset($show_request->visitor) ? $show_request->visitor->Name : '-' }}</td>
                           <td>{{ $show_request->typeofblood }}</td>
                           <td>{{ $show_request->no_bags }}</td>
                           <td>{{ $show_request->status_request }}</td>
